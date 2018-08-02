@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2. Creating Reidual, CLEAN, Synthesized Beam Maps &mdash; Smili 0.0.1pre documentation</title>
+  <title>2.3.1. Creating Reidual, CLEAN, Synthesized Beam Maps &mdash; Smili 0.0.1pre documentation</title>
   
 
   
@@ -36,7 +36,8 @@
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Smili 0.0.1pre documentation" href="../../index.html"/>
-        <link rel="prev" title="1. Installation" href="../../_static/install.html"/> 
+        <link rel="up" title="2. Tutorial and Example Scripts" href="../index.html"/>
+        <link rel="prev" title="2. Tutorial and Example Scripts" href="../index.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -91,7 +92,17 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../_static/install.html">1. Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Creating Reidual, CLEAN, Synthesized Beam Maps</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">2. Tutorial and Example Scripts</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#handling-images">2.1. Handling Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#handlint-uv-data-sets">2.2. Handlint UV data sets</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#imaging">2.3. Imaging</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.3.1. Creating Reidual, CLEAN, Synthesized Beam Maps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#feature-extraction">2.4. Feature Extraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#modeling">2.5. Modeling</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -136,7 +147,9 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>2. Creating Reidual, CLEAN, Synthesized Beam Maps</li>
+          <li><a href="../index.html">2. Tutorial and Example Scripts</a> &raquo;</li>
+        
+      <li>2.3.1. Creating Reidual, CLEAN, Synthesized Beam Maps</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -339,7 +352,7 @@ div.nboutput div.output_area.stderr {
 }
 </style>
 <div class="section" id="Creating-Reidual,-CLEAN,-Synthesized-Beam-Maps">
-<h1>2. Creating Reidual, CLEAN, Synthesized Beam Maps<a class="headerlink" href="#Creating-Reidual,-CLEAN,-Synthesized-Beam-Maps" title="Permalink to this headline">¶</a></h1>
+<h1>2.3.1. Creating Reidual, CLEAN, Synthesized Beam Maps<a class="headerlink" href="#Creating-Reidual,-CLEAN,-Synthesized-Beam-Maps" title="Permalink to this headline">¶</a></h1>
 <p>In the traditional radio astrnomy, the residual map, which is an inverse
 Fourier transform of the residual visibility, has been a very useful
 tool to check typical noise levels on the image. The CLEAN map, which is
@@ -433,6 +446,22 @@ Reading AN Tables
       8   9  PT       -1.640954e+06 -5.014816e+06  3.575412e+06        0
 
 Reading Source Information from Primary HDU
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+/Users/akiyama/anaconda/lib/python2.7/site-packages/astropy/io/fits/fitsrec.py:687: UserWarning: Field &#39;ORBPARM&#39; has a repeat count of 0 in its format code, indicating an empty field.
+  &#39;indicating an empty field.&#39;.format(key))
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
   Frequency Setup ID: 1
     Sources:
          id source                        radec  equinox
@@ -442,15 +471,6 @@ Reading Primary HDU data
   VisData.sort: 0 indexes have wrong station orders (ant1 &gt; ant2).
   VisData.sort: Data have been sorted by utc, ant1, ant2, subarray
 Stokes I data will be calculated from input RR and LL data
-</pre></div></div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="stderr output_area docutils container">
-<div class="highlight"><pre>
-/Users/akiyama/anaconda/lib/python2.7/site-packages/astropy/io/fits/fitsrec.py:687: UserWarning: Field &#39;ORBPARM&#39; has a repeat count of 0 in its format code, indicating an empty field.
-  &#39;indicating an empty field.&#39;.format(key))
 </pre></div></div>
 </div>
 <p>We can fit a beam size with vistable. errorweight means uvweighting
@@ -473,7 +493,7 @@ gaussian functions.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{u&#39;minsize&#39;: 0.17205778821231357, u&#39;pa&#39;: -19.75775439659128, u&#39;majsize&#39;: 0.42634618968043975, u&#39;angunit&#39;: &#39;mas&#39;}
+{u&#39;minsize&#39;: 0.17205778821584752, u&#39;pa&#39;: -19.757754393927826, u&#39;majsize&#39;: 0.42634618969821364, u&#39;angunit&#39;: &#39;mas&#39;}
 </pre></div></div>
 </div>
 <p>Let’s create an image. Load the header information from uvfits files.
@@ -508,7 +528,7 @@ plotting, for instance.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{&#39;minsize&#39;: 0.17205778821231357, &#39;pa&#39;: -19.75775439659128, &#39;majsize&#39;: 0.42634618968043975, &#39;angunit&#39;: &#39;mas&#39;}
+{&#39;minsize&#39;: 0.1720577882158475, &#39;pa&#39;: -19.757754393927826, &#39;majsize&#39;: 0.42634618969821364, &#39;angunit&#39;: &#39;mas&#39;}
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -561,8 +581,8 @@ function.</p>
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>(&lt;matplotlib.image.AxesImage at 0x1c2dc50890&gt;,
- &lt;matplotlib.colorbar.Colorbar at 0x1c2dfd6e50&gt;)
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c27a00890&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c27990e50&gt;)
 </pre></div>
 </div>
 </div>
@@ -616,8 +636,8 @@ Total Flux Constraint: disabled.
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>(&lt;matplotlib.image.AxesImage at 0x1c2e2240d0&gt;,
- &lt;matplotlib.colorbar.Colorbar at 0x1c2e25a650&gt;)
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c27c430d0&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c27c79650&gt;)
 </pre></div>
 </div>
 </div>
@@ -716,7 +736,7 @@ compute model+residual map</p>
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&lt;matplotlib.contour.QuadContourSet at 0x1c338efd50&gt;
+<span></span>&lt;matplotlib.contour.QuadContourSet at 0x1c285f1d50&gt;
 </pre></div>
 </div>
 </div>
@@ -747,7 +767,7 @@ IMFITS.rms() method.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(7.130021528370606e-07, 0.030856365926790474, 43276.67988660611)
+(7.132424174887726e-07, 0.030730492863073656, 43085.62153562242)
 </pre></div></div>
 </div>
 <p>Since there is a big residual due to selfcal with CLEAN in the original
@@ -760,7 +780,6 @@ data and re-image data again.</p>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">uvfits</span> <span class="o">=</span> <span class="n">uvdata</span><span class="o">.</span><span class="n">UVFITS</span><span class="p">(</span><span class="n">uvfitsfile</span><span class="p">)</span><span class="o">.</span><span class="n">avspc</span><span class="p">()</span><span class="o">.</span><span class="n">select_stokes</span><span class="p">(</span><span class="s2">&quot;I&quot;</span><span class="p">)</span>
-<span class="n">totalflux</span> <span class="o">=</span> <span class="n">outimage</span><span class="o">.</span><span class="n">totalflux</span><span class="p">()</span>
 
 <span class="c1"># selfcal for 5 times</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
@@ -841,24 +860,24 @@ Reading Source Information from Primary HDU
 Reading Primary HDU data
   VisData.sort: 0 indexes have wrong station orders (ant1 &gt; ant2).
   VisData.sort: Data have been sorted by utc, ant1, ant2, subarray
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="stderr output_area docutils container">
-<div class="highlight"><pre>
-17it [00:00, 162.78it/s]
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
 Stokes I data will be calculated from input RR and LL data
 Initialize CL Table
 Compute Model Visibilities
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+19it [00:00, 189.80it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
 Subarray 1
 </pre></div></div>
 </div>
@@ -867,7 +886,7 @@ Subarray 1
 </div>
 <div class="stderr output_area docutils container">
 <div class="highlight"><pre>
-100it [00:00, 160.31it/s]
+100it [00:00, 166.93it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -875,7 +894,7 @@ Subarray 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-1.0002656660420424
+1.0002655774471616
 Imaging Window: Not Specified. We solve the image on all the pixels.
 Total Flux Constraint: disabled.
 </pre></div></div>
@@ -885,7 +904,7 @@ Total Flux Constraint: disabled.
 </div>
 <div class="stderr output_area docutils container">
 <div class="highlight"><pre>
-10it [00:00, 97.47it/s]
+15it [00:00, 143.20it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -903,7 +922,7 @@ Subarray 1
 </div>
 <div class="stderr output_area docutils container">
 <div class="highlight"><pre>
-100it [00:00, 117.55it/s]
+100it [00:00, 163.36it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -911,7 +930,7 @@ Subarray 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-1.0005839218893013
+1.0005838142464172
 Imaging Window: Not Specified. We solve the image on all the pixels.
 Total Flux Constraint: disabled.
 </pre></div></div>
@@ -921,7 +940,7 @@ Total Flux Constraint: disabled.
 </div>
 <div class="stderr output_area docutils container">
 <div class="highlight"><pre>
-12it [00:00, 116.62it/s]
+18it [00:00, 171.44it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -939,7 +958,7 @@ Subarray 1
 </div>
 <div class="stderr output_area docutils container">
 <div class="highlight"><pre>
-100it [00:00, 125.48it/s]
+100it [00:00, 164.71it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -947,7 +966,7 @@ Subarray 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-1.0005187181687654
+1.000518746004462
 Imaging Window: Not Specified. We solve the image on all the pixels.
 Total Flux Constraint: disabled.
 </pre></div></div>
@@ -957,7 +976,7 @@ Total Flux Constraint: disabled.
 </div>
 <div class="stderr output_area docutils container">
 <div class="highlight"><pre>
-15it [00:00, 145.25it/s]
+20it [00:00, 192.22it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -975,7 +994,7 @@ Subarray 1
 </div>
 <div class="stderr output_area docutils container">
 <div class="highlight"><pre>
-100it [00:00, 126.03it/s]
+100it [00:00, 151.65it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -983,7 +1002,7 @@ Subarray 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-1.0004574568273095
+1.0004574416234047
 Imaging Window: Not Specified. We solve the image on all the pixels.
 Total Flux Constraint: disabled.
 </pre></div></div>
@@ -993,7 +1012,7 @@ Total Flux Constraint: disabled.
 </div>
 <div class="stderr output_area docutils container">
 <div class="highlight"><pre>
-16it [00:00, 153.73it/s]
+22it [00:00, 219.06it/s]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1011,7 +1030,7 @@ Subarray 1
 </div>
 <div class="stderr output_area docutils container">
 <div class="highlight"><pre>
-100it [00:00, 117.99it/s]
+100it [00:00, 173.61it/s]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1019,7 +1038,7 @@ Subarray 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-1.000417998895842
+1.000418010387839
 Imaging Window: Not Specified. We solve the image on all the pixels.
 Total Flux Constraint: disabled.
 </pre></div></div>
@@ -1070,7 +1089,7 @@ Total Flux Constraint: disabled.
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&lt;matplotlib.contour.QuadContourSet at 0x1c2dd00ed0&gt;
+<span></span>&lt;matplotlib.contour.QuadContourSet at 0x1c2770af90&gt;
 </pre></div>
 </div>
 </div>
@@ -1115,7 +1134,7 @@ Total Flux Constraint: disabled.
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="../../_static/install.html" class="btn btn-neutral" title="1. Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../index.html" class="btn btn-neutral" title="2. Tutorial and Example Scripts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
