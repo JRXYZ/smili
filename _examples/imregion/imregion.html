@@ -1,0 +1,969 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.1.1. Handle Regions in the image &mdash; Smili 0.0.1pre documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Smili 0.0.1pre documentation" href="../../index.html"/>
+        <link rel="up" title="2. Tutorial and Example Scripts" href="../index.html"/>
+        <link rel="next" title="2.3.1. Creating Reidual, CLEAN, Synthesized Beam Maps" href="../maps/maps.html"/>
+        <link rel="prev" title="2. Tutorial and Example Scripts" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Smili
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../_static/install.html">1. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">2. Tutorial and Example Scripts</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#handling-images">2.1. Handling Images</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.1.1. Handle Regions in the image</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Interactively-set-imaging-regions-using-SAO-DS9">2.1.1.1. Interactively set imaging regions using SAO DS9</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Manually-set/edit-imaging-regions">2.1.1.2. Manually set/edit imaging regions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Masking-image-with-imregion">2.1.1.3. Masking image with imregion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#handlint-uv-data-sets">2.2. Handlint UV data sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#imaging">2.3. Imaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#feature-extraction">2.4. Feature Extraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#modeling">2.5. Modeling</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Smili</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">2. Tutorial and Example Scripts</a> &raquo;</li>
+        
+      <li>2.1.1. Handle Regions in the image</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/_examples/imregion/imregion.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="Handle-Regions-in-the-image">
+<h1>2.1.1. Handle Regions in the image<a class="headerlink" href="#Handle-Regions-in-the-image" title="Permalink to this headline">¶</a></h1>
+<p>In interferometric imaging or any image processing, often we need to set
+regions where the intensity will be solved or to mask images. SMILI
+provide a class for handling geometric description of such regions.</p>
+<p><a class="reference internal" href="#"><span class="doc">This notebook</span></a> provides an example usage how to
+read, set and save image regions.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">smili</span> <span class="kn">import</span> <span class="n">imdata</span><span class="p">,</span> <span class="n">util</span>
+</pre></div>
+</div>
+</div>
+<p>Here, we use <a class="reference external" href="BU_3C273_sampleimage.fits">an FITS image</a> reconstructed
+with SMILI from a 43 GHz 3C 273 data set of <a class="reference external" href="https://www.bu.edu/blazars/VLBAproject.html">the Boston University
+Blazar Group</a>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Load the FITS image</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">IMFITS</span><span class="p">(</span><span class="s2">&quot;./BU_3C273_sampleimage.fits&quot;</span><span class="p">,</span> <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot the image in linear and log scales</span>
+<span class="n">util</span><span class="o">.</span><span class="n">matplotlibrc</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;3C 273 Example Image: Linear Scale&quot;</span><span class="p">)</span>
+<span class="n">image</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mjy&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;3C 273 Example Image: Log Scale&quot;</span><span class="p">)</span>
+<span class="n">image</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;gamma&quot;</span><span class="p">,</span> <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mjy&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcdefaults</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_imregion_imregion_4_0.png" src="../../_images/_examples_imregion_imregion_4_0.png" />
+</div>
+</div>
+<div class="section" id="Interactively-set-imaging-regions-using-SAO-DS9">
+<h2>2.1.1.1. Interactively set imaging regions using SAO DS9<a class="headerlink" href="#Interactively-set-imaging-regions-using-SAO-DS9" title="Permalink to this headline">¶</a></h2>
+<p>SMILI can intractively set regions with <a class="reference external" href="http://ds9.si.edu/site/Home.html">SAO
+DS9</a> using
+<a class="reference external" href="http://hea-www.harvard.edu/RD/pyds9/">pyds9</a>. To load your image to
+DS9, you can use <em>open_pyds9</em> method of your image object.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Open this image in DS9</span>
+<span class="n">image</span><span class="o">.</span><span class="n">open_pyds9</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Or alternatively, you can create a <em>imdata.IMRegion</em> object and use
+<em>open_pyds9</em> method.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Initialize an IMRegion object</span>
+<span class="n">imregion</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">IMRegion</span><span class="p">()</span>
+
+<span class="c1"># Open the image in DS9. If this imregion has already some regions, it will be sent to DS9 as well.</span>
+<span class="n">imregion</span><span class="o">.</span><span class="n">open_pyds9</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>You can see your image in DS9 and set regions.</p>
+<div class="figure">
+<img alt="" src="../../_images/ds9_sample_1.png" />
+</div>
+<p>You can set a region by clicking <strong>EDIT &gt; Region</strong>. Currently, SMILI can
+handle circles, squares and ellipses in DS9. Here, ellipses are set to
+the area with significant flux densities.</p>
+<p><img alt="image0" src="../../_images/ds9_sample_2.png" /> <img alt="image1" src="../../_images/ds9_sample_3.png" /></p>
+<p>You can pull regions from DS9 with load_pyds9 methods in imdata.IMFITS
+or imdata.IMRegion objects.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># eighther of commands will work to pull regions from DS9</span>
+<span class="n">imregion</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load_pyds9</span><span class="p">()</span>
+<span class="n">imregion</span> <span class="o">=</span> <span class="n">imregion</span><span class="o">.</span><span class="n">load_pyds9</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The imdata.IMRegion class is inheriting
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html">pandas.DataFrame</a>.
+You can use all functions available for pandas.DataFrame.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">imregion</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>shape</th>
+      <th>xc</th>
+      <th>yc</th>
+      <th>width</th>
+      <th>height</th>
+      <th>radius</th>
+      <th>maja</th>
+      <th>mina</th>
+      <th>angle</th>
+      <th>angunit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>circle</td>
+      <td>61.83334</td>
+      <td>80.4166</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>214.16716</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>uas</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>circle</td>
+      <td>-98.79166</td>
+      <td>-101.6250</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>214.16716</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>uas</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>circle</td>
+      <td>-270.12500</td>
+      <td>-305.0834</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>239.36694</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>uas</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>circle</td>
+      <td>-377.20834</td>
+      <td>-519.2500</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>273.55490</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>uas</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>circle</td>
+      <td>-655.62500</td>
+      <td>-562.0834</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>283.40834</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>uas</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>circle</td>
+      <td>-912.62500</td>
+      <td>-744.1250</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>369.12282</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>uas</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>circle</td>
+      <td>-1137.50000</td>
+      <td>-1108.2084</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>422.75350</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>uas</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>In addition, it has additional functions. For instance, you can plot
+your regions with <em>plot</em> method.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># plot the original image as a reference</span>
+<span class="n">image</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mjy&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+
+<span class="c1"># plot regions. You can use any arguments of pyplot.plot for customizing your plots.</span>
+<span class="n">imregion</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_imregion_imregion_15_0.png" src="../../_images/_examples_imregion_imregion_15_0.png" />
+</div>
+</div>
+<p>You can save this region file to a <a class="reference external" href="imregion.csv">csv file</a> with
+<em>to_csv</em> method, and load it again with <em>imdata.read_imregion</em>
+function</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># save this region file to a csv file</span>
+<span class="n">imregion</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;imregion.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># load this region file from the csv file</span>
+<span class="n">imregion</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">read_imregion</span><span class="p">(</span><span class="s2">&quot;imregion.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>If you have a pixel-coordinated DS9 region file, you can also read it
+with load_ds9reg method</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Load DS9 region file (must be using pixel-based coordinates)</span>
+<span class="n">imregion_ds9</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">IMRegion</span><span class="p">()</span>
+<span class="n">imregion_ds9</span> <span class="o">=</span> <span class="n">imregion_ds9</span><span class="o">.</span><span class="n">load_ds9reg</span><span class="p">(</span><span class="n">regfile</span><span class="o">=</span><span class="s2">&quot;xxx.reg&quot;</span><span class="p">,</span><span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Manually-set/edit-imaging-regions">
+<h2>2.1.1.2. Manually set/edit imaging regions<a class="headerlink" href="#Manually-set/edit-imaging-regions" title="Permalink to this headline">¶</a></h2>
+<p>You can also add regions from SMILI. This would be useful to pipeline
+imaging scripts.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Adding a box</span>
+<span class="n">imregion_box</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">IMRegion</span><span class="p">()</span>
+<span class="n">imregion_box</span><span class="o">=</span> <span class="n">imregion_box</span><span class="o">.</span><span class="n">add_box</span><span class="p">(</span><span class="n">xc</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span><span class="n">yc</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">angle</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+
+<span class="c1"># Check</span>
+<span class="n">image</span><span class="o">.</span><span class="n">imshow</span><span class="p">()</span>
+<span class="n">imregion_box</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_imregion_imregion_22_0.png" src="../../_images/_examples_imregion_imregion_22_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Adding a circle</span>
+<span class="n">imregion_circ</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">IMRegion</span><span class="p">()</span>
+<span class="n">imregion_circ</span><span class="o">=</span> <span class="n">imregion_circ</span><span class="o">.</span><span class="n">add_circle</span><span class="p">(</span><span class="n">xc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">yc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">radius</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+
+<span class="c1"># Check</span>
+<span class="n">image</span><span class="o">.</span><span class="n">imshow</span><span class="p">()</span>
+<span class="n">imregion_circ</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_imregion_imregion_23_0.png" src="../../_images/_examples_imregion_imregion_23_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Adding a circle</span>
+<span class="n">imregion_ellip</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">IMRegion</span><span class="p">()</span>
+<span class="n">imregion_ellip</span> <span class="o">=</span> <span class="n">imregion_ellip</span><span class="o">.</span><span class="n">add_ellipse</span><span class="p">(</span><span class="n">xc</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">yc</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">maja</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">mina</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">angle</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+
+<span class="c1"># Check</span>
+<span class="n">image</span><span class="o">.</span><span class="n">imshow</span><span class="p">()</span>
+<span class="n">imregion_ellip</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_imregion_imregion_24_0.png" src="../../_images/_examples_imregion_imregion_24_0.png" />
+</div>
+</div>
+<p>There are some other useful functions to edit regions</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Shifting imaging regions.</span>
+<span class="n">imregion_shift</span> <span class="o">=</span> <span class="n">imregion</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">imregion_shift</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">dx</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">dy</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+
+<span class="c1"># Check</span>
+<span class="n">image</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">imregion</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;original&quot;</span><span class="p">,</span> <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+<span class="n">imregion_shift</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;shifted&quot;</span><span class="p">,</span> <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_imregion_imregion_26_0.png" src="../../_images/_examples_imregion_imregion_26_0.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Zoom regions</span>
+<span class="n">imregion_zoom</span> <span class="o">=</span> <span class="n">imregion</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">imregion_zoom</span><span class="o">.</span><span class="n">zoom</span><span class="p">(</span><span class="n">fx</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Check</span>
+<span class="n">image</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">imregion</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;original&quot;</span><span class="p">)</span>
+<span class="n">imregion_zoom</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;yellow&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>You can also add regions.</p>
+<p>Create region1 and region2.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Create two imaging regions</span>
+<span class="n">imregion1</span> <span class="o">=</span> <span class="n">imregion</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">imregion2</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">IMRegion</span><span class="p">()</span><span class="o">.</span><span class="n">add_box</span><span class="p">(</span><span class="n">xc</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span><span class="n">yc</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">angle</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+
+<span class="c1"># Take a sum</span>
+<span class="n">imregion3</span> <span class="o">=</span> <span class="n">imregion1</span> <span class="o">+</span> <span class="n">imregion2</span>
+
+<span class="c1"># Check</span>
+<span class="n">image</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">imregion3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_imregion_imregion_30_0.png" src="../../_images/_examples_imregion_imregion_30_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="Masking-image-with-imregion">
+<h2>2.1.1.3. Masking image with imregion<a class="headerlink" href="#Masking-image-with-imregion" title="Permalink to this headline">¶</a></h2>
+<p>You can mask images with winmod methods in imdata.IMFITS/imdata.IMRegion
+objects.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># These commands are equivalent</span>
+<span class="n">editimage1</span> <span class="o">=</span> <span class="n">imregion</span><span class="o">.</span><span class="n">winmod</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">save_totalflux</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">editimage2</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">winmod</span><span class="p">(</span><span class="n">imregion</span><span class="p">,</span> <span class="n">save_totalflux</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="c1"># Check: indeed you can see all brightness outside regions are cleared.</span>
+<span class="n">util</span><span class="o">.</span><span class="n">matplotlibrc</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;3C 273 Original Image&quot;</span><span class="p">)</span>
+<span class="n">image</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;gamma&quot;</span><span class="p">,</span>  <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mjy&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+<span class="n">imregion</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;3C 273 Masked1&quot;</span><span class="p">)</span>
+<span class="n">editimage1</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;gamma&quot;</span><span class="p">,</span> <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mjy&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+<span class="n">imregion</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;3C 273 Masked2&quot;</span><span class="p">)</span>
+<span class="n">editimage2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;gamma&quot;</span><span class="p">,</span> <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mjy&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+<span class="n">imregion</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcdefaults</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_imregion_imregion_33_0.png" src="../../_images/_examples_imregion_imregion_33_0.png" />
+</div>
+</div>
+<p>You can also creat a “mask image”, which can be loaded to imaging
+functions as well</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Create a mask image</span>
+<span class="n">maskimage</span> <span class="o">=</span> <span class="n">imregion</span><span class="o">.</span><span class="n">maskimage</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
+<span class="c1"># Check: indeed you can see all brightness outside regions are cleared.</span>
+<span class="n">util</span><span class="o">.</span><span class="n">matplotlibrc</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;3C 273 Original Image&quot;</span><span class="p">)</span>
+<span class="n">image</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;gamma&quot;</span><span class="p">,</span>  <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mjy&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+<span class="n">imregion</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;3C 273 Masked1&quot;</span><span class="p">)</span>
+<span class="n">maskimage</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;gamma&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+<span class="n">imregion</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcdefaults</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_imregion_imregion_35_0.png" src="../../_images/_examples_imregion_imregion_35_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../maps/maps.html" class="btn btn-neutral float-right" title="2.3.1. Creating Reidual, CLEAN, Synthesized Beam Maps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="2. Tutorial and Example Scripts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-, Smili Developper Team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.1pre',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
