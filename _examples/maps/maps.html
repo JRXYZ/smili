@@ -1,0 +1,1178 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. Creating Reidual, CLEAN, Synthesized Beam Maps &mdash; Smili 0.0.1pre documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Smili 0.0.1pre documentation" href="../../index.html"/>
+        <link rel="prev" title="1. Installation" href="../../_static/install.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Smili
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../_static/install.html">1. Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Creating Reidual, CLEAN, Synthesized Beam Maps</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Smili</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>2. Creating Reidual, CLEAN, Synthesized Beam Maps</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/_examples/maps/maps.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="Creating-Reidual,-CLEAN,-Synthesized-Beam-Maps">
+<h1>2. Creating Reidual, CLEAN, Synthesized Beam Maps<a class="headerlink" href="#Creating-Reidual,-CLEAN,-Synthesized-Beam-Maps" title="Permalink to this headline">¶</a></h1>
+<p>In the traditional radio astrnomy, the residual map, which is an inverse
+Fourier transform of the residual visibility, has been a very useful
+tool to check typical noise levels on the image. The CLEAN map, which is
+the sum of the (beam-convolved) model image and the residual map, is
+also a very popular image used as the final image of interferometric
+imaging. This notebook shows how we can compute the trasitional residual
+or CLEAN maps with SMILI.</p>
+<p>Note that once you selfcalibrate data, you can compute these maps for
+images obtained with closure imaging techniques as well.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">smili</span> <span class="kn">import</span> <span class="n">uvdata</span><span class="p">,</span> <span class="n">imdata</span><span class="p">,</span> <span class="n">imaging</span><span class="p">,</span> <span class="n">util</span>
+</pre></div>
+</div>
+</div>
+<p>Here, we use a <a class="reference external" href="./3C345MAR18.UVP">VLBA data set of 3C345 at 43 GHz</a>
+observed by the <a class="reference external" href="https://www.bu.edu/blazars/VLBAproject.html">Boston University Blazar
+Group</a>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Load uvfits file</span>
+<span class="n">uvfitsfile</span> <span class="o">=</span> <span class="s2">&quot;./3C345MAR18.UVP&quot;</span>
+<span class="n">uvfits</span> <span class="o">=</span> <span class="n">uvdata</span><span class="o">.</span><span class="n">UVFITS</span><span class="p">(</span><span class="n">uvfitsfile</span><span class="p">)</span><span class="o">.</span><span class="n">avspc</span><span class="p">()</span>
+
+<span class="c1"># select stokes parameter</span>
+<span class="n">uvfits</span> <span class="o">=</span> <span class="n">uvfits</span><span class="o">.</span><span class="n">select_stokes</span><span class="p">(</span><span class="s2">&quot;I&quot;</span><span class="p">)</span>
+
+<span class="c1"># create a vistable</span>
+<span class="n">vtable</span> <span class="o">=</span> <span class="n">uvfits</span><span class="o">.</span><span class="n">make_vistable</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Filename: ./3C345MAR18.UVP
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 GroupsHDU      118   (3, 4, 1, 4, 1, 1)   float32   3014 Groups  7 Parameters
+  1  AIPS NX       1 BinTableHDU     31   13R x 7C   [1E, 1E, 1J, 1J, 1J, 1J, 1J]
+  2  AIPS FQ       1 BinTableHDU     29   1R x 6C   [1J, 4D, 4E, 4E, 4J, 32A]
+  3  AIPS AN       1 BinTableHDU     72   9R x 14C   [8A, 3D, 0D, 1J, 1J, 1E, 1E, 4E, 1A, 1E, 8E, 1A, 1E, 8E]
+
+Loading HDUs in the input UVFITS files.
+  Primary HDU was loaded.
+  AIPS FQ Table was loaded.
+  Subarray 1 was found in an AIPS AN table
+
+Checking loaded HDUs.
+  1 Subarray settings are found.
+  No AIPS SU tables were found.
+    Assuming that this is a single source UVFITS file.
+
+Reading FQ Tables
+  Frequency Setup ID: 1
+    IF Freq setups (Hz):
+         if_freq_offset  ch_bandwidth  if_bandwidth  sideband
+      0             0.0    64000000.0    64000000.0         1
+      1      80000000.0    64000000.0    64000000.0         1
+      2     144000000.0    64000000.0    64000000.0         1
+      3     208000000.0    64000000.0    64000000.0         1
+    Note: Central Frequency of ch=i at IF=j (where i,j=1,2,3...)
+       freq(i,j) = reffreq + (i-1) * ch_bandwidth(j) * sideband + if_freq_offset(j)
+
+Reading AN Tables
+  Sub Array ID: 1
+    Frequency Setup ID: 1
+    Reference Frequency: 43007500000 Hz
+    Reference Date: 2018-03-
+    AN Table Contents:
+         id      name             x             y             z  mnttype
+      0   1  BR       -2.112065e+06 -3.705357e+06  4.726814e+06        0
+      1   2  FD       -1.324009e+06 -5.332182e+06  3.231962e+06        0
+      2   3  HN        1.446375e+06 -4.447940e+06  4.322306e+06        0
+      3   4  KP       -1.995679e+06 -5.037318e+06  3.357328e+06        0
+      4   5  LA       -1.449753e+06 -4.975299e+06  3.709124e+06        0
+      5   6  MK       -5.464075e+06 -2.495248e+06  2.148298e+06        0
+      6   7  NL       -1.308726e+05 -4.762317e+06  4.226851e+06        0
+      7   8  OV       -2.409150e+06 -4.478573e+06  3.838617e+06        0
+      8   9  PT       -1.640954e+06 -5.014816e+06  3.575412e+06        0
+
+Reading Source Information from Primary HDU
+  Frequency Setup ID: 1
+    Sources:
+         id source                        radec  equinox
+      0   1  3C345  16h42m58.81s +39d48m36.994s   2000.0
+
+Reading Primary HDU data
+  VisData.sort: 0 indexes have wrong station orders (ant1 &gt; ant2).
+  VisData.sort: Data have been sorted by utc, ant1, ant2, subarray
+Stokes I data will be calculated from input RR and LL data
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+/Users/akiyama/anaconda/lib/python2.7/site-packages/astropy/io/fits/fitsrec.py:687: UserWarning: Field &#39;ORBPARM&#39; has a repeat count of 0 in its format code, indicating an empty field.
+  &#39;indicating an empty field.&#39;.format(key))
+</pre></div></div>
+</div>
+<p>We can fit a beam size with vistable. errorweight means uvweighting
+using error. The default is errorweight=-2. The output will be a
+dictionary, which can be used to argments of convolution functions or
+gaussian functions.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">beamprm</span> <span class="o">=</span> <span class="n">vtable</span><span class="o">.</span><span class="n">fit_beam</span><span class="p">(</span><span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">beamprm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{u&#39;minsize&#39;: 0.17205778821231357, u&#39;pa&#39;: -19.75775439659128, u&#39;majsize&#39;: 0.42634618968043975, u&#39;angunit&#39;: &#39;mas&#39;}
+</pre></div></div>
+</div>
+<p>Let’s create an image. Load the header information from uvfits files.
+After generating an image object, you can input the fitted beam
+parameter to the image. This will be used to compute “Jy/beam” for
+plotting, for instance.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># create a blank image</span>
+<span class="n">initimage</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">IMFITS</span><span class="p">(</span><span class="n">nx</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">ny</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">nxref</span><span class="o">=</span><span class="mf">50.</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">,</span> <span class="n">uvfits</span><span class="o">=</span><span class="n">uvfitsfile</span><span class="p">)</span>
+
+<span class="c1"># set a beam size for the unit conversion</span>
+<span class="n">initimage</span><span class="o">.</span><span class="n">set_beam</span><span class="p">(</span><span class="o">**</span><span class="n">beamprm</span><span class="p">)</span>
+
+<span class="c1"># You can plot the beam with plot_beam method</span>
+<span class="n">util</span><span class="o">.</span><span class="n">matplotlibrc</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">initimage</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+<span class="n">initimage</span><span class="o">.</span><span class="n">plot_beam</span><span class="p">()</span>
+
+<span class="c1"># You can also get what is the current beam set in an image object</span>
+<span class="n">beamprm</span> <span class="o">=</span> <span class="n">initimage</span><span class="o">.</span><span class="n">get_beam</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">beamprm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;minsize&#39;: 0.17205778821231357, &#39;pa&#39;: -19.75775439659128, &#39;majsize&#39;: 0.42634618968043975, &#39;angunit&#39;: &#39;mas&#39;}
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_maps_maps_8_1.png" src="../../_images/_examples_maps_maps_8_1.png" />
+</div>
+</div>
+<p>You can make a synthesized beam with vtable.map_beam function.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">beam</span> <span class="o">=</span> <span class="n">vtable</span><span class="o">.</span><span class="n">map_beam</span><span class="p">(</span><span class="n">initimage</span><span class="p">,</span> <span class="n">errorweight</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">util</span><span class="o">.</span><span class="n">matplotlibrc</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">beam</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+<span class="n">beam</span><span class="o">.</span><span class="n">plot_beam</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_maps_maps_10_0.png" src="../../_images/_examples_maps_maps_10_0.png" />
+</div>
+</div>
+<p>You can also make a dirty/residual map with vtable.map_residual
+function.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">dmap</span> <span class="o">=</span> <span class="n">vtable</span><span class="o">.</span><span class="n">map_residual</span><span class="p">(</span><span class="n">initimage</span><span class="p">,</span> <span class="n">errorweight</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">util</span><span class="o">.</span><span class="n">matplotlibrc</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">dmap</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mjy&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[6]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c2dc50890&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c2dfd6e50&gt;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_maps_maps_12_1.png" src="../../_images/_examples_maps_maps_12_1.png" />
+</div>
+</div>
+<p>Let’s start imaging. Here, we just quickly image data.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">outimage</span> <span class="o">=</span> <span class="n">imaging</span><span class="o">.</span><span class="n">lbfgs</span><span class="o">.</span><span class="n">imaging</span><span class="p">(</span>
+    <span class="n">initimage</span><span class="p">,</span>
+    <span class="n">vistable</span> <span class="o">=</span> <span class="n">vtable</span><span class="p">,</span>
+    <span class="n">lambl1</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">lambtsv</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">niter</span><span class="o">=</span><span class="mi">1000</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Imaging Window: Not Specified. We solve the image on all the pixels.
+Total Flux Constraint: disabled.
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">util</span><span class="o">.</span><span class="n">matplotlibrc</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">outimage</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mjy&quot;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s2">&quot;gamma&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[8]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c2e2240d0&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c2e25a650&gt;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_maps_maps_15_1.png" src="../../_images/_examples_maps_maps_15_1.png" />
+</div>
+</div>
+<p>You can plot a residual map.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">resid</span> <span class="o">=</span> <span class="n">vtable</span><span class="o">.</span><span class="n">map_residual</span><span class="p">(</span><span class="n">outimage</span><span class="p">,</span> <span class="n">errorweight</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">util</span><span class="o">.</span><span class="n">matplotlibrc</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">resid</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>  <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mjy&quot;</span><span class="p">,</span> <span class="n">saunit</span><span class="o">=</span><span class="s2">&quot;pixel&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+<span class="n">resid</span><span class="o">.</span><span class="n">plot_beam</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_maps_maps_17_0.png" src="../../_images/_examples_maps_maps_17_0.png" />
+</div>
+</div>
+<p>You can also compute a clean map. If you use restore=True, the model
+image will be convolved before adding residual map. Otherwise it will
+compute model+residual map</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">clean</span> <span class="o">=</span> <span class="n">vtable</span><span class="o">.</span><span class="n">map_clean</span><span class="p">(</span><span class="n">outimage</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">errorweight</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># check dynamic range</span>
+<span class="n">rms</span> <span class="o">=</span> <span class="n">resid</span><span class="o">.</span><span class="n">rms</span><span class="p">(</span><span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;Jy&quot;</span><span class="p">,</span> <span class="n">saunit</span><span class="o">=</span><span class="s2">&quot;pixel&quot;</span><span class="p">)</span>
+<span class="n">peak</span> <span class="o">=</span> <span class="n">clean</span><span class="o">.</span><span class="n">peak</span><span class="p">(</span><span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;Jy&quot;</span><span class="p">,</span> <span class="n">saunit</span><span class="o">=</span><span class="s2">&quot;pixel&quot;</span><span class="p">)</span>
+<span class="n">dyrange</span> <span class="o">=</span> <span class="n">peak</span><span class="o">/</span><span class="n">rms</span>
+
+<span class="c1"># plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;CLAEN Map (Restored)&quot;</span><span class="p">)</span>
+<span class="n">clean</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;gamma&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mjy&quot;</span><span class="p">,</span> <span class="n">saunit</span><span class="o">=</span><span class="s2">&quot;beam&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+<span class="n">clean</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">cmul</span><span class="o">=</span><span class="mi">5</span><span class="o">/</span><span class="n">dyrange</span><span class="p">,</span> <span class="n">relative</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">clean</span><span class="o">.</span><span class="n">plot_beam</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+/Users/akiyama/anaconda/lib/python2.7/site-packages/matplotlib/contour.py:960: UserWarning: The following kwargs were not used by contour: &#39;ls&#39;
+  s)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_maps_maps_19_1.png" src="../../_images/_examples_maps_maps_19_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">clean</span> <span class="o">=</span> <span class="n">vtable</span><span class="o">.</span><span class="n">map_clean</span><span class="p">(</span><span class="n">outimage</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">errorweight</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># check dynamic range</span>
+<span class="n">rms</span> <span class="o">=</span> <span class="n">resid</span><span class="o">.</span><span class="n">rms</span><span class="p">(</span><span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;Jy&quot;</span><span class="p">,</span> <span class="n">saunit</span><span class="o">=</span><span class="s2">&quot;pixel&quot;</span><span class="p">)</span>
+<span class="n">peak</span> <span class="o">=</span> <span class="n">clean</span><span class="o">.</span><span class="n">peak</span><span class="p">(</span><span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;Jy&quot;</span><span class="p">,</span> <span class="n">saunit</span><span class="o">=</span><span class="s2">&quot;pixel&quot;</span><span class="p">)</span>
+<span class="n">dyrange</span> <span class="o">=</span> <span class="n">peak</span><span class="o">/</span><span class="n">rms</span>
+
+<span class="c1"># plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;CLAEN Map (No Restoring)&quot;</span><span class="p">)</span>
+<span class="n">clean</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;gamma&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mjy&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+<span class="n">clean</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">cmul</span><span class="o">=</span><span class="mi">10</span><span class="o">/</span><span class="n">dyrange</span><span class="p">,</span> <span class="n">relative</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[11]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>&lt;matplotlib.contour.QuadContourSet at 0x1c338efd50&gt;
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_maps_maps_20_1.png" src="../../_images/_examples_maps_maps_20_1.png" />
+</div>
+</div>
+<p>How you can compute the dynamic range? You can compute it with
+IMFITS.rms() method.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">rms</span> <span class="o">=</span> <span class="n">resid</span><span class="o">.</span><span class="n">rms</span><span class="p">(</span><span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;Jy&quot;</span><span class="p">,</span> <span class="n">saunit</span><span class="o">=</span><span class="s2">&quot;pixel&quot;</span><span class="p">)</span>
+<span class="n">peak</span> <span class="o">=</span> <span class="n">clean</span><span class="o">.</span><span class="n">peak</span><span class="p">(</span><span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;Jy&quot;</span><span class="p">,</span> <span class="n">saunit</span><span class="o">=</span><span class="s2">&quot;pixel&quot;</span><span class="p">)</span>
+<span class="n">dyrange</span> <span class="o">=</span> <span class="n">peak</span><span class="o">/</span><span class="n">rms</span>
+<span class="k">print</span><span class="p">(</span><span class="n">rms</span><span class="p">,</span> <span class="n">peak</span><span class="p">,</span> <span class="n">dyrange</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(7.130021528370606e-07, 0.030856365926790474, 43276.67988660611)
+</pre></div></div>
+</div>
+<p>Since there is a big residual due to selfcal with CLEAN in the original
+uvfits file, we should probably selfcal data. Here, we quickly selfcal
+data and re-image data again.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">uvfits</span> <span class="o">=</span> <span class="n">uvdata</span><span class="o">.</span><span class="n">UVFITS</span><span class="p">(</span><span class="n">uvfitsfile</span><span class="p">)</span><span class="o">.</span><span class="n">avspc</span><span class="p">()</span><span class="o">.</span><span class="n">select_stokes</span><span class="p">(</span><span class="s2">&quot;I&quot;</span><span class="p">)</span>
+<span class="n">totalflux</span> <span class="o">=</span> <span class="n">outimage</span><span class="o">.</span><span class="n">totalflux</span><span class="p">()</span>
+
+<span class="c1"># selfcal for 5 times</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="c1"># selfcalibration (g)</span>
+    <span class="n">cltable</span> <span class="o">=</span> <span class="n">uvfits</span><span class="o">.</span><span class="n">selfcal</span><span class="p">(</span><span class="n">outimage</span><span class="p">)</span><span class="o">.</span><span class="n">rescale</span><span class="p">()</span>
+    <span class="n">uvfits</span> <span class="o">=</span> <span class="n">uvfits</span><span class="o">.</span><span class="n">apply_cltable</span><span class="p">(</span><span class="n">cltable</span><span class="p">)</span>
+
+    <span class="c1"># re-create uvfits file</span>
+    <span class="n">vtable</span> <span class="o">=</span> <span class="n">uvfits</span><span class="o">.</span><span class="n">make_vistable</span><span class="p">()</span>
+
+    <span class="c1"># re-imaging</span>
+    <span class="n">outimage</span> <span class="o">=</span> <span class="n">imaging</span><span class="o">.</span><span class="n">lbfgs</span><span class="o">.</span><span class="n">imaging</span><span class="p">(</span>
+        <span class="n">outimage</span><span class="p">,</span>
+        <span class="n">vistable</span> <span class="o">=</span> <span class="n">vtable</span><span class="p">,</span>
+        <span class="n">lambl1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">lambtsv</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="n">niter</span><span class="o">=</span><span class="mi">1000</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Filename: ./3C345MAR18.UVP
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 GroupsHDU      118   (3, 4, 1, 4, 1, 1)   float32   3014 Groups  7 Parameters
+  1  AIPS NX       1 BinTableHDU     31   13R x 7C   [1E, 1E, 1J, 1J, 1J, 1J, 1J]
+  2  AIPS FQ       1 BinTableHDU     29   1R x 6C   [1J, 4D, 4E, 4E, 4J, 32A]
+  3  AIPS AN       1 BinTableHDU     72   9R x 14C   [8A, 3D, 0D, 1J, 1J, 1E, 1E, 4E, 1A, 1E, 8E, 1A, 1E, 8E]
+
+Loading HDUs in the input UVFITS files.
+  Primary HDU was loaded.
+  AIPS FQ Table was loaded.
+  Subarray 1 was found in an AIPS AN table
+
+Checking loaded HDUs.
+  1 Subarray settings are found.
+  No AIPS SU tables were found.
+    Assuming that this is a single source UVFITS file.
+
+Reading FQ Tables
+  Frequency Setup ID: 1
+    IF Freq setups (Hz):
+         if_freq_offset  ch_bandwidth  if_bandwidth  sideband
+      0             0.0    64000000.0    64000000.0         1
+      1      80000000.0    64000000.0    64000000.0         1
+      2     144000000.0    64000000.0    64000000.0         1
+      3     208000000.0    64000000.0    64000000.0         1
+    Note: Central Frequency of ch=i at IF=j (where i,j=1,2,3...)
+       freq(i,j) = reffreq + (i-1) * ch_bandwidth(j) * sideband + if_freq_offset(j)
+
+Reading AN Tables
+  Sub Array ID: 1
+    Frequency Setup ID: 1
+    Reference Frequency: 43007500000 Hz
+    Reference Date: 2018-03-
+    AN Table Contents:
+         id      name             x             y             z  mnttype
+      0   1  BR       -2.112065e+06 -3.705357e+06  4.726814e+06        0
+      1   2  FD       -1.324009e+06 -5.332182e+06  3.231962e+06        0
+      2   3  HN        1.446375e+06 -4.447940e+06  4.322306e+06        0
+      3   4  KP       -1.995679e+06 -5.037318e+06  3.357328e+06        0
+      4   5  LA       -1.449753e+06 -4.975299e+06  3.709124e+06        0
+      5   6  MK       -5.464075e+06 -2.495248e+06  2.148298e+06        0
+      6   7  NL       -1.308726e+05 -4.762317e+06  4.226851e+06        0
+      7   8  OV       -2.409150e+06 -4.478573e+06  3.838617e+06        0
+      8   9  PT       -1.640954e+06 -5.014816e+06  3.575412e+06        0
+
+Reading Source Information from Primary HDU
+  Frequency Setup ID: 1
+    Sources:
+         id source                        radec  equinox
+      0   1  3C345  16h42m58.81s +39d48m36.994s   2000.0
+
+Reading Primary HDU data
+  VisData.sort: 0 indexes have wrong station orders (ant1 &gt; ant2).
+  VisData.sort: Data have been sorted by utc, ant1, ant2, subarray
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+17it [00:00, 162.78it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Stokes I data will be calculated from input RR and LL data
+Initialize CL Table
+Compute Model Visibilities
+Subarray 1
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+100it [00:00, 160.31it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1.0002656660420424
+Imaging Window: Not Specified. We solve the image on all the pixels.
+Total Flux Constraint: disabled.
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+10it [00:00, 97.47it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Initialize CL Table
+Compute Model Visibilities
+Subarray 1
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+100it [00:00, 117.55it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1.0005839218893013
+Imaging Window: Not Specified. We solve the image on all the pixels.
+Total Flux Constraint: disabled.
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+12it [00:00, 116.62it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Initialize CL Table
+Compute Model Visibilities
+Subarray 1
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+100it [00:00, 125.48it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1.0005187181687654
+Imaging Window: Not Specified. We solve the image on all the pixels.
+Total Flux Constraint: disabled.
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+15it [00:00, 145.25it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Initialize CL Table
+Compute Model Visibilities
+Subarray 1
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+100it [00:00, 126.03it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1.0004574568273095
+Imaging Window: Not Specified. We solve the image on all the pixels.
+Total Flux Constraint: disabled.
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+16it [00:00, 153.73it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Initialize CL Table
+Compute Model Visibilities
+Subarray 1
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+100it [00:00, 117.99it/s]
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1.000417998895842
+Imaging Window: Not Specified. We solve the image on all the pixels.
+Total Flux Constraint: disabled.
+</pre></div></div>
+</div>
+<p>Let’s check maps.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">util</span><span class="o">.</span><span class="n">matplotlibrc</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Raw reconstructed image&quot;</span><span class="p">)</span>
+<span class="n">outimage</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;gamma&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mjy&quot;</span><span class="p">,</span> <span class="n">saunit</span><span class="o">=</span><span class="s2">&quot;pixel&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Reconstructed image (Blurred with beam)&quot;</span><span class="p">)</span>
+<span class="n">outimage</span><span class="o">.</span><span class="n">convolve_gauss</span><span class="p">(</span><span class="o">**</span><span class="n">outimage</span><span class="o">.</span><span class="n">get_beam</span><span class="p">())</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;gamma&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mjy&quot;</span><span class="p">,</span> <span class="n">saunit</span><span class="o">=</span><span class="s2">&quot;beam&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+<span class="n">outimage</span><span class="o">.</span><span class="n">plot_beam</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Residual Map&quot;</span><span class="p">)</span>
+<span class="n">resid</span> <span class="o">=</span> <span class="n">vtable</span><span class="o">.</span><span class="n">map_residual</span><span class="p">(</span><span class="n">outimage</span><span class="p">)</span>
+<span class="n">resid</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>  <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mjy&quot;</span><span class="p">,</span> <span class="n">saunit</span><span class="o">=</span><span class="s2">&quot;beam&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+<span class="n">outimage</span><span class="o">.</span><span class="n">plot_beam</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;CLAEN Map (Restored)&quot;</span><span class="p">)</span>
+<span class="n">clean</span> <span class="o">=</span> <span class="n">vtable</span><span class="o">.</span><span class="n">map_clean</span><span class="p">(</span><span class="n">outimage</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">errorweight</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># check dynamic range</span>
+<span class="n">rms</span> <span class="o">=</span> <span class="n">resid</span><span class="o">.</span><span class="n">rms</span><span class="p">(</span><span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;Jy&quot;</span><span class="p">,</span> <span class="n">saunit</span><span class="o">=</span><span class="s2">&quot;pixel&quot;</span><span class="p">)</span>
+<span class="n">peak</span> <span class="o">=</span> <span class="n">clean</span><span class="o">.</span><span class="n">peak</span><span class="p">(</span><span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;Jy&quot;</span><span class="p">,</span> <span class="n">saunit</span><span class="o">=</span><span class="s2">&quot;pixel&quot;</span><span class="p">)</span>
+<span class="n">dyrange</span> <span class="o">=</span> <span class="n">peak</span><span class="o">/</span><span class="n">rms</span>
+
+<span class="c1"># plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;CLAEN Map (Restored)&quot;</span><span class="p">)</span>
+<span class="n">clean</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;gamma&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mjy&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+<span class="n">clean</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">cmul</span><span class="o">=</span><span class="mi">5</span><span class="o">/</span><span class="n">dyrange</span><span class="p">,</span> <span class="n">relative</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[14]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>&lt;matplotlib.contour.QuadContourSet at 0x1c2dd00ed0&gt;
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_maps_maps_26_1.png" src="../../_images/_examples_maps_maps_26_1.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_maps_maps_26_2.png" src="../../_images/_examples_maps_maps_26_2.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_maps_maps_26_3.png" src="../../_images/_examples_maps_maps_26_3.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_maps_maps_26_4.png" src="../../_images/_examples_maps_maps_26_4.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../../_static/install.html" class="btn btn-neutral" title="1. Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-, Smili Developper Team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.1pre',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
