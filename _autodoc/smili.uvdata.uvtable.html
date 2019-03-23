@@ -1,0 +1,2040 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.1.2.1.3. smili.uvdata.uvtable package &mdash; SMILI 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7.1.3. smili.imaging package" href="smili.imaging.html" />
+    <link rel="prev" title="7.1.2.1.2. smili.uvdata.uvfits package" href="smili.uvdata.uvfits.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SMILI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../_static/install.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_examples/index.html">2. Tutorial and Example Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/license.html">3. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/references.html">4. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/link.html">5. Developer Team and Related Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/acknowledgement.html">6. Acknowledgement</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="smili.html">7. smili package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="smili.html#subpackages">7.1. Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="smili.imdata.html">7.1.1. smili.imdata package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="smili.uvdata.html">7.1.2. smili.uvdata package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="smili.uvdata.html#subpackages">7.1.2.1. Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="smili.uvdata.html#module-smili.uvdata">7.1.2.2. Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="smili.imaging.html">7.1.3. smili.imaging package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="smili.html#submodules">7.2. Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smili.html#module-smili.util">7.3. smili.util module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smili.html#module-smili">7.4. Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SMILI</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="smili.html">7. smili package</a> &raquo;</li>
+        
+          <li><a href="smili.uvdata.html">7.1.2. smili.uvdata package</a> &raquo;</li>
+        
+      <li>7.1.2.1.3. smili.uvdata.uvtable package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/_autodoc/smili.uvdata.uvtable.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="smili-uvdata-uvtable-package">
+<h1>7.1.2.1.3. smili.uvdata.uvtable package<a class="headerlink" href="#smili-uvdata-uvtable-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>7.1.2.1.3.1. Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-smili.uvdata.uvtable.bstable">
+<span id="smili-uvdata-uvtable-bstable-module"></span><h2>7.1.2.1.3.2. smili.uvdata.uvtable.bstable module<a class="headerlink" href="#module-smili.uvdata.uvtable.bstable" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="smili.uvdata.uvtable.bstable.BSSeries">
+<em class="property">class </em><code class="descclassname">smili.uvdata.uvtable.bstable.</code><code class="descname">BSSeries</code><span class="sig-paren">(</span><em>data=None</em>, <em>index=None</em>, <em>dtype=None</em>, <em>name=None</em>, <em>copy=False</em>, <em>fastpath=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSSeries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#smili.uvdata.uvtable.uvtable.UVSeries" title="smili.uvdata.uvtable.uvtable.UVSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">smili.uvdata.uvtable.uvtable.UVSeries</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="smili.uvdata.uvtable.bstable.BSTable">
+<em class="property">class </em><code class="descclassname">smili.uvdata.uvtable.bstable.</code><code class="descname">BSTable</code><span class="sig-paren">(</span><em>data=None</em>, <em>index=None</em>, <em>columns=None</em>, <em>dtype=None</em>, <em>copy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#smili.uvdata.uvtable.uvtable.UVTable" title="smili.uvdata.uvtable.uvtable.UVTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">smili.uvdata.uvtable.uvtable.UVTable</span></code></a></p>
+<p>This class is for handling two dimentional tables of Bi-spectrua of
+visibilities. The class inherits pandas.DataFrame class, so you can use this
+class like pandas.DataFrame. The class also has additional methods to edit,
+visualize and convert data.</p>
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.add_phaseerror">
+<code class="descname">add_phaseerror</code><span class="sig-paren">(</span><em>phaseerror</em>, <em>quadrature=True</em>, <em>deg=True</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.add_phaseerror" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increase errors by a specified value</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>error</strong> (<em>float</em><em> or </em><em>array like</em>) – error to be added.</li>
+<li><strong>quadrature</strong> (<em>boolean; default=True</em>) – if True, error will be added to sigma in quadrature</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.bstable_columns">
+<code class="descname">bstable_columns</code><em class="property"> = [u'utc', u'gsthour', u'freq', u'stokesid', u'chid', u'ifid', u'ch', u'u12', u'v12', u'w12', u'uvdist12', u'u23', u'v23', u'w23', u'uvdist23', u'u31', u'v31', u'w31', u'uvdist31', u'uvdistmin', u'uvdistmax', u'uvdistave', u'st1', u'st2', u'st3', u'st1name', u'st2name', u'st3name', u'amp', u'phase', u'sigma']</em><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.bstable_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.bstable_types">
+<code class="descname">bstable_types</code><em class="property"> = [&lt;function asarray&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.int32'&gt;, &lt;type 'numpy.int32'&gt;, &lt;type 'numpy.int32'&gt;, &lt;type 'numpy.int32'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.int32'&gt;, &lt;type 'numpy.int32'&gt;, &lt;type 'numpy.int32'&gt;, &lt;function asarray&gt;, &lt;function asarray&gt;, &lt;function asarray&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;]</em><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.bstable_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.chisq_image">
+<code class="descname">chisq_image</code><span class="sig-paren">(</span><em>imfits</em>, <em>mask=None</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.chisq_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns (mean square) standardized residuals.
+:param imfits: model image to construct model bispectra
+:type imfits: imdata.IMFITS object
+:param mask: array for masking
+:type mask: array
+:param istokes: index for Stokes Parameter at which the image will be edited
+:type istokes: integer
+:param ifreq: index for Frequency at which the image will be edited
+:type ifreq: integer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(mean square) standardized residuals based on an input image</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.comp">
+<code class="descname">comp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.comp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return full complex visibilities</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.eval_geomodel">
+<code class="descname">eval_geomodel</code><span class="sig-paren">(</span><em>geomodel</em>, <em>evalargs={}</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.eval_geomodel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate model values and output them to a new table</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>geomodel</strong> (<em>geomodel.geomodel.GeoModel</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">uvdata.BSTable object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.eval_image">
+<code class="descname">eval_image</code><span class="sig-paren">(</span><em>imfits</em>, <em>mask=None</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.eval_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns model bispectra calculated by an input image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>imfits</strong> (<em>imdata.IMFITS object</em>) – <p>model image to construct model bispectra
+mask (array):</p>
+<blockquote>
+<div>array for masking</div></blockquote>
+</li>
+<li><strong>istokes</strong> (<em>integer</em>) – index for Stokes Parameter at which the image will be edited</li>
+<li><strong>ifreq</strong> (<em>integer</em>) – index for Frequency at which the image will be edited</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">BSTable object of a model bispectrum based on an input image</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.imag">
+<code class="descname">imag</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.imag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the imag part of full complex visibilities</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.plot_model">
+<code class="descname">plot_model</code><span class="sig-paren">(</span><em>outimage</em>, <em>filename=None</em>, <em>plotargs={u'ms': 1.0}</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.plot_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make summary pdf figures and csv file of checking model, residual
+and chisq of closure phases for each triangle
+:param outimage: model image to construct a model visibility
+:type outimage: imdata.IMFITS object
+:param filename: str, pathlib.Path, py._path.local.LocalPath or any object with a read()</p>
+<blockquote>
+<div>method (such as a file handle or StringIO)</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot.
+Defaults are {‘ms’: 1., }</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Output pdf file that summerizes results.
+cvsumtablefile (default = “model.csv”):<blockquote>
+<div>Output csv file that summerizes results.</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">summary pdf file (default = “model.pdf”)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.radplot">
+<code class="descname">radplot</code><span class="sig-paren">(</span><em>uvdtype=u'ave'</em>, <em>uvunit=None</em>, <em>normerror=False</em>, <em>errorbar=True</em>, <em>ls=u'none'</em>, <em>marker=u'.'</em>, <em>**plotargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.radplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot closure phases as a function of baseline lengths on the current axes.
+This method uses matplotlib.pyplot.plot() or matplotlib.pyplot.errorbar().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>uvdtype</strong> (<em>str</em><em>, </em><em>default = &quot;ave&quot;</em>) – <dl class="docutils">
+<dt>The type of the baseline length plotted along the horizontal axis.</dt>
+<dd>”max”: maximum of three baselines (=self[“uvdistmax”])
+“min”: minimum of three baselines (=self[“uvdistmin”])
+“ave”: average of three baselines (=self[“uvdistave”])</dd>
+</dl>
+</li>
+<li><strong>uvunit</strong> (<em>str</em><em>, </em><em>default = None</em>) – The unit of the baseline length. if uvunit is None, it will use
+self.uvunit.</li>
+<li><strong>errorbar</strong> (<em>boolean</em><em>, </em><em>default = True</em>) – <p>If errorbar is True, it will plot data with errorbars using
+matplotlib.pyplot.errorbar(). Otherwise, it will plot data without
+errorbars using matplotlib.pyplot.plot().</p>
+<p>If you plot model closure phases (i.e. model is not None),
+it will plot without errobars regardless of this parameter.</p>
+</li>
+<li><strong>model</strong> (<em>dict-like such as pd.DataFrame</em><em>, </em><em>pd.Series</em><em>, </em><em>default is None</em>) – Model data sets. Model closure phases must be given by model[“cpmod”].
+Otherwise, it will plot closure phases in the table (i.e. self[“phase”]).</li>
+<li><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot() or
+matplotlib.pyplot.errorbars().
+Defaults are {‘ls’: “none”, ‘marker’: “.”}.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.real">
+<code class="descname">real</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.real" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the real part of full complex visibilities</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.residual_geomodel">
+<code class="descname">residual_geomodel</code><span class="sig-paren">(</span><em>geomodel</em>, <em>normed=True</em>, <em>doeval=False</em>, <em>evalargs={}</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.residual_geomodel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate residuals of closure phases in radian
+for an input geometric model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>geomodel</strong> (<em>geomodel.geomodel.GeoModel object</em>) – input model</li>
+<li><strong>normed</strong> (<em>boolean</em><em>, </em><em>default=True</em>) – if True, residuals will be normalized by 1 sigma error</li>
+<li><strong>eval</strong> (<em>boolean</em><em>, </em><em>default=False</em>) – if True, actual residual values will be calculated.
+Otherwise, resduals will be given as a theano graph.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">ndarray (if doeval=True) or theano object (otherwise)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.residual_image">
+<code class="descname">residual_image</code><span class="sig-paren">(</span><em>imfits</em>, <em>mask=None</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.residual_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns residual between observational and model bispectra.
+:param imfits: model image to construct model bispectra
+:type imfits: imdata.IMFITS object
+:param mask: array for masking
+:type mask: array
+:param istokes: index for Stokes Parameter at which the image will be edited
+:type istokes: integer
+:param ifreq: index for Frequency at which the image will be edited
+:type ifreq: integer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">BSTable object of residual between observational and model bispectra</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.set_uvunit">
+<code class="descname">set_uvunit</code><span class="sig-paren">(</span><em>uvunit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.set_uvunit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set or guess uvunit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>uvunit</strong> (<em>str</em><em>, </em><em>default=None</em>) – The unit for spacial frequencies.
+Availables are lambda, klambda, mlambda and glambda.
+If not specified, uvunit will be guessed.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.sigma_phase">
+<code class="descname">sigma_phase</code><span class="sig-paren">(</span><em>deg=True</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.sigma_phase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the phase error estimator using a high SNR limit formula</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>deg</strong> (<em>boolean; default=True</em>) – IF true, returns values in degree. Otherwide, values will be
+returned in radian</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.snr">
+<code class="descname">snr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.snr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the SNR estimator</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.station_dic">
+<code class="descname">station_dic</code><span class="sig-paren">(</span><em>id2name=True</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.station_dic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return dictionary of stations. If id2name=True, return a dictionary
+whose key is the station ID number and value is the station name.
+Otherwise return a dictionary whose key is the name and value is ID.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.station_list">
+<code class="descname">station_list</code><span class="sig-paren">(</span><em>id=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.station_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return list of stations. If id=True, return list of station IDs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.tplot">
+<code class="descname">tplot</code><span class="sig-paren">(</span><em>axis1=u'utc'</em>, <em>gst_continuous=True</em>, <em>gst_wraphour=0.0</em>, <em>time_maj_loc=&lt;matplotlib.dates.HourLocator object&gt;</em>, <em>time_min_loc=&lt;matplotlib.dates.MinuteLocator object&gt;</em>, <em>time_maj_fmt=u'%H:%M'</em>, <em>ls=u'none'</em>, <em>marker=u'.'</em>, <em>label=None</em>, <em>**plotargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.tplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot time-coverage of data. Available types for the xaxis is
+[“utc”,”gst”]</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot() or
+matplotlib.pyplot.errorbars().
+Defaults are {‘ls’: “none”, ‘marker’: “.”}.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.triangle_list">
+<code class="descname">triangle_list</code><span class="sig-paren">(</span><em>id=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.triangle_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of baselines. If id=False, then the names of stations
+will be returned. Otherwise, the ID numbers of stations will be returned.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.uvplot">
+<code class="descname">uvplot</code><span class="sig-paren">(</span><em>uvunit=None</em>, <em>conj=True</em>, <em>ls=u'none'</em>, <em>marker=u'.'</em>, <em>**plotargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.uvplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot uv-plot on the current axes.
+This method uses matplotlib.pyplot.plot().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>uvunit</strong> (<em>str</em><em>, </em><em>default = None</em>) – The unit of the baseline length. if uvunit is None, it will use
+self.uvunit.</li>
+<li><strong>conj</strong> (<em>boolean</em><em>, </em><em>default = True</em>) – if conj=True, it will plot complex conjugate components (i.e. (-u, -v)).</li>
+<li><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot.
+Defaults are {‘ls’: “none”, ‘marker’: “.”}</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.bstable.BSTable.vplot">
+<code class="descname">vplot</code><span class="sig-paren">(</span><em>axis1=u'utc'</em>, <em>axis2=u'phase'</em>, <em>triangle=None</em>, <em>normerror1=False</em>, <em>normerror2=None</em>, <em>errorbar=True</em>, <em>gst_continuous=True</em>, <em>gst_wraphour=0.0</em>, <em>time_maj_loc=&lt;matplotlib.dates.HourLocator object&gt;</em>, <em>time_min_loc=&lt;matplotlib.dates.MinuteLocator object&gt;</em>, <em>time_maj_fmt=u'%H:%M'</em>, <em>uvunit=None</em>, <em>ls=u'none'</em>, <em>marker=u'.'</em>, <em>label=None</em>, <em>**plotargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.BSTable.vplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot various type of data. Available types of data are
+[“utc”,”gst”,”amp”,”phase”,”sigma”,”real”,”imag”,”snr”,</p>
+<blockquote>
+<div>“uvd(ist)mean”,”uvd(ist)min”,”uvd(ist)max”,
+“uvd(ist)1”,”uvd(ist)2”,”uvd(ist)3”]</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>uvunit</strong> (<em>str</em><em>, </em><em>default = None</em>) – The unit of the baseline length. if uvunit is None, it will use
+self.uvunit.</li>
+<li><strong>errorbar</strong> (<em>boolean</em><em>, </em><em>default = True</em>) – <p>If errorbar is True, it will plot data with errorbars using
+matplotlib.pyplot.errorbar(). Otherwise, it will plot data without
+errorbars using matplotlib.pyplot.plot().</p>
+<p>If you plot model closure phases (i.e. model is not None),
+it will plot without errobars regardless of this parameter.</p>
+</li>
+<li><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot() or
+matplotlib.pyplot.errorbars().
+Defaults are {‘ls’: “none”, ‘marker’: “.”}.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="smili.uvdata.uvtable.bstable.read_bstable">
+<code class="descclassname">smili.uvdata.uvtable.bstable.</code><code class="descname">read_bstable</code><span class="sig-paren">(</span><em>filename</em>, <em>uvunit=None</em>, <em>**args</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.bstable.read_bstable" title="Permalink to this definition">¶</a></dt>
+<dd><p>This fuction loads uvdata.BSTable from an input csv file using pd.read_csv().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filename</strong> – str, pathlib.Path, py._path.local.LocalPath or any object with a read()
+method (such as a file handle or StringIO)</li>
+<li><strong>uvunit</strong> (<em>str</em><em>, </em><em>default is None</em>) – units of uvdistance for plotting. If uvunit is None, uvunit will be
+inferred from the maximum baseline length. Availables are [“l[ambda]”,
+“kl[ambda]”, “ml[ambda]”, “gl[ambda]”, “m”, “km”].</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">uvdata.BSTable object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-smili.uvdata.uvtable.catable">
+<span id="smili-uvdata-uvtable-catable-module"></span><h2>7.1.2.1.3.3. smili.uvdata.uvtable.catable module<a class="headerlink" href="#module-smili.uvdata.uvtable.catable" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="smili.uvdata.uvtable.catable.CASeries">
+<em class="property">class </em><code class="descclassname">smili.uvdata.uvtable.catable.</code><code class="descname">CASeries</code><span class="sig-paren">(</span><em>data=None</em>, <em>index=None</em>, <em>dtype=None</em>, <em>name=None</em>, <em>copy=False</em>, <em>fastpath=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.catable.CASeries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#smili.uvdata.uvtable.uvtable.UVSeries" title="smili.uvdata.uvtable.uvtable.UVSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">smili.uvdata.uvtable.uvtable.UVSeries</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="smili.uvdata.uvtable.catable.CATable">
+<em class="property">class </em><code class="descclassname">smili.uvdata.uvtable.catable.</code><code class="descname">CATable</code><span class="sig-paren">(</span><em>data=None</em>, <em>index=None</em>, <em>columns=None</em>, <em>dtype=None</em>, <em>copy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.catable.CATable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#smili.uvdata.uvtable.uvtable.UVTable" title="smili.uvdata.uvtable.uvtable.UVTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">smili.uvdata.uvtable.uvtable.UVTable</span></code></a></p>
+<dl class="method">
+<dt id="smili.uvdata.uvtable.catable.CATable.add_logerror">
+<code class="descname">add_logerror</code><span class="sig-paren">(</span><em>logerror</em>, <em>quadrature=True</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.catable.CATable.add_logerror" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increase errors by a specified value</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>error</strong> (<em>float</em><em> or </em><em>array like</em>) – error to be added.</li>
+<li><strong>quadrature</strong> (<em>boolean; default=True</em>) – if True, error will be added to sigma in quadrature</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="smili.uvdata.uvtable.catable.CATable.catable_columns">
+<code class="descname">catable_columns</code><em class="property"> = [u'utc', u'gsthour', u'freq', u'stokesid', u'ifid', u'chid', u'ch', u'u1', u'v1', u'w1', u'uvdist1', u'u2', u'v2', u'w2', u'uvdist2', u'u3', u'v3', u'w3', u'uvdist3', u'u4', u'v4', u'w4', u'uvdist4', u'uvdistmin', u'uvdistmax', u'uvdistave', u'st1', u'st2', u'st3', u'st4', u'st1name', u'st2name', u'st3name', u'st4name', u'amp', u'sigma', u'logamp', u'logsigma']</em><a class="headerlink" href="#smili.uvdata.uvtable.catable.CATable.catable_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="smili.uvdata.uvtable.catable.CATable.catable_types">
+<code class="descname">catable_types</code><em class="property"> = [&lt;function asarray&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.int32'&gt;, &lt;type 'numpy.int32'&gt;, &lt;type 'numpy.int32'&gt;, &lt;type 'numpy.int32'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.int32'&gt;, &lt;type 'numpy.int32'&gt;, &lt;type 'numpy.int32'&gt;, &lt;type 'numpy.int32'&gt;, &lt;function asarray&gt;, &lt;function asarray&gt;, &lt;function asarray&gt;, &lt;function asarray&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;]</em><a class="headerlink" href="#smili.uvdata.uvtable.catable.CATable.catable_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.catable.CATable.chisq_image">
+<code class="descname">chisq_image</code><span class="sig-paren">(</span><em>imfits</em>, <em>mask=None</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.catable.CATable.chisq_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns (mean square) standardized residuals.
+:param imfits: model image to construct model log closure amplitudes
+:type imfits: imdata.IMFITS object
+:param mask: array for masking
+:type mask: array
+:param istokes: index for Stokes Parameter at which the image will be edited
+:type istokes: integer
+:param ifreq: index for Frequency at which the image will be edited
+:type ifreq: integer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(mean square) standardized residuals based on an input image</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.catable.CATable.eval_geomodel">
+<code class="descname">eval_geomodel</code><span class="sig-paren">(</span><em>geomodel</em>, <em>evalargs={}</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.catable.CATable.eval_geomodel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate model values and output them to a new table</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>geomodel</strong> (<em>geomodel.geomodel.GeoModel</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">uvdata.CATable object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.catable.CATable.eval_image">
+<code class="descname">eval_image</code><span class="sig-paren">(</span><em>imfits</em>, <em>mask=None</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.catable.CATable.eval_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns model log closure amplitudes calculated by an input image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>imfits</strong> (<em>imdata.IMFITS object</em>) – <p>model image to construct model log closure amplitudes
+mask (array):</p>
+<blockquote>
+<div>array for masking</div></blockquote>
+</li>
+<li><strong>istokes</strong> (<em>integer</em>) – index for Stokes Parameter at which the image will be edited</li>
+<li><strong>ifreq</strong> (<em>integer</em>) – index for Frequency at which the image will be edited</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">CATable object of model log closure amplitudes based on an input image</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.catable.CATable.plot_model">
+<code class="descname">plot_model</code><span class="sig-paren">(</span><em>outimage</em>, <em>filename=None</em>, <em>plotargs={u'ms': 1.0}</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.catable.CATable.plot_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make summary pdf figures and csv file of checking model, residual
+and chisquare of closure amplitudes for each quadrature
+:param outimage: model image to construct a model visibility
+:type outimage: imdata.IMFITS object
+:param filename: str, pathlib.Path, py._path.local.LocalPath or any object with a read()</p>
+<blockquote>
+<div>method (such as a file handle or StringIO)</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot.
+Defaults are {‘ms’: 1., }</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Output pdf file that summerizes results.
+cvsumtablefile (default = “model.csv”):<blockquote>
+<div>Output csv file that summerizes results.</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">summary pdf file (default = “model.pdf”)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.catable.CATable.quadrature_list">
+<code class="descname">quadrature_list</code><span class="sig-paren">(</span><em>id=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.catable.CATable.quadrature_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of baselines. If id=False, then the names of stations
+will be returned. Otherwise, the ID numbers of stations will be returned.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.catable.CATable.radplot">
+<code class="descname">radplot</code><span class="sig-paren">(</span><em>uvdtype=u'ave'</em>, <em>uvunit=None</em>, <em>normerror=False</em>, <em>log=True</em>, <em>errorbar=True</em>, <em>ls=u'none'</em>, <em>marker=u'.'</em>, <em>**plotargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.catable.CATable.radplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot log(closure amplitudes) as a function of baseline lengths
+on the current axes. This method uses matplotlib.pyplot.plot() or
+matplotlib.pyplot.errorbar().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>uvdtype</strong> (<em>str</em><em>, </em><em>default = &quot;ave&quot;</em>) – <dl class="docutils">
+<dt>The type of the baseline length plotted along the horizontal axis.</dt>
+<dd>”max”: maximum of four baselines (=self[“uvdistmax”])
+“min”: minimum of four baselines (=self[“uvdistmin”])
+“ave”: average of four baselines (=self[“uvdistave”])</dd>
+</dl>
+</li>
+<li><strong>uvunit</strong> (<em>str</em><em>, </em><em>default = None</em>) – The unit of the baseline length. if uvunit is None, it will use
+self.uvunit.</li>
+<li><strong>errorbar</strong> (<em>boolean</em><em>, </em><em>default = True</em>) – <p>If errorbar is True, it will plot data with errorbars using
+matplotlib.pyplot.errorbar(). Otherwise, it will plot data without
+errorbars using matplotlib.pyplot.plot().</p>
+<p>If you plot model closure phases (i.e. model is not None),
+it will plot without errobars regardless of this parameter.</p>
+</li>
+<li><strong>model</strong> (<em>dict-like such as pd.DataFrame</em><em>, </em><em>pd.Series</em><em>, </em><em>default is None</em>) – Model data sets. Model closure amplitudes must be given by model[“camod”].
+Otherwise, it will plot closure amplitudes in the table (i.e. self[“logamp”]).</li>
+<li><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot() or
+matplotlib.pyplot.errorbars().
+Defaults are {‘ls’: “none”, ‘marker’: “.”}.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.catable.CATable.residual_geomodel">
+<code class="descname">residual_geomodel</code><span class="sig-paren">(</span><em>geomodel</em>, <em>normed=True</em>, <em>doeval=False</em>, <em>evalargs={}</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.catable.CATable.residual_geomodel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate residuals of log closure amplitudes
+for an input geometric model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>geomodel</strong> (<em>geomodel.geomodel.GeoModel object</em>) – input model</li>
+<li><strong>normed</strong> (<em>boolean</em><em>, </em><em>default=True</em>) – if True, residuals will be normalized by 1 sigma error</li>
+<li><strong>eval</strong> (<em>boolean</em><em>, </em><em>default=False</em>) – if True, actual residual values will be calculated.
+Otherwise, resduals will be given as a theano graph.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">ndarray (if doeval=True) or theano object (otherwise)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.catable.CATable.residual_image">
+<code class="descname">residual_image</code><span class="sig-paren">(</span><em>imfits</em>, <em>mask=None</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.catable.CATable.residual_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns residual between observational and model log closure amplitudes.
+:param imfits: model image to construct model log closure amplitudes
+:type imfits: imdata.IMFITS object
+:param mask: array for masking
+:type mask: array
+:param istokes: index for Stokes Parameter at which the image will be edited
+:type istokes: integer
+:param ifreq: index for Frequency at which the image will be edited
+:type ifreq: integer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">CATable object of residual between observational and model log closure amplitudes</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.catable.CATable.set_uvunit">
+<code class="descname">set_uvunit</code><span class="sig-paren">(</span><em>uvunit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.catable.CATable.set_uvunit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set or guess uvunit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>uvunit</strong> (<em>str</em><em>, </em><em>default=None</em>) – The unit for spacial frequencies.
+Availables are lambda, klambda, mlambda and glambda.
+If not specified, uvunit will be guessed.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.catable.CATable.snr">
+<code class="descname">snr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.catable.CATable.snr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the SNR estimator</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.catable.CATable.station_dic">
+<code class="descname">station_dic</code><span class="sig-paren">(</span><em>id2name=True</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.catable.CATable.station_dic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return dictionary of stations. If id2name=True, return a dictionary
+whose key is the station ID number and value is the station name.
+Otherwise return a dictionary whose key is the name and value is ID.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.catable.CATable.station_list">
+<code class="descname">station_list</code><span class="sig-paren">(</span><em>id=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.catable.CATable.station_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return list of stations. If id=True, return list of station IDs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.catable.CATable.tplot">
+<code class="descname">tplot</code><span class="sig-paren">(</span><em>axis1=u'utc'</em>, <em>gst_continuous=True</em>, <em>gst_wraphour=0.0</em>, <em>time_maj_loc=&lt;matplotlib.dates.HourLocator object&gt;</em>, <em>time_min_loc=&lt;matplotlib.dates.MinuteLocator object&gt;</em>, <em>time_maj_fmt=u'%H:%M'</em>, <em>ls=u'none'</em>, <em>marker=u'.'</em>, <em>label=None</em>, <em>**plotargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.catable.CATable.tplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot time-coverage of data. Available types for the xaxis is
+[“utc”,”gst”]</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot() or
+matplotlib.pyplot.errorbars().
+Defaults are {‘ls’: “none”, ‘marker’: “.”}.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.catable.CATable.uvplot">
+<code class="descname">uvplot</code><span class="sig-paren">(</span><em>uvunit=None</em>, <em>conj=True</em>, <em>ls=u'none'</em>, <em>marker=u'.'</em>, <em>**plotargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.catable.CATable.uvplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot uv-plot on the current axes.
+This method uses matplotlib.pyplot.plot().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>uvunit</strong> (<em>str</em><em>, </em><em>default = None</em>) – The unit of the baseline length. if uvunit is None, it will use
+self.uvunit.</li>
+<li><strong>conj</strong> (<em>boolean</em><em>, </em><em>default = True</em>) – if conj=True, it will plot complex conjugate components (i.e. (-u, -v)).</li>
+<li><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot.
+Defaults are {‘ls’: “none”, ‘marker’: “.”}</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.catable.CATable.vplot">
+<code class="descname">vplot</code><span class="sig-paren">(</span><em>axis1=u'utc'</em>, <em>axis2=u'logamp'</em>, <em>quadrature=None</em>, <em>normerror1=False</em>, <em>normerror2=None</em>, <em>errorbar=True</em>, <em>gst_continuous=True</em>, <em>gst_wraphour=0.0</em>, <em>time_maj_loc=&lt;matplotlib.dates.HourLocator object&gt;</em>, <em>time_min_loc=&lt;matplotlib.dates.MinuteLocator object&gt;</em>, <em>time_maj_fmt=u'%H:%M'</em>, <em>uvunit=None</em>, <em>ls=u'none'</em>, <em>marker=u'.'</em>, <em>label=None</em>, <em>**plotargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.catable.CATable.vplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot various type of data. Available types of data are
+[“utc”,”gst”,”amp”,”sigma”,”logamp”,”logsigma”,”snr”,</p>
+<blockquote>
+<div>“uvd(ist)mean”,”uvd(ist)min”,”uvd(ist)max”,
+“uvd(ist)1”,”uvd(ist)2”,”uvd(ist)3”,”uvd(ist)4”]</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>uvunit</strong> (<em>str</em><em>, </em><em>default = None</em>) – The unit of the baseline length. if uvunit is None, it will use
+self.uvunit.</li>
+<li><strong>errorbar</strong> (<em>boolean</em><em>, </em><em>default = True</em>) – <p>If errorbar is True, it will plot data with errorbars using
+matplotlib.pyplot.errorbar(). Otherwise, it will plot data without
+errorbars using matplotlib.pyplot.plot().</p>
+<p>If you plot model closure phases (i.e. model is not None),
+it will plot without errobars regardless of this parameter.</p>
+</li>
+<li><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot() or
+matplotlib.pyplot.errorbars().
+Defaults are {‘ls’: “none”, ‘marker’: “.”}.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="smili.uvdata.uvtable.catable.read_catable">
+<code class="descclassname">smili.uvdata.uvtable.catable.</code><code class="descname">read_catable</code><span class="sig-paren">(</span><em>filename</em>, <em>uvunit=None</em>, <em>**args</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.catable.read_catable" title="Permalink to this definition">¶</a></dt>
+<dd><p>This fuction loads uvdata.CATable from an input csv file using pd.read_csv().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filename</strong> – str, pathlib.Path, py._path.local.LocalPath or any object with a read()
+method (such as a file handle or StringIO)</li>
+<li><strong>uvunit</strong> (<em>str</em><em>, </em><em>default is None</em>) – units of uvdistance for plotting. If uvunit is None, uvunit will be
+inferred from the maximum baseline length. Availables are [“l[ambda]”,
+“kl[ambda]”, “ml[ambda]”, “gl[ambda]”, “m”, “km”].</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">uvdata.CATable object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-smili.uvdata.uvtable.gvistable">
+<span id="smili-uvdata-uvtable-gvistable-module"></span><h2>7.1.2.1.3.4. smili.uvdata.uvtable.gvistable module<a class="headerlink" href="#module-smili.uvdata.uvtable.gvistable" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="smili.uvdata.uvtable.gvistable.GVisSeries">
+<em class="property">class </em><code class="descclassname">smili.uvdata.uvtable.gvistable.</code><code class="descname">GVisSeries</code><span class="sig-paren">(</span><em>data=None</em>, <em>index=None</em>, <em>dtype=None</em>, <em>name=None</em>, <em>copy=False</em>, <em>fastpath=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.gvistable.GVisSeries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#smili.uvdata.uvtable.uvtable.UVSeries" title="smili.uvdata.uvtable.uvtable.UVSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">smili.uvdata.uvtable.uvtable.UVSeries</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="smili.uvdata.uvtable.gvistable.GVisTable">
+<em class="property">class </em><code class="descclassname">smili.uvdata.uvtable.gvistable.</code><code class="descname">GVisTable</code><span class="sig-paren">(</span><em>data=None</em>, <em>index=None</em>, <em>columns=None</em>, <em>dtype=None</em>, <em>copy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.gvistable.GVisTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#smili.uvdata.uvtable.uvtable.UVTable" title="smili.uvdata.uvtable.uvtable.UVTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">smili.uvdata.uvtable.uvtable.UVTable</span></code></a></p>
+<p>This class is for handling two dimentional tables of full complex visibilities
+and amplitudes. The class inherits pandas.DataFrame class, so you can use this
+class like pandas.DataFrame. The class also has additional methods to edit,
+visualize and convert data.</p>
+<dl class="method">
+<dt id="smili.uvdata.uvtable.gvistable.GVisTable.fftshift">
+<code class="descname">fftshift</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.gvistable.GVisTable.fftshift" title="Permalink to this definition">¶</a></dt>
+<dd><p>shift ugidx and vgidx in the area of [0, Nx), [0, Ny)</p>
+<p>Output: GVisTable object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.gvistable.GVisTable.fit_beam">
+<code class="descname">fit_beam</code><span class="sig-paren">(</span><em>angunit=u'mas'</em>, <em>errweight=0.0</em>, <em>ftsign=1</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.gvistable.GVisTable.fit_beam" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function estimates the synthesized beam size at natural weighting.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>angunit</strong> (<em>string</em>) – Angular unit (uas, mas, asec or arcsec, amin or arcmin, degree)</li>
+<li><strong>errweight</strong> (<em>float; experimental</em>) – index for errer weighting</li>
+<li><strong>ftsign</strong> (<em>integer</em>) – a sign for fourier matrix</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.gvistable.GVisTable.ifftshift">
+<code class="descname">ifftshift</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.gvistable.GVisTable.ifftshift" title="Permalink to this definition">¶</a></dt>
+<dd><p>shift ugidx and vgidx in the area of (-Nx/2, Nx/2], (-Ny/2, Ny/2]</p>
+<p>Output: GVisTable object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.gvistable.GVisTable.pshift_e2r">
+<code class="descname">pshift_e2r</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.gvistable.GVisTable.pshift_e2r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shift the phase tracking center position from (1, 1)
+to the current reference(nxref, nyref)</p>
+<p>Output: GVisTable object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.gvistable.GVisTable.pshift_r2e">
+<code class="descname">pshift_r2e</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.gvistable.GVisTable.pshift_r2e" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shift the phase tracking center position from the current reference
+(nxref, nyref) to (1,1) (the pixel on the bottom-left corner)</p>
+<p>Output: GVisTable object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.gvistable.GVisTable.radplot">
+<code class="descname">radplot</code><span class="sig-paren">(</span><em>uvunit=None</em>, <em>datatype=u'amp'</em>, <em>normerror=False</em>, <em>errorbar=True</em>, <em>ls=u'none'</em>, <em>marker=u'.'</em>, <em>**plotargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.gvistable.GVisTable.radplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot visibility amplitudes as a function of baseline lengths
+on the current axes. This method uses matplotlib.pyplot.plot() or
+matplotlib.pyplot.errorbar().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>uvunit</strong> (<em>str</em><em>, </em><em>default = None</em>) – The unit of the baseline length. if uvunit is None, it will use
+self.uvunit.</li>
+<li><strong>errorbar</strong> (<em>boolean</em><em>, </em><em>default = True</em>) – <p>If errorbar is True, it will plot data with errorbars using
+matplotlib.pyplot.errorbar(). Otherwise, it will plot data without
+errorbars using matplotlib.pyplot.plot().</p>
+<p>If you plot model closure phases (i.e. model is not None),
+it will plot without errobars regardless of this parameter.</p>
+</li>
+<li><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot() or
+matplotlib.pyplot.errorbars().
+Defaults are {‘ls’: “none”, ‘marker’: “.”}.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.gvistable.GVisTable.recalc_uvdist">
+<code class="descname">recalc_uvdist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.gvistable.GVisTable.recalc_uvdist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Re-calculate the baseline length from self[“u”] and self[“v”].</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.gvistable.GVisTable.set_uvunit">
+<code class="descname">set_uvunit</code><span class="sig-paren">(</span><em>uvunit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.gvistable.GVisTable.set_uvunit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.gvistable.GVisTable.trans_for_fftw">
+<code class="descname">trans_for_fftw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.gvistable.GVisTable.trans_for_fftw" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is a quick shortcut to (1) shift phases, (2) flip u coordinates
+(3) rotate uv coordinates for mfista-fft imaging that uses fftw.
+This method uses pshift_r2e and fftshift methods.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">GVisTable object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.gvistable.GVisTable.uvplot">
+<code class="descname">uvplot</code><span class="sig-paren">(</span><em>uvunit=None</em>, <em>conj=True</em>, <em>ls=u'none'</em>, <em>marker=u'.'</em>, <em>**plotargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.gvistable.GVisTable.uvplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot uv-plot on the current axes.
+This method uses matplotlib.pyplot.plot().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>uvunit</strong> (<em>str</em><em>, </em><em>default = None</em>) – The unit of the baseline length. if uvunit is None, it will use
+self.uvunit.</li>
+<li><strong>conj</strong> (<em>boolean</em><em>, </em><em>default = True</em>) – if conj=True, it will plot complex conjugate components (i.e. (-u, -v)).</li>
+<li><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot.
+Defaults are {‘ls’: “none”, ‘marker’: “.”}</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-smili.uvdata.uvtable.tools">
+<span id="smili-uvdata-uvtable-tools-module"></span><h2>7.1.2.1.3.5. smili.uvdata.uvtable.tools module<a class="headerlink" href="#module-smili.uvdata.uvtable.tools" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="smili.uvdata.uvtable.tools.get_uvlist">
+<code class="descclassname">smili.uvdata.uvtable.tools.</code><code class="descname">get_uvlist</code><span class="sig-paren">(</span><em>fcvtable=None</em>, <em>amptable=None</em>, <em>bstable=None</em>, <em>catable=None</em>, <em>thres=0.01</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.tools.get_uvlist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="smili.uvdata.uvtable.tools.get_uvlist_loop">
+<code class="descclassname">smili.uvdata.uvtable.tools.</code><code class="descname">get_uvlist_loop</code><span class="sig-paren">(</span><em>Nt</em>, <em>fcvconcat=None</em>, <em>ampconcat=None</em>, <em>bsconcat=None</em>, <em>caconcat=None</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.tools.get_uvlist_loop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-smili.uvdata.uvtable.uvtable">
+<span id="smili-uvdata-uvtable-uvtable-module"></span><h2>7.1.2.1.3.6. smili.uvdata.uvtable.uvtable module<a class="headerlink" href="#module-smili.uvdata.uvtable.uvtable" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="smili.uvdata.uvtable.uvtable.UVSeries">
+<em class="property">class </em><code class="descclassname">smili.uvdata.uvtable.uvtable.</code><code class="descname">UVSeries</code><span class="sig-paren">(</span><em>data=None</em>, <em>index=None</em>, <em>dtype=None</em>, <em>name=None</em>, <em>copy=False</em>, <em>fastpath=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.uvtable.UVSeries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.core.series.Series</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="smili.uvdata.uvtable.uvtable.UVTable">
+<em class="property">class </em><code class="descclassname">smili.uvdata.uvtable.uvtable.</code><code class="descname">UVTable</code><span class="sig-paren">(</span><em>data=None</em>, <em>index=None</em>, <em>columns=None</em>, <em>dtype=None</em>, <em>copy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.uvtable.UVTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.core.frame.DataFrame</span></code></p>
+<p>This is a class describing common variables and methods of VisTable,
+BSTable and CATable.</p>
+<dl class="method">
+<dt id="smili.uvdata.uvtable.uvtable.UVTable.gencvtables">
+<code class="descname">gencvtables</code><span class="sig-paren">(</span><em>nfold=10</em>, <em>seed=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.uvtable.UVTable.gencvtables" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method generates data sets for N-fold cross varidations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nfolds</strong> (<em>int</em>) – the number of folds</li>
+<li><strong>seed</strong> (<em>int</em>) – the seed number of pseudo ramdam numbers</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">collections.OrderedDict object that lists all training/validating data</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.uvtable.UVTable.get_gst_datetime">
+<code class="descname">get_gst_datetime</code><span class="sig-paren">(</span><em>continuous=True</em>, <em>wraphour=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.uvtable.UVTable.get_gst_datetime" title="Permalink to this definition">¶</a></dt>
+<dd><p>get GST in datetime</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.uvtable.UVTable.get_utc">
+<code class="descname">get_utc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.uvtable.UVTable.get_utc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.uvtable.UVTable.get_uvunitlabel">
+<code class="descname">get_uvunitlabel</code><span class="sig-paren">(</span><em>uvunit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.uvtable.UVTable.get_uvunitlabel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a unit label name for uvunits.
+Available units are l[ambda], kl[ambda], ml[ambda], gl[ambda], m[eter]
+and km[eter].</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>uvunit</strong> (<em>str</em><em>, </em><em>default is None</em>) – The input unit. If uvunit is None, it will use self.uvunit.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The unit label name in string.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.uvtable.UVTable.to_csv">
+<code class="descname">to_csv</code><span class="sig-paren">(</span><em>filename</em>, <em>float_format=u'%22.16e'</em>, <em>index=False</em>, <em>index_label=False</em>, <em>**args</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.uvtable.UVTable.to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output table into csv files using pd.DataFrame.to_csv().
+Default parameter will be</p>
+<blockquote>
+<div>float_format=r”%22.16e”
+index=False
+index_label=False.</div></blockquote>
+<p>see DocStrings for pd.DataFrame.to_csv().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filename</strong> (<em>string</em><em> or </em><em>filehandle</em>) – output filename</li>
+<li><strong>**args</strong> – other arguments of pd.DataFrame.to_csv()</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.uvtable.UVTable.uvunitconv">
+<code class="descname">uvunitconv</code><span class="sig-paren">(</span><em>unit1=u'l'</em>, <em>unit2=u'l'</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.uvtable.UVTable.uvunitconv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Derive a conversion factor of units for the baseline length from unit1
+to unit2. Available angular units are l[ambda], kl[ambda], ml[ambda],
+gl[ambda], m[eter] and km[eter].</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>unit1</strong> (<em>str</em>) – the first unit</li>
+<li><strong>unit2</strong> (<em>str</em>) – the second unit</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">conversion factor from unit1 to unit2 in float.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-smili.uvdata.uvtable.vistable">
+<span id="smili-uvdata-uvtable-vistable-module"></span><h2>7.1.2.1.3.7. smili.uvdata.uvtable.vistable module<a class="headerlink" href="#module-smili.uvdata.uvtable.vistable" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="smili.uvdata.uvtable.vistable.VisSeries">
+<em class="property">class </em><code class="descclassname">smili.uvdata.uvtable.vistable.</code><code class="descname">VisSeries</code><span class="sig-paren">(</span><em>data=None</em>, <em>index=None</em>, <em>dtype=None</em>, <em>name=None</em>, <em>copy=False</em>, <em>fastpath=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisSeries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#smili.uvdata.uvtable.uvtable.UVSeries" title="smili.uvdata.uvtable.uvtable.UVSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">smili.uvdata.uvtable.uvtable.UVSeries</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="smili.uvdata.uvtable.vistable.VisTable">
+<em class="property">class </em><code class="descclassname">smili.uvdata.uvtable.vistable.</code><code class="descname">VisTable</code><span class="sig-paren">(</span><em>data=None</em>, <em>index=None</em>, <em>columns=None</em>, <em>dtype=None</em>, <em>copy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#smili.uvdata.uvtable.uvtable.UVTable" title="smili.uvdata.uvtable.uvtable.UVTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">smili.uvdata.uvtable.uvtable.UVTable</span></code></a></p>
+<p>This class is for handling two dimensional tables of full complex visibilities
+and amplitudes. The class inherits pandas.DataFrame class, so you can use this
+class like pandas.DataFrame. The class also has additional methods to edit,
+visualize and convert data.</p>
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.add_error">
+<code class="descname">add_error</code><span class="sig-paren">(</span><em>error</em>, <em>quadrature=True</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.add_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increase errors by a specified value</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>error</strong> (<em>float</em><em> or </em><em>array like</em>) – error to be added.</li>
+<li><strong>quadrature</strong> (<em>boolean; default=True</em>) – if True, error will be added to sigma in quadrature</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.baseline_list">
+<code class="descname">baseline_list</code><span class="sig-paren">(</span><em>id=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.baseline_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of baselines. If id=False, then the names of stations
+will be returned. Otherwise, the ID numbers of stations will be returned.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.chisq_image">
+<code class="descname">chisq_image</code><span class="sig-paren">(</span><em>imfits</em>, <em>mask=None</em>, <em>amptable=False</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.chisq_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns a (mean square) standardized residual.
+:param imfits: model image to construct a model visibility
+:type imfits: imdata.IMFITS object
+:param mask: array for masking
+:type mask: array
+:param amptable: If it is not False, this function returns a table of a model visibility amplitude.
+:type amptable: True, False, or uvdata.VisTable object
+:param istokes: index for Stokes Parameter at which the image will be edited
+:type istokes: integer
+:param ifreq: index for Frequency at which the image will be edited
+:type ifreq: integer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(mean square) standardized residuals based on an input image</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.comp">
+<code class="descname">comp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.comp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return full complex visibilities</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.deblurr">
+<code class="descname">deblurr</code><span class="sig-paren">(</span><em>thetamaj=1.309</em>, <em>thetamin=0.64</em>, <em>alpha=2.0</em>, <em>pa=78.0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.deblurr" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a special function for Sgr A* data, which deblurrs
+visibility amplitudes and removes dominant scattering effects.</p>
+<p>This method calculates a scattering kernel based on specified parameters
+of the lambda-square scattering law, and devide visibility amplitudes
+and their errors by corresponding kernel amplitudes.</p>
+<p>(see Fish et al. 2014, ApJL for a reference.)</p>
+<dl class="docutils">
+<dt>Args: Default values are from Bower et al. 2006, ApJL</dt>
+<dd><dl class="first last docutils">
+<dt>thetamaj=1.309, thetamin=0.64 (float):</dt>
+<dd>Factors for the scattering power law in mas/cm^(alpha)</dd>
+<dt>alpha=2.0 (float):</dt>
+<dd>Index of the scattering power law</dd>
+<dt>pa=78.0 (float)</dt>
+<dd>Position angle of the scattering kernel in degree</dd>
+</dl>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">De-blurred visibility data in uvdata.VisTable object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.eval_geomodel">
+<code class="descname">eval_geomodel</code><span class="sig-paren">(</span><em>geomodel</em>, <em>evalargs={}</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.eval_geomodel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate model values and output them to a new table</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>geomodel</strong> (<em>geomodel.geomodel.GeoModel</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">uvdata.VisTable object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.eval_image">
+<code class="descname">eval_image</code><span class="sig-paren">(</span><em>imfits</em>, <em>mask=None</em>, <em>amptable=False</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.eval_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns model visibilities calculated by an input image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>imfits</strong> (<em>imdata.IMFITS object</em>) – model image to construct model visibilities</li>
+<li><strong>mask</strong> (<em>array</em>) – array for masking</li>
+<li><strong>amptable</strong> (<em>True</em><em> or </em><em>False</em>) – If it is not False, this function returns a table of a model visibility amplitude.</li>
+<li><strong>istokes</strong> (<em>integer</em>) – index for Stokes Parameter at which the image will be edited</li>
+<li><strong>ifreq</strong> (<em>integer</em>) – index for Frequency at which the image will be edited</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">uvdata.VisTable object of a model visibility based on an input image</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.fit_beam">
+<code class="descname">fit_beam</code><span class="sig-paren">(</span><em>angunit=u'mas'</em>, <em>errorweight=-2</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.fit_beam" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method estimates the synthesized beam size at natural weighting.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>angunit</strong> (<em>string</em>) – Angular unit (uas, mas, asec or arcsec, amin or arcmin, degree)</li>
+<li><strong>errweight</strong> (<em>float; experimental</em>) – index for errer weighting</li>
+<li><strong>ftsign</strong> (<em>integer</em>) – a sign for fourier matrix</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">beam parameters in a dictionary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.gridding">
+<code class="descname">gridding</code><span class="sig-paren">(</span><em>fitsdata</em>, <em>conj=False</em>, <em>j=3.0</em>, <em>beta=2.34</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.gridding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform uv-girdding based on image pixel information of
+the input fitsdata using the 0-th order Keiser-Bessel Function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>vistable</strong> (<em>pandas.Dataframe object</em>) – input visibility table</li>
+<li><strong>fitsdata</strong> (<em>imdata.IMFITS object</em>) – input imdata.IMFITS object</li>
+<li><strong>conj</strong> (<em>boolean</em><em>, </em><em>default=False</em>) – If true, output also conjugate components</li>
+<li><strong>j</strong> (<em>int; default = 3</em>) – The number of grids (j x j pixels) giving the size of the
+convolution kernel. Default is 3x3 pixels.</li>
+<li><strong>beta</strong> (<em>float; default = 2.34</em>) – The spread of the Kaiser Bessel function. The default value
+is based on work presented in Fessler &amp; Sutton (2003).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">uvdata.GVisTable object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.imag">
+<code class="descname">imag</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.imag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the imag part of full complex visibilities</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.make_bstable">
+<code class="descname">make_bstable</code><span class="sig-paren">(</span><em>redundant=None</em>, <em>dependent=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.make_bstable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Form bi-spectra from complex visibilities.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>redandant</strong> (<em>list of sets of redundant station IDs</em><em> or </em><em>names; default=None</em>) – If this is specified, non-trivial bispectra will be formed.
+This is useful for EHT-like array that have redandant stations in the same site.
+For example, if stations 1,2,3 and 4,5 are on the same sites, respectively, then
+you can specify redundant=[[1,2,3],[4,5]].</li>
+<li><strong>dependent</strong> (<em>boolean; default=False</em>) – If False, only independent dependent closure amplitudes will be formed.
+Otherwise, dependent closure amplitudes also will be formed as well.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">uvdata.BSTable object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.make_catable">
+<code class="descname">make_catable</code><span class="sig-paren">(</span><em>redundant=None</em>, <em>dependent=False</em>, <em>debias=True</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.make_catable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Form closure amplitudes from complex visibilities.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>redandant</strong> (<em>list of sets of redundant station IDs</em><em> or </em><em>names; default=None</em>) – If this is specified, non-trivial closure amplitudes will be formed.
+This is useful for EHT-like array that have redundant stations in the same site.
+For example, if stations 1,2,3 and 4,5 are on the same sites, respectively, then
+you can specify redundant=[[1,2,3],[4,5]].</li>
+<li><strong>dependent</strong> (<em>boolean; default=False</em>) – If False, only independent dependent closure amplitudes will be formed.
+Otherwise, dependent closure amplitudes also will be formed as well.</li>
+<li><strong>debias</strong> (<em>boolean; default=True</em>) – If True, visibility amplitudes will be debiased before closing
+closure amplitudes.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">uvdata.CATable object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.map_beam">
+<code class="descname">map_beam</code><span class="sig-paren">(</span><em>image</em>, <em>errorweight=-2</em>, <em>normalize=True</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.map_beam" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method calculates the synthesized beam</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>image</strong> (<em>imdata.IMFITS object</em>) – image for grid size</li>
+<li><strong>errorweight</strong> – index of weight</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">imdata.IMFITS object of synthesized beam map</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.map_clean">
+<code class="descname">map_clean</code><span class="sig-paren">(</span><em>image</em>, <em>restore=False</em>, <em>errorweight=-2</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.map_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method calculates the model image adding residual map based on visibility and model image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>image</strong> (<em>imdata.IMFITS object</em>) – model image</li>
+<li><strong>errorweight</strong> – index of weight</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">imdata.IMFITS object of residual+model image</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.map_residual">
+<code class="descname">map_residual</code><span class="sig-paren">(</span><em>image</em>, <em>errorweight=-2</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.map_residual" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method calculates the residual map by using visibility and model image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>image</strong> (<em>imdata.IMFITS object</em>) – model image</li>
+<li><strong>errorweight</strong> – index of weight</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">imdata.IMFITS object of residual map</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.plot_model_amp">
+<code class="descname">plot_model_amp</code><span class="sig-paren">(</span><em>outimage</em>, <em>filename=None</em>, <em>plotargs={u'ms': 1.0}</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.plot_model_amp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make summary pdf figures and csv file of checking model, residual
+and chisquare of visibility amplitudes for each baseline
+:param outimage: model image to construct a model visibility
+:type outimage: imdata.IMFITS object
+:param filename: str, pathlib.Path, py._path.local.LocalPath or any object with a read()</p>
+<blockquote>
+<div>method (such as a file handle or StringIO)</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot.
+Defaults are {‘ms’: 1., }</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Output pdf file that summerizes results.
+cvsumtablefile (default = “model.csv”):<blockquote>
+<div>Output csv file that summerizes results.</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">summary pdf file (default = “model.pdf”)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.plot_model_fcv">
+<code class="descname">plot_model_fcv</code><span class="sig-paren">(</span><em>outimage</em>, <em>filename=None</em>, <em>plotargs={u'ms': 1.0}</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.plot_model_fcv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make summary pdf figures and csv file of checking model, residual
+and chisquare of real and imaginary parts of visibility for each baseline
+:param outimage: model image to construct a model visibility
+:type outimage: imdata.IMFITS object
+:param filename: str, pathlib.Path, py._path.local.LocalPath or any object with a read()</p>
+<blockquote>
+<div>method (such as a file handle or StringIO)</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot.
+Defaults are {‘ms’: 1., }</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Output pdf file that summerizes results.
+cvsumtablefile (default = “model.csv”):<blockquote>
+<div>Output csv file that summerizes results.</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">summary pdf file (default = “model.pdf”)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.radplot">
+<code class="descname">radplot</code><span class="sig-paren">(</span><em>uvunit=None</em>, <em>datatype=u'amp'</em>, <em>normerror=False</em>, <em>errorbar=True</em>, <em>ls=u'none'</em>, <em>marker=u'.'</em>, <em>**plotargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.radplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot visibility amplitudes as a function of baseline lengths
+on the current axes. This method uses matplotlib.pyplot.plot() or
+matplotlib.pyplot.errorbar().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>uvunit</strong> (<em>str</em><em>, </em><em>default = None</em>) – The unit of the baseline length. if uvunit is None, it will use
+self.uvunit.</li>
+<li><strong>errorbar</strong> (<em>boolean</em><em>, </em><em>default = True</em>) – <p>If errorbar is True, it will plot data with errorbars using
+matplotlib.pyplot.errorbar(). Otherwise, it will plot data without
+errorbars using matplotlib.pyplot.plot().</p>
+<p>If you plot model closure phases (i.e. model is not None),
+it will plot without errobars regardless of this parameter.</p>
+</li>
+<li><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot() or
+matplotlib.pyplot.errorbars().
+Defaults are {‘ls’: “none”, ‘marker’: “.”}.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.real">
+<code class="descname">real</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.real" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the real part of full complex visibilities</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.recalc_uvdist">
+<code class="descname">recalc_uvdist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.recalc_uvdist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Re-calculate the baseline length from self[“u”] and self[“v”].</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.residual_geomodel">
+<code class="descname">residual_geomodel</code><span class="sig-paren">(</span><em>geomodel</em>, <em>normed=True</em>, <em>amp=False</em>, <em>doeval=False</em>, <em>evalargs={}</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.residual_geomodel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate Geometric Model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>geomodel</strong> (<em>geomodel.geomodel.GeoModel object</em>) – input model</li>
+<li><strong>normed</strong> (<em>boolean</em><em>, </em><em>default=True</em>) – if True, residuals will be normalized by 1 sigma error</li>
+<li><strong>amp</strong> (<em>boolean</em><em>, </em><em>default=False</em>) – if True, residuals will be calculated for amplitudes.
+Otherwise, residuals will be calculate for full complex visibilities</li>
+<li><strong>eval</strong> (<em>boolean</em><em>, </em><em>default=False</em>) – if True, actual residual values will be calculated.
+Otherwise, resduals will be given as a theano graph.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">ndarray (if doeval=True) or theano object (otherwise)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.residual_image">
+<code class="descname">residual_image</code><span class="sig-paren">(</span><em>imfits</em>, <em>mask=None</em>, <em>amptable=False</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.residual_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns residual between observational and model visibilities.
+:param imfits: model image to construct a model visibility
+:type imfits: imdata.IMFITS object
+:param mask: array for masking
+:type mask: array
+:param amptable: If it is not False, this function returns a table of a model visibility amplitude.
+:type amptable: True or False
+:param istokes: index for Stokes Parameter at which the image will be edited
+:type istokes: integer
+:param ifreq: index for Frequency at which the image will be edited
+:type ifreq: integer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">uvdata.VisTable object of a residual between observational and model visibilities</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.rotate">
+<code class="descname">rotate</code><span class="sig-paren">(</span><em>dPA</em>, <em>deg=True</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotate uv-coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dPA</strong> (<em>float</em>) – Rotation angle.</li>
+<li><strong>deg</strong> (<em>boolean</em><em>, </em><em>default=True</em>) – The unit of dPA. If True, it will be degree. Otherwise,
+it will be radian</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">uvdata.VisTable object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.set_uvunit">
+<code class="descname">set_uvunit</code><span class="sig-paren">(</span><em>uvunit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.set_uvunit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set or guess uvunit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>uvunit</strong> (<em>str</em><em>, </em><em>default=None</em>) – The unit for spacial frequencies.
+Availables are lambda, klambda, mlambda and glambda.
+If not specified, uvunit will be guessed.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.sigma_phase">
+<code class="descname">sigma_phase</code><span class="sig-paren">(</span><em>deg=True</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.sigma_phase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the phase error estimator using a high SNR limit formula</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>deg</strong> (<em>boolean; default=True</em>) – IF true, returns values in degree. Otherwide, values will be
+returned in radian</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.snr">
+<code class="descname">snr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.snr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the SNR estimator</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.snrcutoff">
+<code class="descname">snrcutoff</code><span class="sig-paren">(</span><em>threshold=5</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.snrcutoff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Thesholding data with SNR (amp/sigma)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>threshold</strong> (<em>float; default=5</em>) – snrcutoff</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">uvdata.VisTable object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.station_dic">
+<code class="descname">station_dic</code><span class="sig-paren">(</span><em>id2name=True</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.station_dic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return dictionary of stations. If id2name=True, return a dictionary
+whose key is the station ID number and value is the station name.
+Otherwise return a dictionary whose key is the name and value is ID.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.station_list">
+<code class="descname">station_list</code><span class="sig-paren">(</span><em>id=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.station_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return list of stations. If id=True, return list of station IDs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.tplot">
+<code class="descname">tplot</code><span class="sig-paren">(</span><em>axis1=u'utc'</em>, <em>gst_continuous=True</em>, <em>gst_wraphour=0.0</em>, <em>time_maj_loc=&lt;matplotlib.dates.HourLocator object&gt;</em>, <em>time_min_loc=&lt;matplotlib.dates.MinuteLocator object&gt;</em>, <em>time_maj_fmt=u'%H:%M'</em>, <em>ls=u'none'</em>, <em>marker=u'.'</em>, <em>label=None</em>, <em>**plotargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.tplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot time-coverage of data. Available types for the xaxis is
+[“utc”,”gst”]</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot() or
+matplotlib.pyplot.errorbars().
+Defaults are {‘ls’: “none”, ‘marker’: “.”}.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.uvplot">
+<code class="descname">uvplot</code><span class="sig-paren">(</span><em>uvunit=None</em>, <em>conj=True</em>, <em>ls=u'none'</em>, <em>marker=u'.'</em>, <em>**plotargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.uvplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot uv-plot on the current axes.
+This method uses matplotlib.pyplot.plot().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>uvunit</strong> (<em>str</em><em>, </em><em>default = None</em>) – The unit of the baseline length. if uvunit is None, it will use
+self.uvunit.</li>
+<li><strong>conj</strong> (<em>boolean</em><em>, </em><em>default = True</em>) – if conj=True, it will plot complex conjugate components (i.e. (-u, -v)).</li>
+<li><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot.
+Defaults are {‘ls’: “none”, ‘marker’: “.”}</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.uvsort">
+<code class="descname">uvsort</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.uvsort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort uvdata. First, it will check station IDs of each visibility
+and switch its order if “st1” &gt; “st2”. Then, data will be TB-sorted.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvtable.vistable.VisTable.vplot">
+<code class="descname">vplot</code><span class="sig-paren">(</span><em>axis1=u'utc'</em>, <em>axis2=u'amp'</em>, <em>baseline=None</em>, <em>normerror1=False</em>, <em>normerror2=None</em>, <em>errorbar=True</em>, <em>gst_continuous=True</em>, <em>gst_wraphour=0.0</em>, <em>time_maj_loc=&lt;matplotlib.dates.HourLocator object&gt;</em>, <em>time_min_loc=&lt;matplotlib.dates.MinuteLocator object&gt;</em>, <em>time_maj_fmt=u'%H:%M'</em>, <em>uvunit=None</em>, <em>ls=u'none'</em>, <em>marker=u'.'</em>, <em>label=None</em>, <em>**plotargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.VisTable.vplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot various type of data. Available types of data are
+[“utc”,”gst”,”amp”,”phase”,”sigma”,”real”,”imag”,”u”,”v”,”uvd”,”snr”]</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>uvunit</strong> (<em>str</em><em>, </em><em>default = None</em>) – The unit of the baseline length. if uvunit is None, it will use
+self.uvunit.</li>
+<li><strong>errorbar</strong> (<em>boolean</em><em>, </em><em>default = True</em>) – <p>If errorbar is True, it will plot data with errorbars using
+matplotlib.pyplot.errorbar(). Otherwise, it will plot data without
+errorbars using matplotlib.pyplot.plot().</p>
+<p>If you plot model closure phases (i.e. model is not None),
+it will plot without errobars regardless of this parameter.</p>
+</li>
+<li><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot() or
+matplotlib.pyplot.errorbars().
+Defaults are {‘ls’: “none”, ‘marker’: “.”}.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="smili.uvdata.uvtable.vistable.calc_bparms">
+<code class="descclassname">smili.uvdata.uvtable.vistable.</code><code class="descname">calc_bparms</code><span class="sig-paren">(</span><em>vistable</em>, <em>angunit=u'mas'</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.calc_bparms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infer beam parameters (major size, minor size, position angle)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vistable</strong> – input visibility data</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="smili.uvdata.uvtable.vistable.calc_matrix_bs">
+<code class="descclassname">smili.uvdata.uvtable.vistable.</code><code class="descname">calc_matrix_bs</code><span class="sig-paren">(</span><em>matrix</em>, <em>blid1</em>, <em>blid2</em>, <em>blid3</em>, <em>Nbl</em>, <em>dependent</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.calc_matrix_bs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="smili.uvdata.uvtable.vistable.calc_matrix_ca">
+<code class="descclassname">smili.uvdata.uvtable.vistable.</code><code class="descname">calc_matrix_ca</code><span class="sig-paren">(</span><em>matrix</em>, <em>blid1</em>, <em>blid2</em>, <em>blid3</em>, <em>blid4</em>, <em>Nbl</em>, <em>dependent</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.calc_matrix_ca" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="smili.uvdata.uvtable.vistable.check_baselines">
+<code class="descclassname">smili.uvdata.uvtable.vistable.</code><code class="descname">check_baselines</code><span class="sig-paren">(</span><em>baselines</em>, <em>blset</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.check_baselines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="smili.uvdata.uvtable.vistable.check_nontrivial">
+<code class="descclassname">smili.uvdata.uvtable.vistable.</code><code class="descname">check_nontrivial</code><span class="sig-paren">(</span><em>baselines</em>, <em>redundant</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.check_nontrivial" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="smili.uvdata.uvtable.vistable.fit_chisq">
+<code class="descclassname">smili.uvdata.uvtable.vistable.</code><code class="descname">fit_chisq</code><span class="sig-paren">(</span><em>parms</em>, <em>X</em>, <em>Y</em>, <em>dbeam</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.fit_chisq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate residuals of two 2-D array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>parms</strong> – information of clean beam</li>
+<li><strong>X</strong> – 2-D array of x-axis</li>
+<li><strong>Y</strong> – 2-D array of y-axis</li>
+<li><strong>dbeam</strong> – an array of dirty beam</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="smili.uvdata.uvtable.vistable.gauss_func">
+<code class="descclassname">smili.uvdata.uvtable.vistable.</code><code class="descname">gauss_func</code><span class="sig-paren">(</span><em>X</em>, <em>Y</em>, <em>maja</em>, <em>mina</em>, <em>PA</em>, <em>x0=0.0</em>, <em>y0=0.0</em>, <em>scale=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.gauss_func" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate 2-D gauss function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>X</strong> – 2-D array of x-axis</li>
+<li><strong>Y</strong> – 2-D array of y-axis</li>
+<li><strong>maja</strong> (<em>float</em>) – major size of the gauss</li>
+<li><strong>mina</strong> (<em>float</em>) – minor size</li>
+<li><strong>PA</strong> (<em>float</em>) – position angle</li>
+<li><strong>x0</strong> (<em>float</em>) – value of x-position at the center of the gauss</li>
+<li><strong>y0</strong> (<em>float</em>) – value of y-position at the center of the gauss</li>
+<li><strong>scale</strong> (<em>float</em>) – scaling factor</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="smili.uvdata.uvtable.vistable.getblid">
+<code class="descclassname">smili.uvdata.uvtable.vistable.</code><code class="descname">getblid</code><span class="sig-paren">(</span><em>st1</em>, <em>st2</em>, <em>Nst</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.getblid" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is a subfunction for uvdata.VisTable.
+It calculates an id number of the baseline from a given set of
+station numbers and the total number of stations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>st1</strong> (<em>int</em>) – the first station ID number</li>
+<li><strong>st2</strong> (<em>int</em>) – the second station ID number</li>
+<li><strong>Nst</strong> (<em>int</em>) – the total number of stations</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Return (int): the baseline ID number</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="smili.uvdata.uvtable.vistable.read_vistable">
+<code class="descclassname">smili.uvdata.uvtable.vistable.</code><code class="descname">read_vistable</code><span class="sig-paren">(</span><em>filename</em>, <em>uvunit=None</em>, <em>**args</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvtable.vistable.read_vistable" title="Permalink to this definition">¶</a></dt>
+<dd><p>This fuction loads uvdata.VisTable from an input csv file using pd.read_csv().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filename</strong> – str, pathlib.Path, py._path.local.LocalPath or any object with a read()
+method (such as a file handle or StringIO)</li>
+<li><strong>uvunit</strong> (<em>str</em><em>, </em><em>default is None</em>) – units of uvdistance for plotting. If uvunit is None, uvunit will be
+inferred from the maximum baseline length. Availables are [“l[ambda]”,
+“kl[ambda]”, “ml[ambda]”, “gl[ambda]”, “m”, “km”].</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">uvdata.VisTable object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-smili.uvdata.uvtable">
+<span id="module-contents"></span><h2>7.1.2.1.3.8. Module contents<a class="headerlink" href="#module-smili.uvdata.uvtable" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="smili.imaging.html" class="btn btn-neutral float-right" title="7.1.3. smili.imaging package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="smili.uvdata.uvfits.html" class="btn btn-neutral float-left" title="7.1.2.1.2. smili.uvdata.uvfits package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-, SMILI Developper Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

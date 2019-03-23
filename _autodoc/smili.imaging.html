@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.1.3. smili.imaging package &mdash; SMILI 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="7.1.2.1.3. smili.uvdata.uvtable package" href="smili.uvdata.uvtable.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SMILI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../_static/install.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_examples/index.html">2. Tutorial and Example Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/license.html">3. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/references.html">4. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/link.html">5. Developer Team and Related Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/acknowledgement.html">6. Acknowledgement</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="smili.html">7. smili package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="smili.html#subpackages">7.1. Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="smili.imdata.html">7.1.1. smili.imdata package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smili.uvdata.html">7.1.2. smili.uvdata package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">7.1.3. smili.imaging package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">7.1.3.1. Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-smili.imaging.lbfgs">7.1.3.2. smili.imaging.lbfgs module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-smili.imaging">7.1.3.3. Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="smili.html#submodules">7.2. Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smili.html#module-smili.util">7.3. smili.util module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smili.html#module-smili">7.4. Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SMILI</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="smili.html">7. smili package</a> &raquo;</li>
+        
+      <li>7.1.3. smili.imaging package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/_autodoc/smili.imaging.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="smili-imaging-package">
+<h1>7.1.3. smili.imaging package<a class="headerlink" href="#smili-imaging-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>7.1.3.1. Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-smili.imaging.lbfgs">
+<span id="smili-imaging-lbfgs-module"></span><h2>7.1.3.2. smili.imaging.lbfgs module<a class="headerlink" href="#module-smili.imaging.lbfgs" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="smili.imaging.lbfgs.imaging">
+<code class="descclassname">smili.imaging.lbfgs.</code><code class="descname">imaging</code><span class="sig-paren">(</span><em>initimage</em>, <em>imregion=None</em>, <em>vistable=None</em>, <em>amptable=None</em>, <em>bstable=None</em>, <em>catable=None</em>, <em>w_vis=1</em>, <em>w_amp=1</em>, <em>w_bs=1</em>, <em>w_ca=1</em>, <em>l1_lambda=-1.0</em>, <em>l1_prior=None</em>, <em>tv_lambda=-1</em>, <em>tv_prior=None</em>, <em>tsv_lambda=-1</em>, <em>tsv_prior=None</em>, <em>kl_lambda=-1</em>, <em>kl_prior=None</em>, <em>gs_lambda=-1</em>, <em>gs_prior=None</em>, <em>tfd_lambda=-1</em>, <em>tfd_tgterror=0.01</em>, <em>cen_lambda=-1</em>, <em>cen_alpha=3</em>, <em>cen_prior=None</em>, <em>niter=1000</em>, <em>nonneg=True</em>, <em>nprint=500</em>, <em>totalflux=None</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imaging.lbfgs.imaging" title="Permalink to this definition">¶</a></dt>
+<dd><p>FFT imaging with closure quantities.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>initimage</strong> (<a class="reference internal" href="smili.imdata.html#smili.imdata.imdata.IMFITS" title="smili.imdata.imdata.IMFITS"><em>IMFITS</em></a>) – Initial model for fft imaging.</li>
+<li><strong>imregion</strong> (<a class="reference internal" href="smili.imdata.html#smili.imdata.imregion.IMRegion" title="smili.imdata.imregion.IMRegion"><em>IMRegion</em></a><em>, </em><em>default=None</em>) – Image region to set image windows.</li>
+<li><strong>vistable</strong> (<a class="reference internal" href="smili.uvdata.uvtable.html#smili.uvdata.uvtable.vistable.VisTable" title="smili.uvdata.uvtable.vistable.VisTable"><em>VisTable</em></a><em>, </em><em>default=None</em>) – Visibility table containing full complex visiblities.</li>
+<li><strong>amptable</strong> (<a class="reference internal" href="smili.uvdata.uvtable.html#smili.uvdata.uvtable.vistable.VisTable" title="smili.uvdata.uvtable.vistable.VisTable"><em>VisTable</em></a><em>, </em><em>default=None</em>) – Amplitude table.</li>
+<li><strong>bstable</strong> (<a class="reference internal" href="smili.uvdata.uvtable.html#smili.uvdata.uvtable.bstable.BSTable" title="smili.uvdata.uvtable.bstable.BSTable"><em>BSTable</em></a><em>, </em><em>default=None</em>) – Closure phase table.</li>
+<li><strong>catable</strong> (<a class="reference internal" href="smili.uvdata.uvtable.html#smili.uvdata.uvtable.catable.CATable" title="smili.uvdata.uvtable.catable.CATable"><em>CATable</em></a><em>, </em><em>default=None</em>) – Closure amplitude table.</li>
+<li><strong>l1_lambda</strong> (<em>float</em><em>,</em><em>default=-1.</em>) – Regularization parameter for L1 term.
+If negative then, this regularization won’t be used.</li>
+<li><strong>l1_prior</strong> (<a class="reference internal" href="smili.imdata.html#smili.imdata.imdata.IMFITS" title="smili.imdata.imdata.IMFITS"><em>IMFITS</em></a><em>, </em><em>default=None</em>) – Prior image to be used to compute the weighted l1-norm.
+If not specified, the flat prior will be used.
+This prior image will be normalized with the total flux estimator.</li>
+<li><strong>tv_lambda</strong> (<em>float</em><em>,</em><em>default=-1.</em>) – Regularization parameter for total variation.
+If negative then, this regularization won’t be used.</li>
+<li><strong>tv_prior</strong> (<a class="reference internal" href="smili.imdata.html#smili.imdata.imdata.IMFITS" title="smili.imdata.imdata.IMFITS"><em>IMFITS</em></a><em>, </em><em>default=None</em>) – Prior image to be used to compute the weighted TV term.
+If not specified, the flat prior will be used.
+This prior image will be normalized with the total flux estimator.</li>
+<li><strong>tsv_lambda</strong> (<em>float</em><em>,</em><em>default=-1.</em>) – Regularization parameter for total squared variation.
+If negative then, this regularization won’t be used.</li>
+<li><strong>tsv_prior</strong> (<a class="reference internal" href="smili.imdata.html#smili.imdata.imdata.IMFITS" title="smili.imdata.imdata.IMFITS"><em>IMFITS</em></a><em>, </em><em>default=None</em>) – Prior image to be used to compute the weighted TSV term.
+If not specified, the flat prior will be used.
+This prior image will be normalized with the total flux estimator.</li>
+<li><strong>kl_lambda</strong> (<em>float</em><em>,</em><em>default=-1.</em>) – Regularization parameter for the KL divergence (relative entropy).
+If negative then, this regularization won’t be used.</li>
+<li><strong>kl_prior</strong> (<a class="reference internal" href="smili.imdata.html#smili.imdata.imdata.IMFITS" title="smili.imdata.imdata.IMFITS"><em>IMFITS</em></a><em>, </em><em>default=None</em>) – Prior image to be used to compute the weighted TSV term.
+If not specified, the flat prior will be used.
+This prior image will be normalized with the total flux estimator.</li>
+<li><strong>gs_lambda</strong> (<em>float</em><em>,</em><em>default=-1.</em>) – Regularization parameter for the GS entropy (relative entropy).
+If negative then, this regularization won’t be used.</li>
+<li><strong>gs_prior</strong> (<a class="reference internal" href="smili.imdata.html#smili.imdata.imdata.IMFITS" title="smili.imdata.imdata.IMFITS"><em>IMFITS</em></a><em>, </em><em>default=None</em>) – Prior image to be used to compute the weighted TSV term.
+If not specified, the flat prior will be used.
+This prior image will be normalized with the total flux estimator.</li>
+<li><strong>tfd_lambda</strong> (<em>float</em><em>,</em><em>default=-1.</em>) – Regularization parameter for the total flux regularization.
+If negative then, this regularization won’t be used.
+The target flux can be specified with “totalflux”. If it is not specified,
+then it will be guessed from the maximum visibility amplitudes.</li>
+<li><strong>tfd_tgterror</strong> (<em>float</em><em>, </em><em>default=0.01</em>) – The target accracy of the total flux regulariztion. For instance,
+tfd_tgterror = 0.01 and tfd_lambda = 1 will give the cost function of
+unity when the fractional error of the total flux is 0.01.</li>
+<li><strong>cen_lambda</strong> (<em>float</em><em>,</em><em>default=-1.</em>) – Regularization parameter for the centroid regularization.
+If negative then, this regularization won’t be used.
+You should NOT use this regularization if you will use the
+full complex visibilities.</li>
+<li><strong>cen_power</strong> (<em>float</em><em>, </em><em>default=3</em>) – The power to be used in the centroid regularizaion.
+cen_power = 1 gives the exact center-of-mass regularization, while
+higher value will work as the peak fixing regularization.</li>
+<li><strong>cem_prior</strong> (<a class="reference internal" href="smili.imdata.html#smili.imdata.imdata.IMFITS" title="smili.imdata.imdata.IMFITS"><em>IMFITS</em></a><em>, </em><em>default=None</em>) – The prior image to be used to compute the normalization factor.
+If not specified, then the initial image will be used.</li>
+<li><strong>niter</strong> (<em>int</em><em>,</em><em>defalut=100</em>) – The number of iterations.</li>
+<li><strong>nonneg</strong> (<em>boolean</em><em>,</em><em>default=True</em>) – If nonneg=True, the problem is solved with non-negative constrants.</li>
+<li><strong>totalflux</strong> (<em>float</em><em>, </em><em>default=None</em>) – Total flux of the source.</li>
+<li><strong>nprint</strong> (<em>integer</em><em>, </em><em>default=200</em>) – The summary of metrics will be printed with an interval specified
+with this number.</li>
+<li><strong>istokes</strong> (<em>int</em><em>,</em><em>default=0</em>) – The ordinal number of stokes parameters.</li>
+<li><strong>ifreq</strong> (<em>int</em><em>,</em><em>default=0</em>) – The ordinal number of frequencies.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">imdata.IMFITS object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="smili.imaging.lbfgs.plots">
+<code class="descclassname">smili.imaging.lbfgs.</code><code class="descname">plots</code><span class="sig-paren">(</span><em>outimage</em>, <em>imageprm={}</em>, <em>filename=None</em>, <em>plotargs={'ms': 1.0}</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imaging.lbfgs.plots" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="smili.imaging.lbfgs.statistics">
+<code class="descclassname">smili.imaging.lbfgs.</code><code class="descname">statistics</code><span class="sig-paren">(</span><em>initimage</em>, <em>imregion=None</em>, <em>vistable=None</em>, <em>amptable=None</em>, <em>bstable=None</em>, <em>catable=None</em>, <em>lambl1=-1.0</em>, <em>lambtv=-1.0</em>, <em>lambtsv=-1.0</em>, <em>lambmem=-1.0</em>, <em>lambcom=-1.0</em>, <em>normlambda=True</em>, <em>reweight=False</em>, <em>dyrange=1000000.0</em>, <em>niter=1000</em>, <em>nonneg=True</em>, <em>compower=1.0</em>, <em>totalflux=None</em>, <em>fluxconst=False</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imaging.lbfgs.statistics" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-smili.imaging">
+<span id="module-contents"></span><h2>7.1.3.3. Module contents<a class="headerlink" href="#module-smili.imaging" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="smili.uvdata.uvtable.html" class="btn btn-neutral float-left" title="7.1.2.1.3. smili.uvdata.uvtable package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-, SMILI Developper Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,690 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.1.2.1.2. smili.uvdata.uvfits package &mdash; SMILI 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7.1.2.1.3. smili.uvdata.uvtable package" href="smili.uvdata.uvtable.html" />
+    <link rel="prev" title="7.1.2.1.1. smili.uvdata.cltable package" href="smili.uvdata.cltable.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SMILI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../_static/install.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_examples/index.html">2. Tutorial and Example Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/license.html">3. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/references.html">4. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/link.html">5. Developer Team and Related Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/acknowledgement.html">6. Acknowledgement</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="smili.html">7. smili package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="smili.html#subpackages">7.1. Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="smili.imdata.html">7.1.1. smili.imdata package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="smili.uvdata.html">7.1.2. smili.uvdata package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="smili.uvdata.html#subpackages">7.1.2.1. Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="smili.uvdata.html#module-smili.uvdata">7.1.2.2. Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="smili.imaging.html">7.1.3. smili.imaging package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="smili.html#submodules">7.2. Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smili.html#module-smili.util">7.3. smili.util module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smili.html#module-smili">7.4. Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SMILI</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="smili.html">7. smili package</a> &raquo;</li>
+        
+          <li><a href="smili.uvdata.html">7.1.2. smili.uvdata package</a> &raquo;</li>
+        
+      <li>7.1.2.1.2. smili.uvdata.uvfits package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/_autodoc/smili.uvdata.uvfits.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="smili-uvdata-uvfits-package">
+<h1>7.1.2.1.2. smili.uvdata.uvfits package<a class="headerlink" href="#smili-uvdata-uvfits-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>7.1.2.1.2.1. Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-smili.uvdata.uvfits.uvfits">
+<span id="smili-uvdata-uvfits-uvfits-module"></span><h2>7.1.2.1.2.2. smili.uvdata.uvfits.uvfits module<a class="headerlink" href="#module-smili.uvdata.uvfits.uvfits" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="smili.uvdata.uvfits.uvfits.ArrayData">
+<em class="property">class </em><code class="descclassname">smili.uvdata.uvfits.uvfits.</code><code class="descname">ArrayData</code><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.ArrayData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.ArrayData.avspc">
+<code class="descname">avspc</code><span class="sig-paren">(</span><em>dofreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.ArrayData.avspc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.ArrayData.check">
+<code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.ArrayData.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Keep consistensy between header and data of AN Table</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="smili.uvdata.uvfits.uvfits.FrequencyData">
+<em class="property">class </em><code class="descclassname">smili.uvdata.uvfits.uvfits.</code><code class="descname">FrequencyData</code><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.FrequencyData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="smili.uvdata.uvfits.uvfits.SourceData">
+<em class="property">class </em><code class="descclassname">smili.uvdata.uvfits.uvfits.</code><code class="descname">SourceData</code><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.SourceData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS">
+<em class="property">class </em><code class="descclassname">smili.uvdata.uvfits.uvfits.</code><code class="descname">UVFITS</code><span class="sig-paren">(</span><em>uvfits</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is a class to load, edit, write uvfits data</p>
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS.apply_cltable">
+<code class="descname">apply_cltable</code><span class="sig-paren">(</span><em>cltable</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS.apply_cltable" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns complex visibilities by means of gain calibration table.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cltable</strong> (<em>CLTable object</em>) – gain calibration table for full complex visibilities</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">uvfits.UVFITS object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS.avspc">
+<code class="descname">avspc</code><span class="sig-paren">(</span><em>dofreq=0</em>, <em>minpoint=2</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS.avspc" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will weighted-average full complex visibilities in frequency directions.
+:param dofreq:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Parameter for multi-frequency data.</dt>
+<dd>dofreq = 0: average over IFs and channels
+dofreq = 1: average over channels at each IF</dd>
+</dl>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>minpoint</strong> (<em>int; default =2.</em>) – Number of points required to re-evaluate weights.
+If data do not have enough number of points at each time/frequency
+segments specified with dofreq, weight will be set to 0
+meaning that the corresponding point will be flagged out.</td>
+</tr>
+</tbody>
+</table>
+<p>Returns: uvfits.UVFITS object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS.get_ant">
+<code class="descname">get_ant</code><span class="sig-paren">(</span><em>key='name'</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS.get_ant" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will make a dictionary of specified antenna information</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> (<em>string; default=&quot;name&quot;</em>) – key name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Dictionary of the speficied key Value.
+key of the dictionary is (subarrayid, antenna id)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS.get_freq">
+<code class="descname">get_freq</code><span class="sig-paren">(</span><em>center=True</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS.get_freq" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will make a dictionary of frequency offsets of each
+channel. The frequency offset is for the center of each channel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>center</strong> (<em>boolean; default=True</em>) – If True, the central frequency of each channel will be returned.
+Otherwise, the beggining frequency of each channel will be returned.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Dictionary of the speficied key Value.
+key of the dictionary is (frqsel, IFid, CHid)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS.get_freq_offset">
+<code class="descname">get_freq_offset</code><span class="sig-paren">(</span><em>center=True</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS.get_freq_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will make a dictionary of frequency offsets of each
+channel. The frequency offset is for the center of each channel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>center</strong> (<em>boolean; default=True</em>) – If True, the central frequency of each channel will be returned.
+Otherwise, the beggining frequency of each channel will be returned.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Dictionary of the speficied key Value.
+key of the dictionary is (frqsel, IFid, CHid)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS.get_gst">
+<code class="descname">get_gst</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS.get_gst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of UTC in astropy.time.sidereal_time object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS.get_utc">
+<code class="descname">get_utc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS.get_utc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of UTC in astropy.time.Time object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS.get_uvw">
+<code class="descname">get_uvw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS.get_uvw" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will make a matrix of uvw coverage and uv distance of each
+channel, frequency band (IF).
+The frequency offset is for the center of each channel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">matrix of the Values of u,v,w,uvdistance(=sqrt(u**2+v**2)).
+key of the dictionary is (Nuvw, Ndata, IFid, CHid),
+where Ndata is the number of the uvw data, and Nuvw is the type of the uvw coverages:
+Nuvw=0,1,2, and 3 corresponds to u,v,w, and uvdistance, respectively.
+Further, CHid and IFid is the number of channels and frequency bands.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS.get_vismodel">
+<code class="descname">get_vismodel</code><span class="sig-paren">(</span><em>imfits</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS.get_vismodel" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will compute model visivilities based on uv-coverages of
+data and the input image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>imfits</strong> (<em>imdata.IMFITS object</em>) – input image data</li>
+<li><strong>istokes</strong> (<em>int</em><em>, </em><em>default=0</em>) – the stoked index of the image to be used</li>
+<li><strong>ifreq</strong> (<em>int</em><em>, </em><em>default=0</em>) – the frequency index of the image to be used</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">real and imaginary parts of the model visibilities</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Vreal, Vimag (ndarray, float64)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS.make_vistable">
+<code class="descname">make_vistable</code><span class="sig-paren">(</span><em>flag=True</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS.make_vistable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert visibility data to a two dimentional table.
+:param flag: if flag=True, data with weights &lt;= 0 or sigma &lt;=0 will be ignored.
+:type flag: boolean</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">uvdata.VisTable object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS.radplot">
+<code class="descname">radplot</code><span class="sig-paren">(</span><em>uvunit=None</em>, <em>datatype='amp'</em>, <em>normerror=False</em>, <em>errorbar=True</em>, <em>ls='none'</em>, <em>marker='.'</em>, <em>**plotargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS.radplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot visibility amplitudes as a function of baseline lengths
+on the current axes. This method uses matplotlib.pyplot.plot() or
+matplotlib.pyplot.errorbar().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>uvunit</strong> (<em>str</em><em>, </em><em>default = None</em>) – The unit of the baseline length. if uvunit is None, it will use
+self.uvunit.</li>
+<li><strong>errorbar</strong> (<em>boolean</em><em>, </em><em>default = True</em>) – <p>If errorbar is True, it will plot data with errorbars using
+matplotlib.pyplot.errorbar(). Otherwise, it will plot data without
+errorbars using matplotlib.pyplot.plot().</p>
+<p>If you plot model closure phases (i.e. model is not None),
+it will plot without errobars regardless of this parameter.</p>
+</li>
+<li><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot() or
+matplotlib.pyplot.errorbars().
+Defaults are {‘ls’: “none”, ‘marker’: “.”}.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS.select_stokes">
+<code class="descname">select_stokes</code><span class="sig-paren">(</span><em>stokes='I'</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS.select_stokes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pick up single polarization data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stokes</strong> (<em>string; default=&quot;I&quot;</em>) – <p>Output stokes parameters.
+Availables are [“I”, “Q”, “U”, “V”,</p>
+<blockquote>
+<div>”LL”, “RR”, “RL”, “LR”,
+“XX”, “YY”, “XY”, “YX”].</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Returns: uvdata.UVFITS object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS.selfcal">
+<code class="descname">selfcal</code><span class="sig-paren">(</span><em>imodel</em>, <em>std_amp=1</em>, <em>std_pha=100</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS.selfcal" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is currently designed for selfcalibration of
+single polarization (LL, RR, I) or dual polarization (RR+LL, XX+YY).</p>
+<p>For dual polarization, we assume that I = LL = RR = XX = YY,
+which means no circlar polariztion for L/R data, and no linear polarization
+for X/Y data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>imodel</strong> (<em>imdata.IMFITS object</em>) – Input Model</li>
+<li><strong>std_amp</strong> (<em>float</em><em>, </em><em>default=0.2</em>) – Standard deviation of Gain amplitudes from unity.
+This standard deviation will used for the Gaussian prior
+of gain amplitudes. The defaul value (Std Gain error=100%)
+provides a weakely infromed prior.</li>
+<li><strong>std_pha</strong> (<em>float in radian</em><em>, </em><em>default=100</em>) – Standard deviation of Gain phases from 0.
+This standard deviation will used for the Gaussian prior
+of gain phases. The defaul value provides a very weakely
+infromed prior.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">CLTable object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS.to_uvfits">
+<code class="descname">to_uvfits</code><span class="sig-paren">(</span><em>filename=None</em>, <em>overwrite=True</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS.to_uvfits" title="Permalink to this definition">¶</a></dt>
+<dd><p>save to uvfits file. If the filename is not given, then
+return HDUList object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filename</strong> (<em>str</em>) – Output uvfits filename</li>
+<li><strong>overwrite</strong> (<em>boolean; default=True</em>) – If True, overwrite when the specified file already exiests.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">astropy.io.fits.HDUList object if filename=None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS.uvavg">
+<code class="descname">uvavg</code><span class="sig-paren">(</span><em>solint=10</em>, <em>minpoint=2</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS.uvavg" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will weighted-average full complex visibilities in time direction.
+Visibilities will be weighted-average, using weight information of data.
+uvw-coordinates on new time grid will be interpolated with cubic spline interpolation.
+This may give slightly different uvw coordinates from other software, such as DIFMAP
+computing weighted averages or AIPS UVFIX recalculating uvw coordinates.
+:param solint: Time averaging interval (in sec)</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>minpoint (int; default =2.):</dt>
+<dd>Number of points required to re-evaluate weights.
+If data do not have enough number of points at each time/frequency
+segments specified with dofreq, weight will be set to 0
+meaning that the corresponding point will be flagged out.</dd>
+</dl>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+</tbody>
+</table>
+<p>Returns: uvfits.UVFITS object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS.uvplot">
+<code class="descname">uvplot</code><span class="sig-paren">(</span><em>uvunit=None</em>, <em>conj=True</em>, <em>ls='none'</em>, <em>marker='.'</em>, <em>**plotargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS.uvplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot uv-plot on the current axes.
+This method uses matplotlib.pyplot.plot().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>uvunit</strong> (<em>str</em><em>, </em><em>default = None</em>) – The unit of the baseline length.</li>
+<li><strong>conj</strong> (<em>boolean</em><em>, </em><em>default = True</em>) – if conj=True, it will plot complex conjugate components (i.e. (-u, -v)).</li>
+<li><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot.
+Defaults are {‘ls’: “none”, ‘marker’: “.”}</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS.uvw_recalc">
+<code class="descname">uvw_recalc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS.uvw_recalc" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will recalculate uvw coordinates, using utc information,
+source coordinates, and station locations.</p>
+<p>This function would be not accurate as uvw-recalculation functions in
+AIPS (UVFIX) and VEDA, which are using the latest parameters like EOPs.</p>
+<p>So, we do not guarantee that this function will provide accurate
+uvw coordinates enough for astrometric VLBI observations.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS.weightcal">
+<code class="descname">weightcal</code><span class="sig-paren">(</span><em>dofreq=0</em>, <em>solint=60.0</em>, <em>minpoint=2</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS.weightcal" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will recalculate sigmas and weights of data from scatter
+in full complex visibilities over specified frequency and time segments.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dofreq</strong> (<em>int; default = 0</em>) – <dl class="docutils">
+<dt>Parameter for multi-frequency data.</dt>
+<dd>dofreq = 0: calculate weights and sigmas over IFs and channels
+dofreq = 1: calculate weights and sigmas over channels at each IF
+dofreq = 2: calculate weights and sigmas at each IF and Channel</dd>
+</dl>
+</li>
+<li><strong>solint</strong> (<em>float; default = 60.</em>) – solution interval in sec</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Returns: uvfits.UVFITS object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.UVFITS.write_fits">
+<code class="descname">write_fits</code><span class="sig-paren">(</span><em>filename=None</em>, <em>overwrite=True</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.UVFITS.write_fits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="smili.uvdata.uvfits.uvfits.VisibilityData">
+<em class="property">class </em><code class="descclassname">smili.uvdata.uvfits.uvfits.</code><code class="descname">VisibilityData</code><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.VisibilityData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.VisibilityData.check">
+<code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.VisibilityData.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="smili.uvdata.uvfits.uvfits.VisibilityData.sort">
+<code class="descname">sort</code><span class="sig-paren">(</span><em>by=['utc', 'ant1', 'ant2', 'subarray']</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.uvdata.uvfits.uvfits.VisibilityData.sort" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-smili.uvdata.uvfits">
+<span id="module-contents"></span><h2>7.1.2.1.2.3. Module contents<a class="headerlink" href="#module-smili.uvdata.uvfits" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="smili.uvdata.uvtable.html" class="btn btn-neutral float-right" title="7.1.2.1.3. smili.uvdata.uvtable package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="smili.uvdata.cltable.html" class="btn btn-neutral float-left" title="7.1.2.1.1. smili.uvdata.cltable package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-, SMILI Developper Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,374 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7. smili package &mdash; SMILI 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7.1.1. smili.imdata package" href="smili.imdata.html" />
+    <link rel="prev" title="6. Acknowledgement" href="../_static/acknowledgement.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SMILI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../_static/install.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_examples/index.html">2. Tutorial and Example Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/license.html">3. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/references.html">4. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/link.html">5. Developer Team and Related Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/acknowledgement.html">6. Acknowledgement</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. smili package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subpackages">7.1. Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="smili.imdata.html">7.1.1. smili.imdata package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smili.uvdata.html">7.1.2. smili.uvdata package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smili.imaging.html">7.1.3. smili.imaging package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">7.2. Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-smili.util">7.3. smili.util module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-smili">7.4. Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SMILI</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>7. smili package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/_autodoc/smili.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="smili-package">
+<h1>7. smili package<a class="headerlink" href="#smili-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>7.1. Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="smili.imdata.html">7.1.1. smili.imdata package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="smili.imdata.html#submodules">7.1.1.1. Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smili.imdata.html#module-smili.imdata.imdata">7.1.1.2. smili.imdata.imdata module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smili.imdata.html#module-smili.imdata.imregion">7.1.1.3. smili.imdata.imregion module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smili.imdata.html#module-smili.imdata">7.1.1.4. Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="smili.uvdata.html">7.1.2. smili.uvdata package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="smili.uvdata.html#subpackages">7.1.2.1. Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="smili.uvdata.cltable.html">7.1.2.1.1. smili.uvdata.cltable package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="smili.uvdata.cltable.html#submodules">7.1.2.1.1.1. Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="smili.uvdata.cltable.html#module-smili.uvdata.cltable.cltable">7.1.2.1.1.2. smili.uvdata.cltable.cltable module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="smili.uvdata.cltable.html#module-smili.uvdata.cltable">7.1.2.1.1.3. Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="smili.uvdata.uvfits.html">7.1.2.1.2. smili.uvdata.uvfits package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="smili.uvdata.uvfits.html#submodules">7.1.2.1.2.1. Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="smili.uvdata.uvfits.html#module-smili.uvdata.uvfits.uvfits">7.1.2.1.2.2. smili.uvdata.uvfits.uvfits module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="smili.uvdata.uvfits.html#module-smili.uvdata.uvfits">7.1.2.1.2.3. Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="smili.uvdata.uvtable.html">7.1.2.1.3. smili.uvdata.uvtable package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="smili.uvdata.uvtable.html#submodules">7.1.2.1.3.1. Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="smili.uvdata.uvtable.html#module-smili.uvdata.uvtable.bstable">7.1.2.1.3.2. smili.uvdata.uvtable.bstable module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="smili.uvdata.uvtable.html#module-smili.uvdata.uvtable.catable">7.1.2.1.3.3. smili.uvdata.uvtable.catable module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="smili.uvdata.uvtable.html#module-smili.uvdata.uvtable.gvistable">7.1.2.1.3.4. smili.uvdata.uvtable.gvistable module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="smili.uvdata.uvtable.html#module-smili.uvdata.uvtable.tools">7.1.2.1.3.5. smili.uvdata.uvtable.tools module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="smili.uvdata.uvtable.html#module-smili.uvdata.uvtable.uvtable">7.1.2.1.3.6. smili.uvdata.uvtable.uvtable module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="smili.uvdata.uvtable.html#module-smili.uvdata.uvtable.vistable">7.1.2.1.3.7. smili.uvdata.uvtable.vistable module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="smili.uvdata.uvtable.html#module-smili.uvdata.uvtable">7.1.2.1.3.8. Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="smili.uvdata.html#module-smili.uvdata">7.1.2.2. Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="smili.imaging.html">7.1.3. smili.imaging package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="smili.imaging.html#submodules">7.1.3.1. Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smili.imaging.html#module-smili.imaging.lbfgs">7.1.3.2. smili.imaging.lbfgs module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smili.imaging.html#module-smili.imaging">7.1.3.3. Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>7.2. Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-smili.util">
+<span id="smili-util-module"></span><h2>7.3. smili.util module<a class="headerlink" href="#module-smili.util" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="smili.util.angconv">
+<code class="descclassname">smili.util.</code><code class="descname">angconv</code><span class="sig-paren">(</span><em>unit1='deg'</em>, <em>unit2='deg'</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.util.angconv" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a conversion factor from unit1 to unit2
+Available angular units are uas, mas, asec or arcsec, amin or arcmin and degree.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="smili.util.fluxconv">
+<code class="descclassname">smili.util.</code><code class="descname">fluxconv</code><span class="sig-paren">(</span><em>unit1='Jy'</em>, <em>unit2='Jy'</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.util.fluxconv" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert flux units.
+Availables are [Jy, mJy, uJy, si, cgs]</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="smili.util.matplotlibrc">
+<code class="descclassname">smili.util.</code><code class="descname">matplotlibrc</code><span class="sig-paren">(</span><em>nrows=1</em>, <em>ncols=1</em>, <em>width=250</em>, <em>height=250</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.util.matplotlibrc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="smili.util.prt">
+<code class="descclassname">smili.util.</code><code class="descname">prt</code><span class="sig-paren">(</span><em>obj</em>, <em>indent=''</em>, <em>output=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.util.prt" title="Permalink to this definition">¶</a></dt>
+<dd><p>a useful print function</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="smili.util.saconv">
+<code class="descclassname">smili.util.</code><code class="descname">saconv</code><span class="sig-paren">(</span><em>x1=1.0</em>, <em>y1=None</em>, <em>angunit1='deg'</em>, <em>satype1='pixel'</em>, <em>x2=1.0</em>, <em>y2=None</em>, <em>angunit2=None</em>, <em>satype2=None</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.util.saconv" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a conversion factor between given sizes of the pixel or beam</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="smili.util.solidang">
+<code class="descclassname">smili.util.</code><code class="descname">solidang</code><span class="sig-paren">(</span><em>x=1.0</em>, <em>y=None</em>, <em>angunit='deg'</em>, <em>satype='pixel'</em>, <em>angunitout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.util.solidang" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the solid angle of the pixel or beam</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>y</strong> (<em>x</em><em>,</em>) – if type=”pixel”, the pixel size for x and y directions.
+if type=”beam”, the major/minor-axis FWHM size of the Gaussian beam
+if y is not given, y := x.</li>
+<li><strong>angunit</strong> (<em>str</em>) – angular unit of x, y</li>
+<li><strong>satype</strong> (<em>str</em>) – type of the solid angle. Availables are ‘pixel’ or ‘beam’.</li>
+<li><strong>angunitout</strong> (<em>str; default=None</em>) – Angular unit to be used for the solid angle.
+The solid angle of angunitout^2 will be adopted.
+If not specified, angunit will be used.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">solidangle in angunitout^2</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-smili">
+<span id="module-contents"></span><h2>7.4. Module contents<a class="headerlink" href="#module-smili" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="smili.imdata.html" class="btn btn-neutral float-right" title="7.1.1. smili.imdata package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../_static/acknowledgement.html" class="btn btn-neutral float-left" title="6. Acknowledgement" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-, SMILI Developper Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

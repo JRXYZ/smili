@@ -1,0 +1,1645 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.1.1. smili.imdata package &mdash; SMILI 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7.1.2. smili.uvdata package" href="smili.uvdata.html" />
+    <link rel="prev" title="7. smili package" href="smili.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SMILI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../_static/install.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_examples/index.html">2. Tutorial and Example Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/license.html">3. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/references.html">4. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/link.html">5. Developer Team and Related Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_static/acknowledgement.html">6. Acknowledgement</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="smili.html">7. smili package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="smili.html#subpackages">7.1. Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">7.1.1. smili.imdata package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">7.1.1.1. Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-smili.imdata.imdata">7.1.1.2. smili.imdata.imdata module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-smili.imdata.imregion">7.1.1.3. smili.imdata.imregion module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-smili.imdata">7.1.1.4. Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="smili.uvdata.html">7.1.2. smili.uvdata package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smili.imaging.html">7.1.3. smili.imaging package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="smili.html#submodules">7.2. Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smili.html#module-smili.util">7.3. smili.util module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smili.html#module-smili">7.4. Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SMILI</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="smili.html">7. smili package</a> &raquo;</li>
+        
+      <li>7.1.1. smili.imdata package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/_autodoc/smili.imdata.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="smili-imdata-package">
+<h1>7.1.1. smili.imdata package<a class="headerlink" href="#smili-imdata-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>7.1.1.1. Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-smili.imdata.imdata">
+<span id="smili-imdata-imdata-module"></span><h2>7.1.1.2. smili.imdata.imdata module<a class="headerlink" href="#module-smili.imdata.imdata" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="smili.imdata.imdata.IMFITS">
+<em class="property">class </em><code class="descclassname">smili.imdata.imdata.</code><code class="descname">IMFITS</code><span class="sig-paren">(</span><em>imfits=None</em>, <em>imfitstype='standard'</em>, <em>uvfits=None</em>, <em>source=None</em>, <em>instrument=None</em>, <em>observer=None</em>, <em>dx=2.0</em>, <em>dy=None</em>, <em>angunit='uas'</em>, <em>nx=100</em>, <em>ny=None</em>, <em>nxref=None</em>, <em>nyref=None</em>, <em>**args</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.add_gauss">
+<code class="descname">add_gauss</code><span class="sig-paren">(</span><em>x0=0.0</em>, <em>y0=0.0</em>, <em>totalflux=1.0</em>, <em>majsize=1.0</em>, <em>minsize=None</em>, <em>scale=1.0</em>, <em>pa=0.0</em>, <em>overwrite=False</em>, <em>istokes=0</em>, <em>ifreq=0</em>, <em>fluxunit='Jy'</em>, <em>angunit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.add_gauss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gaussian Convolution</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>y0</strong> (<em>x0</em><em>,</em>) – the peak location of the gaussian in the unit of “angunit”</li>
+<li><strong>totalflux</strong> (<em>float</em>) – total flux density</li>
+<li><strong>majsize</strong> (<em>float</em>) – Major Axis Size</li>
+<li><strong>minsize</strong> (<em>float</em>) – Minor Axis Size. If None, it will be same to the Major Axis Size (Circular Gaussian)</li>
+<li><strong>fluxunit</strong> (<em>string</em>) – unit of the total flux density (Jy, mJy, uJy, si, cgs)</li>
+<li><strong>angunit</strong> (<em>string</em>) – Angular Unit for the sizes (uas, mas, asec or arcsec, amin or arcmin, degree)</li>
+<li><strong>pa</strong> (<em>float</em>) – Position Angle of the Gaussian</li>
+<li><strong>scale</strong> (<em>float</em>) – The sizes will be multiplied by this value.</li>
+<li><strong>overwrite</strong> (<em>boolean; default=False</em>) – If True, the image will be overwritten by this Gaussian.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">imdata.IMFITS object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.angconv">
+<code class="descname">angconv</code><span class="sig-paren">(</span><em>unit1='deg'</em>, <em>unit2='deg'</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.angconv" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a conversion factor from unit1 to unit2
+Available angular units are uas, mas, asec or arcsec, amin or arcmin and degree.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.circle_hough">
+<code class="descname">circle_hough</code><span class="sig-paren">(</span><em>radius</em>, <em>ntheta=360</em>, <em>angunit=None</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.circle_hough" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function calculates the circle Hough transform (CHT) of the input image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>radius</strong> (<em>array</em>) – array for radii for which the circle Hough transform is
+calculated. The unit of the radius is specified with angunit.</li>
+<li><strong>Ntheta</strong> (<em>optional</em><em>, </em><em>integer</em>) – The number of circular shifts to be used in the circle Hough transform.
+For instance, ntheta=360 (default) gives circular shifts of every 1 deg.</li>
+<li><strong>angunit</strong> (<em>optional</em><em>, </em><em>string</em>) – The angular unit for radius and also the output peak profile</li>
+<li><strong>istokes</strong> (<em>integer</em>) – index for Stokes Parameter at which the CHT to be performed</li>
+<li><strong>ifreq</strong> (<em>integer</em>) – index for Frequency at which the CHT to be performed</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><dl class="docutils">
+<dt>The Circle Hough Accumulator. This is a three dimensional array of which</dt>
+<dd><p class="first last">shape is [Nx, Ny, Nr] in <em>Fortran Order</em>.</p>
+</dd>
+<dt>profile (pd.DataFrame):</dt>
+<dd><p class="first last">The table for the peak profile Hr(r)=max_r(H(x,y,r)).</p>
+</dd>
+</dl>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">H (ndarray)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.colorbar">
+<code class="descname">colorbar</code><span class="sig-paren">(</span><em>fluxunit='Jy'</em>, <em>saunit='pixel'</em>, <em>**colorbarprm</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.colorbar" title="Permalink to this definition">¶</a></dt>
+<dd><p>add colorbar</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.compos">
+<code class="descname">compos</code><span class="sig-paren">(</span><em>alpha=1.0</em>, <em>angunit=None</em>, <em>ifreq=0</em>, <em>istokes=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.compos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the position of the center of mass in a specified angular unit.</p>
+<dl class="docutils">
+<dt>Arg:</dt>
+<dd><dl class="first last docutils">
+<dt>alpha (float):</dt>
+<dd>if alpha != 0, then the image is powered by alpha prior to compute
+the center of the mass.</dd>
+<dt>angunit (string):</dt>
+<dd>The angular unit for the position. If not specified, it will use
+self.angunit.</dd>
+<dt>istokes (integer):</dt>
+<dd>index for Stokes Parameter</dd>
+<dt>ifreq (integer):</dt>
+<dd>index for Frequency</dd>
+<dt>save_totalflux (boolean):</dt>
+<dd>If true, the total flux of the image will be conserved.</dd>
+</dl>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary for the position</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.comshift">
+<code class="descname">comshift</code><span class="sig-paren">(</span><em>alpha=1.0</em>, <em>save_totalflux=False</em>, <em>ifreq=0</em>, <em>istokes=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.comshift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shift the image so that its center-of-mass position coincides with the reference pixel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>alpha</strong> (<em>float</em>) – if alpha != 0, then the image is powered by alpha prior to compute
+the center of the mass.</li>
+<li><strong>istokes</strong> (<em>integer</em>) – index for Stokes Parameter at which the shift will be computed.</li>
+<li><strong>ifreq</strong> (<em>integer</em>) – index for Frequency at which the shift will be computed.</li>
+<li><strong>save_totalflux</strong> (<em>boolean</em>) – If true, the total flux of the image will be conserved.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">imdata.IMFITS object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.contour">
+<code class="descname">contour</code><span class="sig-paren">(</span><em>cmul=None</em>, <em>relative=True</em>, <em>levels=None</em>, <em>colors='white'</em>, <em>ls='-'</em>, <em>istokes=0</em>, <em>ifreq=0</em>, <em>**contour_args</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.contour" title="Permalink to this definition">¶</a></dt>
+<dd><p>plot contours of the image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>istokes</strong> (<em>integer</em>) – index for Stokes Parameter at which the image will be plotted</li>
+<li><strong>ifreq</strong> (<em>integer</em>) – index for Frequency at which the image will be plotted</li>
+<li><strong>colors</strong> (<em>string</em><em>, </em><em>array-like</em>) – colors of contour levels</li>
+<li><strong>cmul</strong> (<em>float; default=None</em>) – The lowest contour level. Default value is 1% of the peak intensity.</li>
+<li><strong>relative</strong> (<em>boolean</em><em>, </em><em>default=True</em>) – If true, cmul will be the relative value to the peak intensity.</li>
+<li><strong>levels</strong> – contour level. This will be multiplied with cmul.</li>
+<li><strong>**contour_args</strong> – Args will be input in matplotlib.pyplot.contour</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.convolve_gauss">
+<code class="descname">convolve_gauss</code><span class="sig-paren">(</span><em>majsize</em>, <em>minsize=None</em>, <em>x0=0</em>, <em>y0=0</em>, <em>pa=0.0</em>, <em>scale=1.0</em>, <em>angunit=None</em>, <em>set_beam=True</em>, <em>save_totalflux=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.convolve_gauss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gaussian Convolution</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>y0</strong> (<em>x0</em><em>,</em>) – x, y shift of the convolved image in the unit of “angunit”</li>
+<li><strong>majsize</strong> (<em>float</em>) – Major Axis Size</li>
+<li><strong>minsize</strong> (<em>float</em>) – Minor Axis Size. If None, it will be same to the Major Axis Size (Circular Gaussian)</li>
+<li><strong>angunit</strong> (<em>string</em>) – Angular Unit for the sizes (uas, mas, asec or arcsec, amin or arcmin, degree)</li>
+<li><strong>pa</strong> (<em>float</em>) – Position Angle of the Gaussian</li>
+<li><strong>scale</strong> (<em>float; default=False</em>) – The sizes will be multiplied by this value.</li>
+<li><strong>restore</strong> (<em>boolean; default=False</em>) – if True, omit the flux normalizing factor</li>
+<li><strong>set_beam</strong> (<em>boolean; default=True</em>) – update header file with this blurring beam</li>
+<li><strong>save_totalflux</strong> (<em>boolean</em>) – If true, the total flux of the image will be conserved.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">imdata.IMFITS object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.cpimage">
+<code class="descname">cpimage</code><span class="sig-paren">(</span><em>fitsdata</em>, <em>save_totalflux=False</em>, <em>order=3</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.cpimage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy the brightness ditribution of the input IMFITS object
+into the image grid of this image data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fitsdata</strong> (<em>imdata.IMFITS object</em>) – This image will be copied into the image grid of this data.</li>
+<li><strong>save_totalflux</strong> (<em>boolean</em>) – If true, the total flux of the image will be conserved.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">the copied image data</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">imdata.IMFITS object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.edge_detect">
+<code class="descname">edge_detect</code><span class="sig-paren">(</span><em>method='prewitt'</em>, <em>mask=None</em>, <em>sigma=1</em>, <em>low_threshold=0.1</em>, <em>high_threshold=0.2</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.edge_detect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output edge-highlighted images.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>method</strong> (<em>string</em><em>, </em><em>default=&quot;prewitt&quot;</em>) – Type of edge filters to be used.
+Availables are [“prewitt”,”sobel”,”scharr”,”roberts”,”canny”].</li>
+<li><strong>mask</strong> (<em>array</em>) – array for masking</li>
+<li><strong>sigma</strong> (<em>integer</em>) – index for canny</li>
+<li><strong>low_threshold</strong> (<em>float</em>) – index for canny</li>
+<li><strong>high_threshold</strong> (<em>float</em>) – index for canny</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">imdata.IMFITS object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.get_angunitlabel">
+<code class="descname">get_angunitlabel</code><span class="sig-paren">(</span><em>angunit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.get_angunitlabel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the angular unit of the specifed angunit. If not given,
+it will be taken by self.angunit</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.get_bconv">
+<code class="descname">get_bconv</code><span class="sig-paren">(</span><em>fluxunit='Jy'</em>, <em>saunit='beam'</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.get_bconv" title="Permalink to this definition">¶</a></dt>
+<dd><p>derive a conversion factor to convert the unit of the intensity
+to the one using the specified flux and solid angle units.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.get_beam">
+<code class="descname">get_beam</code><span class="sig-paren">(</span><em>angunit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.get_beam" title="Permalink to this definition">¶</a></dt>
+<dd><p>get beam parameters</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>angunit</strong> (<em>string</em>) – Angular unit (uas, mas, asec or arcsec, amin or arcmin, degree)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.get_fluxunitlabel">
+<code class="descname">get_fluxunitlabel</code><span class="sig-paren">(</span><em>fluxunit='Jy'</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.get_fluxunitlabel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the angular unit of the specifed angunit. If not given,
+it will be taken by self.angunit</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.get_imarray">
+<code class="descname">get_imarray</code><span class="sig-paren">(</span><em>fluxunit='Jy'</em>, <em>saunit='pixel'</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.get_imarray" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns np.array of the brightness distributions in a specified unit</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.get_imextent">
+<code class="descname">get_imextent</code><span class="sig-paren">(</span><em>angunit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.get_imextent" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate the field of view of the image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>angunit</strong> (<em>string</em>) – Angular unit (uas, mas, asec or arcsec, amin or arcmin, degree)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.get_saunitlabel">
+<code class="descname">get_saunitlabel</code><span class="sig-paren">(</span><em>saunit='pixel'</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.get_saunitlabel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the angular unit of the specifed angunit. If not given,
+it will be taken by self.angunit</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.get_xygrid">
+<code class="descname">get_xygrid</code><span class="sig-paren">(</span><em>twodim=False</em>, <em>angunit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.get_xygrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate the grid of the image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>angunit</strong> (<em>string</em>) – Angular unit (uas, mas, asec or arcsec, amin or arcmin, degree)</li>
+<li><strong>twodim</strong> (<em>boolean</em>) – It True, the 2D grids will be returned. Otherwise, the 1D arrays will be returned</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.hard_threshold">
+<code class="descname">hard_threshold</code><span class="sig-paren">(</span><em>threshold=0.01</em>, <em>relative=True</em>, <em>save_totalflux=False</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.hard_threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do hard-threshold the input image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>istokes</strong> (<em>integer</em>) – index for Stokes Parameter at which the image will be edited</li>
+<li><strong>ifreq</strong> (<em>integer</em>) – index for Frequency at which the image will be edited</li>
+<li><strong>threshold</strong> (<em>float</em>) – threshold</li>
+<li><strong>relative</strong> (<em>boolean</em>) – If true, theshold value will be normalized with the peak intensity of the image</li>
+<li><strong>save_totalflux</strong> (<em>boolean</em>) – If true, the total flux of the image will be conserved.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.imagecost">
+<code class="descname">imagecost</code><span class="sig-paren">(</span><em>func</em>, <em>out</em>, <em>istokes=0</em>, <em>ifreq=0</em>, <em>compower=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.imagecost" title="Permalink to this definition">¶</a></dt>
+<dd><p>return image cost.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>func</strong> (<em>string</em>) – cost function (“l1”, “mem”, “tv”, “tsv”, or “com”).</li>
+<li><strong>out</strong> (<em>string</em>) – output cost (“cost”, “costmap”, “gradmap”).</li>
+<li><strong>istokes</strong> (<em>integer</em>) – index for Stokes Parameter at which l1-norm will be calculated.</li>
+<li><strong>ifreq</strong> (<em>integer</em>) – index for Frequency at which l1-norm will be calculated.</li>
+<li><strong>compower</strong> (<em>float</em>) – power if func = “com”.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.imshow">
+<code class="descname">imshow</code><span class="sig-paren">(</span><em>scale='linear'</em>, <em>dyrange=100</em>, <em>gamma=0.5</em>, <em>vmax=None</em>, <em>vmin=None</em>, <em>relative=False</em>, <em>fluxunit='jy'</em>, <em>saunit='pixel'</em>, <em>restore=False</em>, <em>colorbar=False</em>, <em>colorbarprm={}</em>, <em>istokes=0</em>, <em>ifreq=0</em>, <em>cmap=&lt;matplotlib.colors.LinearSegmentedColormap object&gt;</em>, <em>interpolation='none'</em>, <em>**imshow_args</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.imshow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the image.
+To change the angular unit, please change IMFITS.angunit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>scale</strong> (<em>str; default=&quot;linear&quot;</em>) – Transfar function. Availables are “linear”, “log”, “gamma”</li>
+<li><strong>dyrange</strong> (<em>float; default=100</em>) – Dynamic range of the log color contour.</li>
+<li><strong>gamma</strong> (<em>float; default=1/2.</em>) – Gamma parameter for scale=”gamma”.</li>
+<li><strong>vmax</strong> (<em>float</em>) – The maximum value of the color contour.</li>
+<li><strong>vmin</strong> (<em>float</em>) – The minimum value of the color contour.
+If logscale=True, dyrange will be used to set vmin.</li>
+<li><strong>relative</strong> (<em>boolean</em><em>, </em><em>default=True</em>) – If True, vmin will be the relative value to the peak or vmax.</li>
+<li><strong>saunit</strong> (<em>string</em>) – Angular Unit for the solid angle (pixel, uas, mas, asec or arcsec,
+amin or arcmin, degree, beam). If restore is True, saunit will be
+forced to be “beam”.</li>
+<li><strong>restore</strong> (<em>boolean</em><em>, </em><em>default=True</em>) – If True, the image will be blurred by a Gaussian specified with
+beam parameters in the header.</li>
+<li><strong>colorbar</strong> (<em>boolean</em><em>, </em><em>default=False</em>) – If True, the colorbar will be shown.</li>
+<li><strong>colorbarprm</strong> (<em>dic</em><em>, </em><em>default={}</em>) – parameters for pyplot.colorbar</li>
+<li><strong>istokes</strong> (<em>integer</em>) – index for Stokes Parameter at which the image will be plotted</li>
+<li><strong>ifreq</strong> (<em>integer</em>) – index for Frequency at which the image will be plotted</li>
+<li><strong>**imshow_args</strong> – Args will be input in matplotlib.pyplot.imshow</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.init_header">
+<code class="descname">init_header</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.init_header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.load_pyds9">
+<code class="descname">load_pyds9</code><span class="sig-paren">(</span><em>angunit=None</em>, <em>wait=10</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.load_pyds9" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load DS9 region to IMRegion.
+This method uses pyds9.DS9().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>angunit</strong> (<em>str</em><em>, </em><em>default = None</em>) – The angular unit of region. If None, it will take from
+the default angunit of the image</li>
+<li><strong>wait</strong> (<em>float</em><em>, </em><em>default = 10</em>) – seconds to wait for ds9 to start.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">imdata.IMRegion object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.mad">
+<code class="descname">mad</code><span class="sig-paren">(</span><em>imregion=None</em>, <em>fluxunit='Jy'</em>, <em>saunit='pixel'</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.mad" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate the median absolute deviation of the image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>istokes</strong> (<em>integer</em>) – index for Stokes Parameter at which l1-norm will be calculated</li>
+<li><strong>ifreq</strong> (<em>integer</em>) – index for Frequency at which l1-norm will be calculated</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.min_threshold">
+<code class="descname">min_threshold</code><span class="sig-paren">(</span><em>threshold=0.0</em>, <em>replace=0.0</em>, <em>relative=True</em>, <em>save_totalflux=False</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.min_threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is thresholding with the mininum value. This is slightly different
+from hard thresholding, since this function resets all of pixels where
+their brightness is smaller than a given threshold. On the other hand,
+hard thresholding resets all of pixels where the absolute of their
+brightness is smaller than the threshold.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>istokes</strong> (<em>integer</em>) – index for Stokes Parameter at which the image will be edited</li>
+<li><strong>ifreq</strong> (<em>integer</em>) – index for Frequency at which the image will be edited</li>
+<li><strong>threshold</strong> (<em>float</em>) – threshold</li>
+<li><strong>replace</strong> (<em>float</em>) – the brightness to be replaced for thresholded pixels.</li>
+<li><strong>relative</strong> (<em>boolean</em>) – If true, theshold &amp; Replace value will be normalized with the peak intensity of the image</li>
+<li><strong>save_totalflux</strong> (<em>boolean</em>) – If true, the total flux of the image will be conserved.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.open_pyds9">
+<code class="descname">open_pyds9</code><span class="sig-paren">(</span><em>imregion=None</em>, <em>wait=10</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.open_pyds9" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open pyds9 and plot the region.
+This method uses pyds9.DS9().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>imregion</strong> (<em>imdata.IMRegion object; default=None</em>) – If specifed, imregion will be transferred to ds9 as well.</li>
+<li><strong>wait</strong> (<em>float</em><em>, </em><em>default = 10</em>) – seconds to wait for ds9 to start.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.peak">
+<code class="descname">peak</code><span class="sig-paren">(</span><em>absolute=False</em>, <em>fluxunit='Jy'</em>, <em>saunit='pixel'</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.peak" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate the peak intensity of the image in Jy/Pixel</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>absolute</strong> (<em>boolean</em>) – if True, it will pick up the peak of the absolute.</li>
+<li><strong>istokes</strong> (<em>integer</em>) – index for Stokes Parameter at which the peak intensity will be calculated</li>
+<li><strong>ifreq</strong> (<em>integer</em>) – index for Frequency at which the peak intensity will be calculated</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.peakpos">
+<code class="descname">peakpos</code><span class="sig-paren">(</span><em>angunit=None</em>, <em>ifreq=0</em>, <em>istokes=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.peakpos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the position of the peak in a specified angular unit.</p>
+<dl class="docutils">
+<dt>Arg:</dt>
+<dd><dl class="first last docutils">
+<dt>angunit (string):</dt>
+<dd>The angular unit for the position. If not specified, it will use
+self.angunit.</dd>
+<dt>istokes (integer):</dt>
+<dd>index for Stokes Parameter</dd>
+<dt>ifreq (integer):</dt>
+<dd>index for Frequency</dd>
+<dt>save_totalflux (boolean):</dt>
+<dd>If true, the total flux of the image will be conserved.</dd>
+</dl>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionary for the position</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.peakshift">
+<code class="descname">peakshift</code><span class="sig-paren">(</span><em>save_totalflux=False</em>, <em>ifreq=0</em>, <em>istokes=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.peakshift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shift the image so that its peak position coincides with the reference pixel.</p>
+<dl class="docutils">
+<dt>Arg:</dt>
+<dd><dl class="first last docutils">
+<dt>istokes (integer):</dt>
+<dd>index for Stokes Parameter at which the image will be edited</dd>
+<dt>ifreq (integer):</dt>
+<dd>index for Frequency at which the image will be edited</dd>
+<dt>save_totalflux (boolean):</dt>
+<dd>If true, the total flux of the image will be conserved.</dd>
+</dl>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">imdata.IMFITS object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.plot_beam">
+<code class="descname">plot_beam</code><span class="sig-paren">(</span><em>boxfc='black'</em>, <em>boxec='white'</em>, <em>beamfc='black'</em>, <em>beamec='white'</em>, <em>lw=1.0</em>, <em>alpha=0.5</em>, <em>x0=0.05</em>, <em>y0=0.05</em>, <em>boxsize=1.5</em>, <em>zorder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.plot_beam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot beam in the header.
+To change the angular unit, please change IMFITS.angunit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>y0</strong> (<em>x0</em><em>,</em>) – leftmost, lowermost location of the box
+if relative=True, the value is on transAxes coordinates</li>
+<li><strong>relative</strong> (<em>boolean</em><em>, </em><em>default=True</em>) – If True, the relative coordinate to the current axis will be
+used to plot data</li>
+<li><strong>boxsize</strong> (<em>float</em><em>, </em><em>default=1.5</em>) – Relative size of the box to the major axis size.</li>
+<li><strong>boxec</strong> (<em>boxfc</em><em>,</em>) – Face and edge colors of the box</li>
+<li><strong>beamec</strong> (<em>beamfc</em><em>,</em>) – Face and edge colors of the beam</li>
+<li><strong>lw</strong> (<em>float</em><em>, </em><em>default=1</em>) – linewidth</li>
+<li><strong>alpha</strong> (<em>float</em><em>, </em><em>default=0.5</em>) – transparency parameter (0&lt;1) for the face color</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.read_fits_aipscc">
+<code class="descname">read_fits_aipscc</code><span class="sig-paren">(</span><em>imfits</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.read_fits_aipscc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read data from the image FITS file. For the brightness distribution,
+this function loads the AIPS CC table rather than data of the primary HDU.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>imfits</strong> (<em>string</em><em> or </em><em>hdulist</em><em>, </em><em>optional</em>) – If specified, image will be loaded from the specified image fits file
+or specified HDUlist object.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.read_fits_ehtim">
+<code class="descname">read_fits_ehtim</code><span class="sig-paren">(</span><em>imfits</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.read_fits_ehtim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read data from the image FITS file geneated from the eht-imaging library</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>imfits</strong> (<em>string</em><em> or </em><em>hdulist</em><em>, </em><em>optional</em>) – If specified, image will be loaded from the specified image fits file
+or specified HDUlist object.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.read_fits_standard">
+<code class="descname">read_fits_standard</code><span class="sig-paren">(</span><em>imfits</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.read_fits_standard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read data from the image FITS file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>imfits</strong> (<em>string</em><em> or </em><em>hdulist</em><em>, </em><em>optional</em>) – If specified, image will be loaded from the specified image fits file
+or specified HDUlist object.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.read_uvfitsheader">
+<code class="descname">read_uvfitsheader</code><span class="sig-paren">(</span><em>uvfits</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.read_uvfitsheader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read header information from uvfits file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>uvfits</strong> (<em>string</em><em> or </em><em>hdulist</em>) – input uv-fits file specified by its filename or HDUList object.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.refshift">
+<code class="descname">refshift</code><span class="sig-paren">(</span><em>x0=0.0</em>, <em>y0=0.0</em>, <em>angunit=None</em>, <em>save_totalflux=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.refshift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shift the reference position to the specified coordinate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>y0</strong> (<em>x0</em><em>,</em>) – RA, Dec coordinate of the reference position</li>
+<li><strong>angunit</strong> (<em>string</em><em>, </em><em>optional</em>) – The angular unit of the coordinate. If not specified, self.angunit
+will be used.</li>
+<li><strong>save_totalflux</strong> (<em>boolean</em>) – If true, the total flux of the image will be conserved.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">imdata.IMFIT object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.rms">
+<code class="descname">rms</code><span class="sig-paren">(</span><em>imregion=None</em>, <em>fluxunit='Jy'</em>, <em>saunit='pixel'</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.rms" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculate the median absolute deviation of the image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>istokes</strong> (<em>integer</em>) – index for Stokes Parameter at which l1-norm will be calculated</li>
+<li><strong>ifreq</strong> (<em>integer</em>) – index for Frequency at which l1-norm will be calculated</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.rotate">
+<code class="descname">rotate</code><span class="sig-paren">(</span><em>angle=0</em>, <em>deg=True</em>, <em>save_totalflux=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotate the input image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>angle</strong> (<em>float</em>) – Rotational Angle. Anti-clockwise direction will be positive (same to the Position Angle).</li>
+<li><strong>deg</strong> (<em>boolean</em>) – It true, then the unit of angle will be degree. Otherwise, it will be radian.</li>
+<li><strong>save_totalflux</strong> (<em>boolean</em>) – If true, the total flux of the image will be conserved.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">imdata.IMFIT object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.save_fits">
+<code class="descname">save_fits</code><span class="sig-paren">(</span><em>outfitsfile=None</em>, <em>overwrite=True</em>, <em>bunit='Jy/pixel'</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.save_fits" title="Permalink to this definition">¶</a></dt>
+<dd><p>save the image(s) to the image FITS file or HDUList.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>outfitsfile</strong> (<em>string; default is None</em>) – FITS file name. If not specified, then HDUList object will be
+returned.</li>
+<li><strong>overwrite</strong> (<em>boolean</em>) – It True, an existing file will be overwritten.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">HDUList object if outfitsfile is None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.set_beam">
+<code class="descname">set_beam</code><span class="sig-paren">(</span><em>majsize=0.0</em>, <em>minsize=0.0</em>, <em>pa=0.0</em>, <em>scale=1.0</em>, <em>angunit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.set_beam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set beam parameters into headers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>minsize</strong> (<em>majsize</em><em>,</em>) – major/minor-axis FWHM size</li>
+<li><strong>scale</strong> (<em>float</em><em>, </em><em>default=1</em>) – scaling factor that will be multiplied to maj/min size.</li>
+<li><strong>pa</strong> (<em>float</em><em>, </em><em>default=0</em>) – position angle in deg</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.set_instrument">
+<code class="descname">set_instrument</code><span class="sig-paren">(</span><em>instrument</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.set_instrument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update headers for instrument and telescope with a
+specified name of the instrument.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.set_observer">
+<code class="descname">set_observer</code><span class="sig-paren">(</span><em>observer</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.set_observer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update headers for instrument, telescope and observer with a
+specified name of the instrument.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.set_source">
+<code class="descname">set_source</code><span class="sig-paren">(</span><em>source='SgrA*'</em>, <em>srccoord=None</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.set_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the source name and the source coordinate to the header.
+If source coordinate is not given, it will be taken from the CDS.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> (<em>str; default=&quot;SgrA*&quot;</em>) – Source Name</li>
+<li><strong>srccoord</strong> (<em>astropy.coordinates.Skycoord object; default=None</em>) – Source position. If not specified, it is automatically pulled
+from the CDS</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.soft_threshold">
+<code class="descname">soft_threshold</code><span class="sig-paren">(</span><em>threshold=0.01</em>, <em>relative=True</em>, <em>save_totalflux=False</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.soft_threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do soft-threshold the input image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>istokes</strong> (<em>integer</em>) – index for Stokes Parameter at which the image will be edited</li>
+<li><strong>ifreq</strong> (<em>integer</em>) – index for Frequency at which the image will be edited</li>
+<li><strong>threshold</strong> (<em>float</em>) – threshold</li>
+<li><strong>relative</strong> (<em>boolean</em>) – If true, theshold value will be normalized with the peak intensity of the image</li>
+<li><strong>save_totalflux</strong> (<em>boolean</em>) – If true, the total flux of the image will be conserved.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.to_aipscc">
+<code class="descname">to_aipscc</code><span class="sig-paren">(</span><em>threshold=None</em>, <em>relative=True</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.to_aipscc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make AIPS CC table</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>istokes</strong> (<em>integer</em>) – index for Stokes Parameter at which the image will be saved</li>
+<li><strong>ifreq</strong> (<em>integer</em>) – index for Frequency at which the image will be saved</li>
+<li><strong>threshold</strong> (<em>float</em>) – pixels with the absolute intensity smaller than this value will be ignored.</li>
+<li><strong>relative</strong> (<em>boolean</em>) – If true, theshold value will be normalized with the peak intensity of the image.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.to_difmapmod">
+<code class="descname">to_difmapmod</code><span class="sig-paren">(</span><em>outfile</em>, <em>threshold=None</em>, <em>relative=True</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.to_difmapmod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save an image into a difmap model file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>istokes</strong> (<em>integer</em>) – index for Stokes Parameter at which the image will be saved</li>
+<li><strong>ifreq</strong> (<em>integer</em>) – index for Frequency at which the image will be saved</li>
+<li><strong>threshold</strong> (<em>float</em>) – pixels with the absolute intensity smaller than this value will be ignored.</li>
+<li><strong>relative</strong> (<em>boolean</em>) – If true, theshold value will be normalized with the peak intensity of the image.</li>
+<li><strong>save_totalflux</strong> (<em>boolean</em>) – If true, the total flux of the image will be conserved.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.to_fits">
+<code class="descname">to_fits</code><span class="sig-paren">(</span><em>outfitsfile=None</em>, <em>overwrite=True</em>, <em>bunit='Jy/pixel'</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.to_fits" title="Permalink to this definition">¶</a></dt>
+<dd><p>save the image(s) to the image FITS file or HDUList.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>outfitsfile</strong> (<em>string; default is None</em>) – FITS file name. If not specified, then HDUList object will be
+returned.</li>
+<li><strong>overwrite</strong> (<em>boolean</em>) – It True, an existing file will be overwritten.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">HDUList object if outfitsfile is None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.totalflux">
+<code class="descname">totalflux</code><span class="sig-paren">(</span><em>fluxunit='Jy'</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.totalflux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the total flux density of the image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>istokes</strong> (<em>integer</em>) – index for Stokes Parameter at which the total flux will be calculated</li>
+<li><strong>ifreq</strong> (<em>integer</em>) – index for Frequency at which the total flux will be calculated</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.update_fits">
+<code class="descname">update_fits</code><span class="sig-paren">(</span><em>bunit='JY/PIXEL'</em>, <em>cctab=True</em>, <em>threshold=None</em>, <em>relative=True</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.update_fits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reflect current self.data / self.header info to the image FITS data.
+:param bunit: unit of the brightness. [“JY/PIXEL”, “JY/BEAM”] is available.
+:type bunit: str; default=bunit
+:param cctab: If True, AIPS CC table is attached to fits file.
+:type cctab: boolean
+:param istokes: index for Stokes Parameter at which the image will be used for CC table.
+:type istokes: integer
+:param ifreq: index for Frequency at which the image will be used for CC table.
+:type ifreq: integer
+:param threshold: pixels with the absolute intensity smaller than this value will be ignored in CC table.
+:type threshold: float
+:param relative: If true, theshold value will be normalized with the peak intensity of the image.
+:type relative: boolean</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imdata.IMFITS.winmod">
+<code class="descname">winmod</code><span class="sig-paren">(</span><em>imregion</em>, <em>save_totalflux=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.IMFITS.winmod" title="Permalink to this definition">¶</a></dt>
+<dd><p>clear brightness distribution outside regions</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>region</strong> (<em>imdata.ImRegTable object</em>) – region data</li>
+<li><strong>save_totalflux</strong> (<em>boolean; default=False</em>) – if True, keep Totalflux</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="smili.imdata.imdata.calc_metric">
+<code class="descclassname">smili.imdata.imdata.</code><code class="descname">calc_metric</code><span class="sig-paren">(</span><em>fitsdata</em>, <em>reffitsdata</em>, <em>metric='NRMSE'</em>, <em>istokes1=0</em>, <em>ifreq1=0</em>, <em>istokes2=0</em>, <em>ifreq2=0</em>, <em>edgeflag=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imdata.calc_metric" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate metrics between two images</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fitsdata</strong> (<em>imdata.IMFITS object</em>) – input image</li>
+<li><strong>reffitsdata</strong> (<em>imdata.IMFITS object</em>) – reference image</li>
+<li><strong>metric</strong> (<em>string</em>) – type of a metric to be calculated.
+Availables are [“NRMSE”,”MSE”,”SSIM”,”DSSIM”]</li>
+<li><strong>istokes1</strong> (<em>integer</em>) – index for the Stokes axis of the input image</li>
+<li><strong>ifreq1</strong> (<em>integer</em>) – index for the frequency axis of the input image</li>
+<li><strong>istokes2</strong> (<em>integer</em>) – index for the Stokes axis of the reference image</li>
+<li><strong>ifreq2</strong> (<em>integer</em>) – index for the frequency axis of the reference image</li>
+<li><strong>edgeflag</strong> (<em>boolean</em>) – calculation of metric on image domain or image gradient domain</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">metrics</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-smili.imdata.imregion">
+<span id="smili-imdata-imregion-module"></span><h2>7.1.1.3. smili.imdata.imregion module<a class="headerlink" href="#module-smili.imdata.imregion" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="smili.imdata.imregion.IMRegion">
+<em class="property">class </em><code class="descclassname">smili.imdata.imregion.</code><code class="descname">IMRegion</code><span class="sig-paren">(</span><em>data=None</em>, <em>index=None</em>, <em>columns=None</em>, <em>dtype=None</em>, <em>copy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.IMRegion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.core.frame.DataFrame</span></code></p>
+<p>This class is for handling two dimentional tables of region. The class
+inherits pandas.DataFrame class, so you can use this class like
+pandas.DataFrame. The class also has additional methods to edit,
+visualize, and handle ds9.</p>
+<dl class="method">
+<dt id="smili.imdata.imregion.IMRegion.add_box">
+<code class="descname">add_box</code><span class="sig-paren">(</span><em>xc=0</em>, <em>yc=0</em>, <em>width=0.05</em>, <em>height=None</em>, <em>angle=0</em>, <em>angunit='mas'</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.IMRegion.add_box" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add box window.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>xc</strong> (<em>float</em><em>, </em><em>default=0</em>) – Center position of window relative to the referrence position in x-axis.</li>
+<li><strong>yc</strong> (<em>float</em><em>, </em><em>default=0</em>) – Center position of window relative to referrence position in y-axis.</li>
+<li><strong>width</strong> (<em>float</em><em>, </em><em>default=0.05</em>) – Width of the box.</li>
+<li><strong>height</strong> (<em>float</em><em>, </em><em>default=None</em>) – Height of the box.</li>
+<li><strong>angle</strong> (<em>float</em><em>, </em><em>default=0</em>) – Position angle of the box (counter clockwise).</li>
+<li><strong>angunit</strong> (<em>str</em><em>, </em><em>default=mas</em>) – Anguler unit of xc, yc, width, height.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">IMRegion.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imregion.IMRegion.add_circle">
+<code class="descname">add_circle</code><span class="sig-paren">(</span><em>xc=0</em>, <em>yc=0</em>, <em>radius=0.05</em>, <em>angunit='mas'</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.IMRegion.add_circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add circle window.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>xc</strong> (<em>float</em><em>, </em><em>default=0</em>) – Center position of window relative to the referrence position in x-axis.</li>
+<li><strong>yc</strong> (<em>float</em><em>, </em><em>default=0</em>) – Center position of window relative to referrence position in y-axis.</li>
+<li><strong>radius</strong> (<em>float</em><em>, </em><em>default=0.05</em>) – radius of the circle.</li>
+<li><strong>angunit</strong> (<em>str</em><em>, </em><em>default=mas</em>) – Anguler unit of xc, yc, radius.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">IMRegion.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imregion.IMRegion.add_ellipse">
+<code class="descname">add_ellipse</code><span class="sig-paren">(</span><em>xc=0</em>, <em>yc=0</em>, <em>maja=0.05</em>, <em>mina=0.02</em>, <em>angle=0</em>, <em>angunit='mas'</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.IMRegion.add_ellipse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add ellipse window.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>xc</strong> (<em>float</em><em>, </em><em>default=0</em>) – Center position of window relative to the referrence position in x-axis.</li>
+<li><strong>yc</strong> (<em>float</em><em>, </em><em>default=0</em>) – Center position of window relative to referrence position in y-axis.</li>
+<li><strong>maja</strong> (<em>float</em><em>, </em><em>default=0.05</em>) – Length of major axis.</li>
+<li><strong>mina</strong> (<em>float</em><em>, </em><em>default=0.02</em>) – Length of minor axis.</li>
+<li><strong>angle</strong> (<em>float</em><em>, </em><em>default=0</em>) – Position angle of the ellipse (counter clockwise).</li>
+<li><strong>angunit</strong> (<em>str</em><em>, </em><em>default=mas</em>) – Anguler unit of xc, yc, maja, mina.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">IMRegion.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imregion.IMRegion.imagewin">
+<code class="descname">imagewin</code><span class="sig-paren">(</span><em>image</em>, <em>istokes=0</em>, <em>ifreq=0</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.IMRegion.imagewin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a mask image. Each pixel of the output image is stored as a
+True/False.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>image</strong> (<a class="reference internal" href="#smili.imdata.imdata.IMFITS" title="smili.imdata.imdata.IMFITS"><em>IMFITS</em></a>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">numpy.array.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="smili.imdata.imregion.IMRegion.imreg_columns">
+<code class="descname">imreg_columns</code><em class="property"> = ['shape', 'xc', 'yc', 'width', 'height', 'radius', 'maja', 'mina', 'angle', 'angunit']</em><a class="headerlink" href="#smili.imdata.imregion.IMRegion.imreg_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="smili.imdata.imregion.IMRegion.imreg_types">
+<code class="descname">imreg_types</code><em class="property"> = [None, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, &lt;type 'numpy.float64'&gt;, None]</em><a class="headerlink" href="#smili.imdata.imregion.IMRegion.imreg_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imregion.IMRegion.initialize">
+<code class="descname">initialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.IMRegion.initialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize region table (empty table with column names).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imregion.IMRegion.load_ds9reg">
+<code class="descname">load_ds9reg</code><span class="sig-paren">(</span><em>regfile</em>, <em>image</em>, <em>angunit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.IMRegion.load_ds9reg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load DS9 region file to IMRegion.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>regfile</strong> (<em>str</em>) – Region file name to read.</li>
+<li><strong>image</strong> (<a class="reference internal" href="#smili.imdata.imdata.IMFITS" title="smili.imdata.imdata.IMFITS"><em>IMFITS</em></a>) – </li>
+<li><strong>angunit</strong> (<em>str</em><em>, </em><em>default = None</em>) – The angular unit of region. If None, it will take from
+the default angunit of the input image</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">IMRegion.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imregion.IMRegion.load_pyds9">
+<code class="descname">load_pyds9</code><span class="sig-paren">(</span><em>image</em>, <em>angunit=None</em>, <em>wait=10</em>, <em>overwrite=True</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.IMRegion.load_pyds9" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load DS9 region to IMRegion.
+This method uses pyds9.DS9().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>image</strong> (<a class="reference internal" href="#smili.imdata.imdata.IMFITS" title="smili.imdata.imdata.IMFITS"><em>IMFITS</em></a>) – </li>
+<li><strong>angunit</strong> (<em>str</em><em>, </em><em>default = None</em>) – The angular unit of region. If None, it will take from
+the default angunit of the input image</li>
+<li><strong>wait</strong> (<em>float</em><em>, </em><em>default = 10</em>) – seconds to wait for ds9 to start.</li>
+<li><strong>overwrite</strong> (<em>boolean</em><em>, </em><em>default = True</em>) – If overwrite=True, previous region is removed.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">IMRegion.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imregion.IMRegion.maskimage">
+<code class="descname">maskimage</code><span class="sig-paren">(</span><em>image</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.IMRegion.maskimage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a mask image. Each pixel of the output image is stored as a
+single bit—i.e., a 0 or 1.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>image</strong> (<a class="reference internal" href="#smili.imdata.imdata.IMFITS" title="smili.imdata.imdata.IMFITS"><em>IMFITS</em></a>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">IMFITS object.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imregion.IMRegion.open_pyds9">
+<code class="descname">open_pyds9</code><span class="sig-paren">(</span><em>image</em>, <em>wait=10</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.IMRegion.open_pyds9" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open pyds9 and plot the region.
+This method uses pyds9.DS9().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>image</strong> (<a class="reference internal" href="#smili.imdata.imdata.IMFITS" title="smili.imdata.imdata.IMFITS"><em>IMFITS</em></a>) – </li>
+<li><strong>wait</strong> (<em>float</em><em>, </em><em>default = 10</em>) – seconds to wait for ds9 to start.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imregion.IMRegion.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>angunit=None</em>, <em>**pltargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.IMRegion.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot region.
+This method uses matplotlib.pyplot.plot().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>angunit</strong> (<em>str</em><em>, </em><em>default = None</em>) – The angular unit of plot. If none, it will use the most frequent
+angular unit in the region list</li>
+<li><strong>**plotargs</strong> – You can set parameters of matplotlib.pyplot.plot.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imregion.IMRegion.read_region">
+<code class="descname">read_region</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.IMRegion.read_region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a csv file as IMRegion using pd.DataFrame.read_csv().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<em>string</em><em> or </em><em>filehandle</em>) – output filename</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imregion.IMRegion.remove_duplicates">
+<code class="descname">remove_duplicates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.IMRegion.remove_duplicates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove duplicated regions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">IMRegion.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imregion.IMRegion.shift">
+<code class="descname">shift</code><span class="sig-paren">(</span><em>dx=0</em>, <em>dy=0</em>, <em>angunit='mas'</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.IMRegion.shift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shift region.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dx</strong> (<em>float</em><em>, </em><em>default=0</em>) – Shift in x-axis.</li>
+<li><strong>dy</strong> (<em>float</em><em>, </em><em>default=0</em>) – Shift in y-axis.</li>
+<li><strong>angunit</strong> (<em>str</em><em>, </em><em>default=mas</em>) – Anguler unit of dx and dy.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imregion.IMRegion.to_csv">
+<code class="descname">to_csv</code><span class="sig-paren">(</span><em>filename</em>, <em>index=False</em>, <em>index_label=False</em>, <em>**args</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.IMRegion.to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output table into csv files using pd.DataFrame.to_csv().
+Default parameter will be</p>
+<blockquote>
+<div>index=False
+index_label=False.</div></blockquote>
+<p>see DocStrings for pd.DataFrame.to_csv().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filename</strong> (<em>string</em><em> or </em><em>filehandle</em>) – output filename</li>
+<li><strong>**args</strong> – other arguments of pd.DataFrame.to_csv()</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imregion.IMRegion.to_ds9reg">
+<code class="descname">to_ds9reg</code><span class="sig-paren">(</span><em>regfile</em>, <em>image</em>, <em>overwrite=True</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.IMRegion.to_ds9reg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write DS9 region file from IMRegion.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>regfile</strong> (<em>str</em>) – Region file name to write.</li>
+<li><strong>image</strong> (<a class="reference internal" href="#smili.imdata.imdata.IMFITS" title="smili.imdata.imdata.IMFITS"><em>IMFITS</em></a>) – </li>
+<li><strong>overwrite</strong> (<em>boolean</em><em>, </em><em>default = True</em>) – if overwrite=True and the region file already exists,
+the file will be replaced.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imregion.IMRegion.winmod">
+<code class="descname">winmod</code><span class="sig-paren">(</span><em>image</em>, <em>save_totalflux=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.IMRegion.winmod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trim the image with image regions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>image</strong> (<a class="reference internal" href="#smili.imdata.imdata.IMFITS" title="smili.imdata.imdata.IMFITS"><em>IMFITS</em></a>) – </li>
+<li><strong>save_totalflux</strong> (<em>boolean</em><em>, </em><em>default = False</em>) – If save_totalflux=True, the trimmed have the same total flux
+as before editting image.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">IMFITS object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="smili.imdata.imregion.IMRegion.zoom">
+<code class="descname">zoom</code><span class="sig-paren">(</span><em>fx=1.0</em>, <em>fy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.IMRegion.zoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zoom region.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fx</strong> (<em>float</em><em>, </em><em>default=1.0</em>) – Zoom fraction of width, radius, and minor axis for box,
+circle, and ellipse windows, respectively.</li>
+<li><strong>fy</strong> (<em>float</em><em>, </em><em>default=None</em>) – Zoom fraction of width and major axis for box and ellipse
+windows, respectively.</li>
+<li><strong>angunit</strong> (<em>str</em><em>, </em><em>default=mas</em>) – Anguler unit of dx and dy.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="smili.imdata.imregion.ImRegSeries">
+<em class="property">class </em><code class="descclassname">smili.imdata.imregion.</code><code class="descname">ImRegSeries</code><span class="sig-paren">(</span><em>data=None</em>, <em>index=None</em>, <em>dtype=None</em>, <em>name=None</em>, <em>copy=False</em>, <em>fastpath=False</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.ImRegSeries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.core.series.Series</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="smili.imdata.imregion.ds9reg_to_reg">
+<code class="descclassname">smili.imdata.imregion.</code><code class="descname">ds9reg_to_reg</code><span class="sig-paren">(</span><em>ds9reg</em>, <em>image</em>, <em>angunit='mas'</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.ds9reg_to_reg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="smili.imdata.imregion.plot_box">
+<code class="descclassname">smili.imdata.imregion.</code><code class="descname">plot_box</code><span class="sig-paren">(</span><em>row</em>, <em>angunit</em>, <em>**pltargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.plot_box" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="smili.imdata.imregion.plot_circle">
+<code class="descclassname">smili.imdata.imregion.</code><code class="descname">plot_circle</code><span class="sig-paren">(</span><em>row</em>, <em>angunit='mas'</em>, <em>**pltargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.plot_circle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="smili.imdata.imregion.plot_ellipse">
+<code class="descclassname">smili.imdata.imregion.</code><code class="descname">plot_ellipse</code><span class="sig-paren">(</span><em>row</em>, <em>angunit='mas'</em>, <em>**pltargs</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.plot_ellipse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="smili.imdata.imregion.read_imregion">
+<code class="descclassname">smili.imdata.imregion.</code><code class="descname">read_imregion</code><span class="sig-paren">(</span><em>filename</em>, <em>**args</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.read_imregion" title="Permalink to this definition">¶</a></dt>
+<dd><p>This fuction loads imdata.IMRegion from an input csv file using pd.read_csv().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> – str, pathlib.Path, py._path.local.LocalPath or any object with a read()
+method (such as a file handle or StringIO)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">imdata.IMRegion object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="smili.imdata.imregion.reg_to_ds9reg">
+<code class="descclassname">smili.imdata.imregion.</code><code class="descname">reg_to_ds9reg</code><span class="sig-paren">(</span><em>row</em>, <em>image</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.reg_to_ds9reg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="smili.imdata.imregion.region_box">
+<code class="descclassname">smili.imdata.imregion.</code><code class="descname">region_box</code><span class="sig-paren">(</span><em>X</em>, <em>Y</em>, <em>x0</em>, <em>y0</em>, <em>width</em>, <em>height</em>, <em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.region_box" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="smili.imdata.imregion.region_circle">
+<code class="descclassname">smili.imdata.imregion.</code><code class="descname">region_circle</code><span class="sig-paren">(</span><em>X</em>, <em>Y</em>, <em>x0</em>, <em>y0</em>, <em>radius</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.region_circle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="smili.imdata.imregion.region_ellipse">
+<code class="descclassname">smili.imdata.imregion.</code><code class="descname">region_ellipse</code><span class="sig-paren">(</span><em>X</em>, <em>Y</em>, <em>x0</em>, <em>y0</em>, <em>radius1</em>, <em>radius2</em>, <em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#smili.imdata.imregion.region_ellipse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-smili.imdata">
+<span id="module-contents"></span><h2>7.1.1.4. Module contents<a class="headerlink" href="#module-smili.imdata" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="smili.uvdata.html" class="btn btn-neutral float-right" title="7.1.2. smili.uvdata package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="smili.html" class="btn btn-neutral float-left" title="7. smili package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-, SMILI Developper Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
