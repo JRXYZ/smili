@@ -1,21 +1,9 @@
 Tutorial and Example Scripts
 ======
 
-Handling Images
-------------------
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
   :numbered:
 
+  image/imfits
   imregion/imregion
-
-Handlint UV data sets
---------------------
-
-Imaging
--------
-.. toctree::
-  :maxdepth: 2
-  :numbered:
-
-  maps/maps

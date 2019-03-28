@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.1.1. Handle Regions in the image &mdash; SMILI 0.0.0 documentation</title>
+  <title>2.2. Handle Regions in the image &mdash; SMILI 0.0.0 documentation</title>
   
 
   
@@ -45,8 +45,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.3.1. Creating Reidual, CLEAN, Synthesized Beam Maps" href="../maps/maps.html" />
-    <link rel="prev" title="2. Tutorial and Example Scripts" href="../index.html" /> 
+    <link rel="next" title="3. License" href="../../_static/license.html" />
+    <link rel="prev" title="2.1. Handle images" href="../image/imfits.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -97,17 +97,16 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../_static/install.html">1. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">2. Tutorial and Example Scripts</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#handling-images">2.1. Handling Images</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.1.1. Handle Regions in the image</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Interactively-set-imaging-regions-using-SAO-DS9">2.1.1.1. Interactively set imaging regions using SAO DS9</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Manually-set/edit-imaging-regions">2.1.1.2. Manually set/edit imaging regions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Masking-image-with-imregion">2.1.1.3. Masking image with imregion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/imfits.html">2.1. Handle images</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.2. Handle Regions in the image</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Interactively-set-imaging-regions-using-SAO-DS9">2.2.1. Interactively set imaging regions using SAO DS9</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Manually-set/edit-imaging-regions">2.2.2. Manually set/edit imaging regions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Masking-image-with-imregion">2.2.3. Masking image with imregion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Acknowledgement">2.2.3.1. Acknowledgement</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#handlint-uv-data-sets">2.2. Handlint UV data sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#imaging">2.3. Imaging</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../_static/license.html">3. License</a></li>
@@ -162,7 +161,7 @@
         
           <li><a href="../index.html">2. Tutorial and Example Scripts</a> &raquo;</li>
         
-      <li>2.1.1. Handle Regions in the image</li>
+      <li>2.2. Handle Regions in the image</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -404,11 +403,11 @@ div.rendered_html tbody tr:hover {
 }
 </style>
 <div class="section" id="Handle-Regions-in-the-image">
-<h1>2.1.1. Handle Regions in the image<a class="headerlink" href="#Handle-Regions-in-the-image" title="Permalink to this headline">¶</a></h1>
+<h1>2.2. Handle Regions in the image<a class="headerlink" href="#Handle-Regions-in-the-image" title="Permalink to this headline">¶</a></h1>
 <p>In interferometric imaging or any image processing, often we need to set regions where the intensity will be solved or to mask images. SMILI provide a class for handling geometric description of such regions.</p>
 <p><a class="reference internal" href="#"><span class="doc">This notebook</span></a> provides an example usage how to read, set and save image regions.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -417,6 +416,36 @@ div.rendered_html tbody tr:hover {
 <span class="kn">from</span> <span class="nn">smili</span> <span class="kn">import</span> <span class="n">imdata</span><span class="p">,</span> <span class="n">util</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+An instance of ds9 was found to be running before we could
+start the &#39;xpans&#39; name server. You will need to perform a
+bit of manual intervention in order to connect this
+existing ds9 to Python.
+
+For ds9 version 5.7 and beyond, simply register the
+existing ds9 with the xpans name server by selecting the
+ds9 File-&gt;XPA-&gt;Connect menu option. Your ds9 will now be
+fully accessible to pyds9 (e.g., it appear in the list
+returned by the ds9_targets() routine).
+
+For ds9 versions prior to 5.7, you cannot (easily) register
+with xpans, but you can view ds9&#39;s File-&gt;XPA Information
+menu option and pass the value associated with XPA_METHOD
+directly to the Python DS9() constructor, e.g.:
+
+    d = DS9(&#39;a000101:12345&#39;)
+
+The good news is that new instances of ds9 will be
+registered with xpans, and will be known to ds9_targets()
+and the DS9() constructor.
+
+</pre></div></div>
 </div>
 <p>Here, we use <a class="reference external" href="BU_3C273_sampleimage.fits">an FITS image</a> reconstructed with SMILI from a 43 GHz 3C 273 data set of <a class="reference external" href="https://www.bu.edu/blazars/VLBAproject.html">the Boston University Blazar Group</a>.</p>
 <div class="nbinput docutils container">
@@ -451,10 +480,10 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="section" id="Interactively-set-imaging-regions-using-SAO-DS9">
-<h2>2.1.1.1. Interactively set imaging regions using SAO DS9<a class="headerlink" href="#Interactively-set-imaging-regions-using-SAO-DS9" title="Permalink to this headline">¶</a></h2>
+<h2>2.2.1. Interactively set imaging regions using SAO DS9<a class="headerlink" href="#Interactively-set-imaging-regions-using-SAO-DS9" title="Permalink to this headline">¶</a></h2>
 <p>SMILI can intractively set regions with <a class="reference external" href="http://ds9.si.edu/site/Home.html">SAO DS9</a> using <a class="reference external" href="http://hea-www.harvard.edu/RD/pyds9/">pyds9</a>. To load your image to DS9, you can use <em>open_pyds9</em> method of your image object.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -465,7 +494,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>Or alternatively, you can create a <em>imdata.IMRegion</em> object and use <em>open_pyds9</em> method.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -483,7 +512,7 @@ div.rendered_html tbody tr:hover {
 <p><img alt="image1" src="../../_images/ds9_sample_2.png" /> <img alt="image2" src="../../_images/ds9_sample_3.png" /></p>
 <p>You can pull regions from DS9 with load_pyds9 methods in imdata.IMFITS or imdata.IMRegion objects.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -495,7 +524,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>The imdata.IMRegion class is inheriting <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html">pandas.DataFrame</a>. You can use all functions available for pandas.DataFrame.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -504,7 +533,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -636,7 +665,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>In addition, it has additional functions. For instance, you can plot your regions with <em>plot</em> method.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -657,7 +686,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>You can save this region file to a <a class="reference external" href="imregion.csv">csv file</a> with <em>to_csv</em> method, and load it again with <em>imdata.read_imregion</em> function</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -683,10 +712,10 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="section" id="Manually-set/edit-imaging-regions">
-<h2>2.1.1.2. Manually set/edit imaging regions<a class="headerlink" href="#Manually-set/edit-imaging-regions" title="Permalink to this headline">¶</a></h2>
+<h2>2.2.2. Manually set/edit imaging regions<a class="headerlink" href="#Manually-set/edit-imaging-regions" title="Permalink to this headline">¶</a></h2>
 <p>You can also add regions from SMILI. This would be useful to pipeline imaging scripts.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -708,7 +737,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -730,7 +759,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -753,7 +782,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>There are some other useful functions to edit regions</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -775,8 +804,8 @@ div.rendered_html tbody tr:hover {
 <img alt="../../_images/_examples_imregion_imregion_26_0.png" src="../../_images/_examples_imregion_imregion_26_0.png" />
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -791,10 +820,17 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_imregion_imregion_27_0.png" src="../../_images/_examples_imregion_imregion_27_0.png" />
+</div>
+</div>
 <p>You can also add regions.</p>
 <p>Create region1 and region2.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -820,10 +856,10 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="section" id="Masking-image-with-imregion">
-<h2>2.1.1.3. Masking image with imregion<a class="headerlink" href="#Masking-image-with-imregion" title="Permalink to this headline">¶</a></h2>
+<h2>2.2.3. Masking image with imregion<a class="headerlink" href="#Masking-image-with-imregion" title="Permalink to this headline">¶</a></h2>
 <p>You can mask images with winmod methods in imdata.IMFITS/imdata.IMRegion objects.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -863,7 +899,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>You can also creat a “mask image”, which can be loaded to imaging functions as well</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -895,6 +931,19 @@ div.rendered_html tbody tr:hover {
 <img alt="../../_images/_examples_imregion_imregion_35_0.png" src="../../_images/_examples_imregion_imregion_35_0.png" />
 </div>
 </div>
+<div class="section" id="Acknowledgement">
+<h3>2.2.3.1. Acknowledgement<a class="headerlink" href="#Acknowledgement" title="Permalink to this headline">¶</a></h3>
+<p>This notebook makes use of 43 GHz VLBA data from the VLBA-BU Blazar Monitoring Program (VLBA-BU-BLAZAR; <a class="reference external" href="http://www.bu.edu/blazars/VLBAproject.html">http://www.bu.edu/blazars/VLBAproject.html</a>), funded by NASA through the Fermi Guest Investigator Program. The VLBA is an instrument of the National Radio Astronomy Observatory. The National Radio Astronomy Observatory is a facility of the National Science Foundation operated by Associated Universities, Inc.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -906,10 +955,10 @@ div.rendered_html tbody tr:hover {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../maps/maps.html" class="btn btn-neutral float-right" title="2.3.1. Creating Reidual, CLEAN, Synthesized Beam Maps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../_static/license.html" class="btn btn-neutral float-right" title="3. License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral float-left" title="2. Tutorial and Example Scripts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../image/imfits.html" class="btn btn-neutral float-left" title="2.1. Handle images" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

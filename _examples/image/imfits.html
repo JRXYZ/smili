@@ -1,0 +1,1221 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.1. Handle images &mdash; SMILI 0.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'0.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.2. Handle Regions in the image" href="../imregion/imregion.html" />
+    <link rel="prev" title="2. Tutorial and Example Scripts" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> SMILI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../_static/install.html">1. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">2. Tutorial and Example Scripts</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.1. Handle images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Creating-a-blank-image">2.1.1. Creating a blank image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Loading-images-from-FITS-files">2.1.2. Loading images from FITS files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Plot-images">2.1.3. Plot images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Extracting-information-of-images">2.1.4. Extracting information of images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Editing-Images">2.1.5. Editing Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Save-images-to-files">2.1.6. Save images to files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Acknowledgement">2.1.6.1. Acknowledgement</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../imregion/imregion.html">2.2. Handle Regions in the image</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../_static/license.html">3. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../_static/references.html">4. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../_static/link.html">5. Developer Team and Related Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../_static/acknowledgement.html">6. Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../_autodoc/smili.html">7. smili package</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SMILI</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">2. Tutorial and Example Scripts</a> &raquo;</li>
+        
+      <li>2.1. Handle images</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/_examples/image/imfits.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 5ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Handle-images">
+<h1>2.1. Handle images<a class="headerlink" href="#Handle-images" title="Permalink to this headline">¶</a></h1>
+<p>The most basic class for the image in SMILI is <strong>imdata.IMFITS</strong> object. Here, we show its basic usage.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[72]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">from</span> <span class="nn">smili</span> <span class="kn">import</span> <span class="n">imdata</span><span class="p">,</span> <span class="n">util</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="kn">as</span> <span class="nn">cm</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="kn">as</span> <span class="nn">mpl</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Creating-a-blank-image">
+<h2>2.1.1. Creating a blank image<a class="headerlink" href="#Creating-a-blank-image" title="Permalink to this headline">¶</a></h2>
+<p>Let’s start from a blank image. You can make a blank image.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Create a blank image</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">IMFITS</span><span class="p">(</span>
+    <span class="c1"># pixel size in the specified angular unit (you can specify dy if you want a non-square image pixel)</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="c1"># number of pixels (you can also specify ny if you want a non-square field of view)</span>
+    <span class="n">nx</span> <span class="o">=</span> <span class="mi">256</span><span class="p">,</span>
+    <span class="c1"># angular unit (e.g., rad, deg, amin/arcmin, asec/arcsec, mas, uas)</span>
+    <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;uas&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Plot image (We will explain this function later)</span>
+<span class="n">image</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c25935a10&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c25983090&gt;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_image_imfits_5_1.png" src="../../_images/_examples_image_imfits_5_1.png" />
+</div>
+</div>
+<p>SMILI also can edit the location of the origin by nxref and nyref in the unit of the pixel number. Note that nxref=1, nyref=1 means the center will be set to the center of the leftmost and bottom pixel.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Create a blank image</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">IMFITS</span><span class="p">(</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">nx</span> <span class="o">=</span> <span class="mi">256</span><span class="p">,</span>
+    <span class="n">nxref</span> <span class="o">=</span> <span class="mi">64</span><span class="p">,</span>
+    <span class="n">nyref</span> <span class="o">=</span> <span class="mi">64</span><span class="p">,</span>
+    <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;uas&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Plot image</span>
+<span class="n">image</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c25b16f90&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c25c68610&gt;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_image_imfits_7_1.png" src="../../_images/_examples_image_imfits_7_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="Loading-images-from-FITS-files">
+<h2>2.1.2. Loading images from FITS files<a class="headerlink" href="#Loading-images-from-FITS-files" title="Permalink to this headline">¶</a></h2>
+<p>Here, we use <a class="reference external" href="BU_3C273_sampleimage.fits">an FITS image</a> reconstructed with SMILI from a 43 GHz 3C 273 data set of <a class="reference external" href="https://www.bu.edu/blazars/VLBAproject.html">the Boston University Blazar Group</a>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">image</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">IMFITS</span><span class="p">(</span>
+    <span class="s2">&quot;./BU_3C273_sampleimage.fits&quot;</span><span class="p">,</span>  <span class="c1"># filename</span>
+    <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span> <span class="c1"># default angular unit that you want to use</span>
+<span class="p">)</span>
+
+<span class="c1"># Plot image</span>
+<span class="n">image</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c25d0c610&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c25e1abd0&gt;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_image_imfits_9_1.png" src="../../_images/_examples_image_imfits_9_1.png" />
+</div>
+</div>
+<p>The popular FITS format, for instance, images from DIFMAP/AIPS can be loaded without a problem. However, there are some options to load images with non-popular FITS formats.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Default</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">IMFITS</span><span class="p">(</span>
+    <span class="s2">&quot;example.fits&quot;</span><span class="p">,</span>
+    <span class="n">imfitstype</span><span class="o">=</span><span class="s2">&quot;standard&quot;</span><span class="p">,</span> <span class="c1"># this is the deafult option for SMILI FITS, AIPS/DIFMAP FITS files.</span>
+    <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># FITS files generated by eht-im</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">IMFITS</span><span class="p">(</span>
+    <span class="s2">&quot;example.fits&quot;</span><span class="p">,</span>
+    <span class="n">imfitstype</span><span class="o">=</span><span class="s2">&quot;ehtim&quot;</span><span class="p">,</span> <span class="c1"># this is the option if you want to load fits files generated by eht-imaging library</span>
+    <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># AIPS CC Table</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">IMFITS</span><span class="p">(</span>
+    <span class="s2">&quot;example.fits&quot;</span><span class="p">,</span>
+    <span class="n">imfitstype</span><span class="o">=</span><span class="s2">&quot;aipscc&quot;</span><span class="p">,</span> <span class="c1"># this is the option if you want to load AIPS CC tables instead of the image data</span>
+    <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Plot-images">
+<h2>2.1.3. Plot images<a class="headerlink" href="#Plot-images" title="Permalink to this headline">¶</a></h2>
+<p>SMILI’s default plotting function is imdata.IMFITS.imshow. This function is inheriting <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.imshow.html">pyplot.imshow</a> so you can use all of arguments in pyplot.imshow to customize your plots.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># linear scale</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;linear, afmhot&quot;</span><span class="p">)</span>
+<span class="n">image</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span>
+    <span class="n">scale</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span>
+    <span class="n">colorbar</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+
+<span class="c1"># Gamma scale</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;gamma scale, jet&quot;</span><span class="p">)</span>
+<span class="n">image</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span>
+    <span class="n">scale</span><span class="o">=</span><span class="s2">&quot;gamma&quot;</span><span class="p">,</span>
+    <span class="n">gamma</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">,</span>
+    <span class="n">colorbar</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+
+<span class="c1"># Log Scale</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;log scale, inferno_r, mjy&quot;</span><span class="p">)</span>
+<span class="n">image</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;log&quot;</span><span class="p">,</span> <span class="n">dyrange</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mjy&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">inferno_r</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c2928d850&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c292c3bd0&gt;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_image_imfits_13_1.png" src="../../_images/_examples_image_imfits_13_1.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_image_imfits_13_2.png" src="../../_images/_examples_image_imfits_13_2.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_image_imfits_13_3.png" src="../../_images/_examples_image_imfits_13_3.png" />
+</div>
+</div>
+<p>If you set the beam information, then you can also compute Jy/beam</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Set beam to image.</span>
+<span class="n">image</span><span class="o">.</span><span class="n">set_beam</span><span class="p">(</span><span class="n">majsize</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span><span class="n">minsize</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span><span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot convolved image with beam.</span>
+<span class="n">image</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;jy&quot;</span><span class="p">,</span><span class="n">saunit</span><span class="o">=</span><span class="s2">&quot;beam&quot;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s2">&quot;log&quot;</span><span class="p">,</span> <span class="n">dyrange</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c28c90e90&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c28f64450&gt;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_image_imfits_15_1.png" src="../../_images/_examples_image_imfits_15_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="Extracting-information-of-images">
+<h2>2.1.4. Extracting information of images<a class="headerlink" href="#Extracting-information-of-images" title="Permalink to this headline">¶</a></h2>
+<p>You can get low level infromation of IMFITS object here.</p>
+<ul class="simple">
+<li>imdata.IMFITS.header: Header information</li>
+<li>imdata.IMFITS.data: 4 dimensional array of images.</li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Header information (dictionary)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Header Information&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">header</span><span class="p">)</span>
+
+<span class="c1"># Example: extract header parameters.</span>
+<span class="n">nx</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;nx&quot;</span><span class="p">]</span>
+<span class="n">ny</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;ny&quot;</span><span class="p">]</span>
+<span class="n">nxref</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;nxref&quot;</span><span class="p">]</span>
+<span class="n">nyref</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;nyref&quot;</span><span class="p">]</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;dx&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">util</span><span class="o">.</span><span class="n">angconv</span><span class="p">(</span><span class="s2">&quot;deg&quot;</span><span class="p">,</span> <span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+<span class="n">dy</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;dy&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">util</span><span class="o">.</span><span class="n">angconv</span><span class="p">(</span><span class="s2">&quot;deg&quot;</span><span class="p">,</span> <span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Example information read from the header&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;  Number of pixels: (nx, ny) = (</span><span class="si">%d</span><span class="s2">, </span><span class="si">%d</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;  Reference pixel:  (nxref, nyref) = (</span><span class="si">%d</span><span class="s2">, </span><span class="si">%d</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">nxref</span><span class="p">,</span><span class="n">nyref</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;  Pixel size:       (dx, dy) = (</span><span class="si">%1.2f</span><span class="s2">, </span><span class="si">%1.2f</span><span class="s2">) [mas]&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">dx</span><span class="p">,</span><span class="n">dy</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Header Information
+{&#39;telescope&#39;: &#39;VLBA&#39;, &#39;observer&#39;: &#39;BM413X&#39;, &#39;nyref&#39;: 216.0, &#39;bmaj&#39;: 8.333333333333333e-08, &#39;instrument&#39;: &#39;VLBA&#39;, &#39;nsref&#39;: 1, &#39;nf&#39;: 1, &#39;nx&#39;: 256, &#39;ny&#39;: 256, &#39;bmin&#39;: 8.333333333333333e-08, &#39;nfref&#39;: 1.0, &#39;ns&#39;: 1, &#39;df&#39;: 64000000.0, &#39;object&#39;: &#39;3C273&#39;, &#39;dateobs&#39;: None, &#39;nxref&#39;: 40.0, &#39;dx&#39;: -5.5555555555555e-09, &#39;dy&#39;: 5.55555555555555e-09, &#39;ds&#39;: 1, &#39;bpa&#39;: 0.0, &#39;f&#39;: 43007500000.0, &#39;s&#39;: 1, &#39;y&#39;: 2.05238841111, &#39;x&#39;: 187.277915537}
+Example information read from the header
+  Number of pixels: (nx, ny) = (256, 256)
+  Reference pixel:  (nxref, nyref) = (40, 216)
+  Pixel size:       (dx, dy) = (-0.02, 0.02) [mas]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># low level image array information (in Jy/pixel)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Shape of the image array:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Array:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Shape of the image array:
+(1, 1, 256, 256)
+
+Array:
+[[[[0.00000000e+00 0.00000000e+00 0.00000000e+00 ... 9.21214561e-06
+    1.46166836e-05 2.08356582e-04]
+   [0.00000000e+00 0.00000000e+00 0.00000000e+00 ... 5.90111877e-06
+    7.22100152e-06 2.47679859e-05]
+   [0.00000000e+00 0.00000000e+00 0.00000000e+00 ... 3.56583850e-06
+    4.00781271e-06 8.47375404e-06]
+   ...
+   [0.00000000e+00 0.00000000e+00 0.00000000e+00 ... 0.00000000e+00
+    0.00000000e+00 0.00000000e+00]
+   [0.00000000e+00 0.00000000e+00 0.00000000e+00 ... 0.00000000e+00
+    0.00000000e+00 0.00000000e+00]
+   [0.00000000e+00 0.00000000e+00 0.00000000e+00 ... 0.00000000e+00
+    0.00000000e+00 0.00000000e+00]]]]
+</pre></div></div>
+</div>
+<p>There are many additonal functions to get some information about images.</p>
+<ul class="simple">
+<li>Total Flux and Peak Intensity</li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">totalflux</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">totalflux</span><span class="p">()</span>
+<span class="n">peak</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">peak</span><span class="p">(</span><span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;Jy&quot;</span><span class="p">,</span> <span class="n">saunit</span><span class="o">=</span><span class="s2">&quot;pixel&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;total flux = </span><span class="si">%1.2f</span><span class="s2"> Jy&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">totalflux</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;peak flux = </span><span class="si">%1.2f</span><span class="s2"> Jy/pixel&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">peak</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+total flux = 10.23 Jy
+peak flux = 0.04 Jy/pixel
+</pre></div></div>
+</div>
+<ul class="simple">
+<li>Grid coordinates</li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[96]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Image extent: compatible with extent argument of pyplot.imshow</span>
+<span class="n">imextent</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">get_imextent</span><span class="p">(</span><span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Image Extent&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">imextent</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="c1"># 1D GRID</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">get_xygrid</span><span class="p">(</span><span class="n">twodim</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;1D coodirnate grids&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="c1"># 2D GRID</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">get_xygrid</span><span class="p">(</span><span class="n">twodim</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;2D coodirnate grids&quot;</span><span class="p">)</span>
+
+<span class="n">util</span><span class="o">.</span><span class="n">matplotlibrc</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;x-axis&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">imextent</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Relative RA (mas)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Relative Dec (mas)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;x coordinate (mas)&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;y-axis&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">imextent</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Relative RA (mas)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Relative Dec (mas)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;y coordinate (mas)&quot;</span><span class="p">)</span>
+
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcdefaults</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Image Extent
+[ 0.79 -4.33 -4.31  0.81]
+
+1D coodirnate grids
+[ 0.78  0.76  0.74  0.72  0.7   0.68  0.66  0.64  0.62  0.6   0.58  0.56
+  0.54  0.52  0.5   0.48  0.46  0.44  0.42  0.4   0.38  0.36  0.34  0.32
+  0.3   0.28  0.26  0.24  0.22  0.2   0.18  0.16  0.14  0.12  0.1   0.08
+  0.06  0.04  0.02 -0.   -0.02 -0.04 -0.06 -0.08 -0.1  -0.12 -0.14 -0.16
+ -0.18 -0.2  -0.22 -0.24 -0.26 -0.28 -0.3  -0.32 -0.34 -0.36 -0.38 -0.4
+ -0.42 -0.44 -0.46 -0.48 -0.5  -0.52 -0.54 -0.56 -0.58 -0.6  -0.62 -0.64
+ -0.66 -0.68 -0.7  -0.72 -0.74 -0.76 -0.78 -0.8  -0.82 -0.84 -0.86 -0.88
+ -0.9  -0.92 -0.94 -0.96 -0.98 -1.   -1.02 -1.04 -1.06 -1.08 -1.1  -1.12
+ -1.14 -1.16 -1.18 -1.2  -1.22 -1.24 -1.26 -1.28 -1.3  -1.32 -1.34 -1.36
+ -1.38 -1.4  -1.42 -1.44 -1.46 -1.48 -1.5  -1.52 -1.54 -1.56 -1.58 -1.6
+ -1.62 -1.64 -1.66 -1.68 -1.7  -1.72 -1.74 -1.76 -1.78 -1.8  -1.82 -1.84
+ -1.86 -1.88 -1.9  -1.92 -1.94 -1.96 -1.98 -2.   -2.02 -2.04 -2.06 -2.08
+ -2.1  -2.12 -2.14 -2.16 -2.18 -2.2  -2.22 -2.24 -2.26 -2.28 -2.3  -2.32
+ -2.34 -2.36 -2.38 -2.4  -2.42 -2.44 -2.46 -2.48 -2.5  -2.52 -2.54 -2.56
+ -2.58 -2.6  -2.62 -2.64 -2.66 -2.68 -2.7  -2.72 -2.74 -2.76 -2.78 -2.8
+ -2.82 -2.84 -2.86 -2.88 -2.9  -2.92 -2.94 -2.96 -2.98 -3.   -3.02 -3.04
+ -3.06 -3.08 -3.1  -3.12 -3.14 -3.16 -3.18 -3.2  -3.22 -3.24 -3.26 -3.28
+ -3.3  -3.32 -3.34 -3.36 -3.38 -3.4  -3.42 -3.44 -3.46 -3.48 -3.5  -3.52
+ -3.54 -3.56 -3.58 -3.6  -3.62 -3.64 -3.66 -3.68 -3.7  -3.72 -3.74 -3.76
+ -3.78 -3.8  -3.82 -3.84 -3.86 -3.88 -3.9  -3.92 -3.94 -3.96 -3.98 -4.
+ -4.02 -4.04 -4.06 -4.08 -4.1  -4.12 -4.14 -4.16 -4.18 -4.2  -4.22 -4.24
+ -4.26 -4.28 -4.3  -4.32]
+
+2D coodirnate grids
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_image_imfits_23_1.png" src="../../_images/_examples_image_imfits_23_1.png" />
+</div>
+</div>
+<ul class="simple">
+<li>two dimensional image array</li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[97]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">imarr</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">get_imarray</span><span class="p">()</span>
+<span class="n">imarr</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[97]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>array([[[[0.00000000e+00, 0.00000000e+00, 0.00000000e+00, ...,
+          9.21214561e-06, 1.46166836e-05, 2.08356582e-04],
+         [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, ...,
+          5.90111877e-06, 7.22100152e-06, 2.47679859e-05],
+         [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, ...,
+          3.56583850e-06, 4.00781271e-06, 8.47375404e-06],
+         ...,
+         [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, ...,
+          0.00000000e+00, 0.00000000e+00, 0.00000000e+00],
+         [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, ...,
+          0.00000000e+00, 0.00000000e+00, 0.00000000e+00],
+         [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, ...,
+          0.00000000e+00, 0.00000000e+00, 0.00000000e+00]]]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Editing-Images">
+<h2>2.1.5. Editing Images<a class="headerlink" href="#Editing-Images" title="Permalink to this headline">¶</a></h2>
+<p>There are several functions to edit images.</p>
+<ul class="simple">
+<li>Shifting:</li>
+</ul>
+<p>When you want to shift the image, peakshift, comshift, and refshift are available.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[98]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Check peak position</span>
+<span class="k">print</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">peakpos</span><span class="p">())</span>
+
+<span class="c1"># Shift the peak position to the origin</span>
+<span class="n">image</span><span class="o">.</span><span class="n">peakshift</span><span class="p">()</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;y0&#39;: 0.07999999999999992, &#39;x0&#39;: 0.059999999999999394, &#39;angunit&#39;: &#39;mas&#39;}
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[98]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c32321e50&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c32b5c450&gt;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_image_imfits_28_2.png" src="../../_images/_examples_image_imfits_28_2.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[99]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Check the position of center of mass (COM).</span>
+<span class="k">print</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">compos</span><span class="p">())</span>
+
+<span class="c1"># Shift the COM position to the origin</span>
+<span class="n">image</span><span class="o">.</span><span class="n">comshift</span><span class="p">()</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;y0&#39;: -0.5030372749420002, &#39;x0&#39;: -0.5017984082235737, &#39;angunit&#39;: &#39;mas&#39;}
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[99]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c378c6450&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c3280da10&gt;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_image_imfits_29_2.png" src="../../_images/_examples_image_imfits_29_2.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[100]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Shift the center to the arbitral location</span>
+<span class="n">image</span><span class="o">.</span><span class="n">refshift</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">y0</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[100]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c37478a10&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c329ebfd0&gt;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_image_imfits_30_1.png" src="../../_images/_examples_image_imfits_30_1.png" />
+</div>
+</div>
+<ul class="simple">
+<li>Image copy and re-gridding</li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[107]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># New grid parameters</span>
+<span class="n">newdx</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;dx&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">util</span><span class="o">.</span><span class="n">angconv</span><span class="p">(</span><span class="s2">&quot;deg&quot;</span><span class="p">,</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">newnx</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;nx&quot;</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span>
+
+<span class="c1"># Making an image based on new grids</span>
+<span class="n">blank</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">IMFITS</span><span class="p">(</span><span class="n">dx</span><span class="o">=</span><span class="n">newdx</span><span class="p">,</span><span class="n">nx</span><span class="o">=</span><span class="n">newnx</span><span class="p">,</span><span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+<span class="n">image_regrid</span> <span class="o">=</span> <span class="n">blank</span><span class="o">.</span><span class="n">cpimage</span><span class="p">(</span><span class="n">image</span><span class="p">)</span> <span class="c1"># regridding the image</span>
+
+<span class="n">image_regrid</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[107]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c32778a50&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c2f7829d0&gt;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_image_imfits_32_1.png" src="../../_images/_examples_image_imfits_32_1.png" />
+</div>
+</div>
+<ul class="simple">
+<li>Convolution</li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[102]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">image</span><span class="o">.</span><span class="n">convolve_gauss</span><span class="p">(</span><span class="n">majsize</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[102]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c371f6690&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c37952c50&gt;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_image_imfits_34_1.png" src="../../_images/_examples_image_imfits_34_1.png" />
+</div>
+</div>
+<ul class="simple">
+<li>Soft/Hard/minimum Thresholding</li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[103]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">image</span><span class="o">.</span><span class="n">hard_threshold</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">relative</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">save_totalflux</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[103]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c3781b810&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c3722add0&gt;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_image_imfits_36_1.png" src="../../_images/_examples_image_imfits_36_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[104]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">image</span><span class="o">.</span><span class="n">soft_threshold</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">relative</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">save_totalflux</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[104]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c3785bdd0&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c397743d0&gt;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_image_imfits_37_1.png" src="../../_images/_examples_image_imfits_37_1.png" />
+</div>
+</div>
+<p>Mininum threshold is slightly different from hard thresholding, since the former resets all of pixels where their brightness is smaller than a given threshold. On the other hand, hard thresholding resets all of pixels where the absolute of their brightness is smaller than the threshold.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[105]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">image</span><span class="o">.</span><span class="n">min_threshold</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">relative</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">save_totalflux</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[105]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c398fee90&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c399c5490&gt;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_image_imfits_39_1.png" src="../../_images/_examples_image_imfits_39_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="Save-images-to-files">
+<h2>2.1.6. Save images to files<a class="headerlink" href="#Save-images-to-files" title="Permalink to this headline">¶</a></h2>
+<p>There are a couple of formats that SMILI can output</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[109]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># to Image FITS file (w/ AIPS CC table equivalent with the pixel brightness information)</span>
+<span class="n">image</span><span class="o">.</span><span class="n">to_fits</span><span class="p">(</span><span class="s2">&quot;save_test.fits&quot;</span><span class="p">)</span>
+
+<span class="c1"># to DIFMAP model file</span>
+<span class="n">image</span><span class="o">.</span><span class="n">to_fits</span><span class="p">(</span><span class="s2">&quot;save_test.mod&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Acknowledgement">
+<h3>2.1.6.1. Acknowledgement<a class="headerlink" href="#Acknowledgement" title="Permalink to this headline">¶</a></h3>
+<p>This notebook makes use of 43 GHz VLBA data from the VLBA-BU Blazar Monitoring Program (VLBA-BU-BLAZAR; <a class="reference external" href="http://www.bu.edu/blazars/VLBAproject.html">http://www.bu.edu/blazars/VLBAproject.html</a>), funded by NASA through the Fermi Guest Investigator Program. The VLBA is an instrument of the National Radio Astronomy Observatory. The National Radio Astronomy Observatory is a facility of the National Science Foundation operated by Associated Universities, Inc.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../imregion/imregion.html" class="btn btn-neutral float-right" title="2.2. Handle Regions in the image" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="2. Tutorial and Example Scripts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-, SMILI Developper Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
