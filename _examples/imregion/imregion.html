@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.2. Handle Regions in the image &mdash; SMILI 0.0.0 documentation</title>
+  <title>2.2. Image regions &mdash; SMILI 0.0.0 documentation</title>
   
 
   
@@ -45,8 +45,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3. License" href="../../_static/license.html" />
-    <link rel="prev" title="2.1. Handle images" href="../image/imfits.html" /> 
+    <link rel="next" title="2.3. Interferometric data sets" href="../uvdata/uvdata.html" />
+    <link rel="prev" title="2.1. Images" href="../image/imfits.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -97,16 +97,16 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../_static/install.html">1. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">2. Tutorial and Example Scripts</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../image/imfits.html">2.1. Handle images</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.2. Handle Regions in the image</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../image/imfits.html">2.1. Images</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.2. Image regions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#Interactively-set-imaging-regions-using-SAO-DS9">2.2.1. Interactively set imaging regions using SAO DS9</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Manually-set/edit-imaging-regions">2.2.2. Manually set/edit imaging regions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Masking-image-with-imregion">2.2.3. Masking image with imregion</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Acknowledgement">2.2.3.1. Acknowledgement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Masking-image-with-imregion">2.2.3. Masking image with imregion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Acknowledgement">2.2.4. Acknowledgement</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../uvdata/uvdata.html">2.3. Interferometric data sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../imaging/imaging.html">2.4. Imaging</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../_static/license.html">3. License</a></li>
@@ -161,7 +161,7 @@
         
           <li><a href="../index.html">2. Tutorial and Example Scripts</a> &raquo;</li>
         
-      <li>2.2. Handle Regions in the image</li>
+      <li>2.2. Image regions</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -402,8 +402,8 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Handle-Regions-in-the-image">
-<h1>2.2. Handle Regions in the image<a class="headerlink" href="#Handle-Regions-in-the-image" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Image-regions">
+<h1>2.2. Image regions<a class="headerlink" href="#Image-regions" title="Permalink to this headline">¶</a></h1>
 <p>In interferometric imaging or any image processing, often we need to set regions where the intensity will be solved or to mask images. SMILI provide a class for handling geometric description of such regions.</p>
 <p><a class="reference internal" href="#"><span class="doc">This notebook</span></a> provides an example usage how to read, set and save image regions.</p>
 <div class="nbinput docutils container">
@@ -931,19 +931,10 @@ and the DS9() constructor.
 <img alt="../../_images/_examples_imregion_imregion_35_0.png" src="../../_images/_examples_imregion_imregion_35_0.png" />
 </div>
 </div>
+</div>
 <div class="section" id="Acknowledgement">
-<h3>2.2.3.1. Acknowledgement<a class="headerlink" href="#Acknowledgement" title="Permalink to this headline">¶</a></h3>
+<h2>2.2.4. Acknowledgement<a class="headerlink" href="#Acknowledgement" title="Permalink to this headline">¶</a></h2>
 <p>This notebook makes use of 43 GHz VLBA data from the VLBA-BU Blazar Monitoring Program (VLBA-BU-BLAZAR; <a class="reference external" href="http://www.bu.edu/blazars/VLBAproject.html">http://www.bu.edu/blazars/VLBAproject.html</a>), funded by NASA through the Fermi Guest Investigator Program. The VLBA is an instrument of the National Radio Astronomy Observatory. The National Radio Astronomy Observatory is a facility of the National Science Foundation operated by Associated Universities, Inc.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 </div>
 
@@ -955,10 +946,10 @@ and the DS9() constructor.
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../_static/license.html" class="btn btn-neutral float-right" title="3. License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../uvdata/uvdata.html" class="btn btn-neutral float-right" title="2.3. Interferometric data sets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../image/imfits.html" class="btn btn-neutral float-left" title="2.1. Handle images" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../image/imfits.html" class="btn btn-neutral float-left" title="2.1. Images" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

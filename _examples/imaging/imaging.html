@@ -1,0 +1,1125 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.4. Imaging &mdash; SMILI 0.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'0.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3. License" href="../../_static/license.html" />
+    <link rel="prev" title="2.3. Interferometric data sets" href="../uvdata/uvdata.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> SMILI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../_static/install.html">1. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">2. Tutorial and Example Scripts</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../image/imfits.html">2.1. Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../imregion/imregion.html">2.2. Image regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uvdata/uvdata.html">2.3. Interferometric data sets</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.4. Imaging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Closure-Imaging">2.4.1. Closure Imaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Image-inspections">2.4.2. Image inspections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Acknowledgement">2.4.3. Acknowledgement</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../_static/license.html">3. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../_static/references.html">4. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../_static/link.html">5. Developer Team and Related Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../_static/acknowledgement.html">6. Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../_autodoc/smili.html">7. smili package</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SMILI</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">2. Tutorial and Example Scripts</a> &raquo;</li>
+        
+      <li>2.4. Imaging</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/_examples/imaging/imaging.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 5ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Imaging">
+<h1>2.4. Imaging<a class="headerlink" href="#Imaging" title="Permalink to this headline">¶</a></h1>
+<p>Here, we show a quick example of imaging using <em>imaging.lbfgs</em> module. In this notebook, we do not go to details of its theoretical backgroud nor practical imaging procedures; here we focus on going through the basic functions. We also note that the imaging function has been dynamical updated, so its usage may change on short time scales. Here, we use a <a class="reference external" href="3C273DEC16.UVP">VLBA data set of 3C 273 at 43 GHz</a> of <a class="reference external" href="https://www.bu.edu/blazars/VLBAproject.html">the Boston University Blazar Group</a>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">from</span> <span class="nn">smili</span> <span class="kn">import</span> <span class="n">uvdata</span><span class="p">,</span><span class="n">imdata</span><span class="p">,</span><span class="n">imaging</span><span class="p">,</span><span class="n">util</span>
+
+<span class="c1"># for plotting</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="kn">as</span> <span class="nn">cm</span>
+<span class="c1">#from IPython.display import IFrame</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Closure-Imaging">
+<h2>2.4.1. Closure Imaging<a class="headerlink" href="#Closure-Imaging" title="Permalink to this headline">¶</a></h2>
+<p>First, you need to load the uvfits data into <strong>uvdata.UVFITS</strong> object.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Load the UVFITS and FITS for a sample image</span>
+<span class="n">uvfits</span> <span class="o">=</span> <span class="n">uvdata</span><span class="o">.</span><span class="n">UVFITS</span><span class="p">(</span><span class="s2">&quot;3C273DEC16.UVP&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">select_stokes</span><span class="p">(</span><span class="s2">&quot;I&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">avspc</span><span class="p">()</span> <span class="c1"># select Stokes I and average over multiple IFs</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Filename: 3C273DEC16.UVP
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 GroupsHDU      155   (3, 4, 1, 4, 1, 1)   float32   1913 Groups  7 Parameters
+  1  AIPS NX       1 BinTableHDU     31   8R x 7C   [1E, 1E, 1J, 1J, 1J, 1J, 1J]
+  2  AIPS FQ       1 BinTableHDU     29   1R x 6C   [1J, 4D, 4E, 4E, 4J, 32A]
+  3  AIPS AN       1 BinTableHDU     72   10R x 14C   [8A, 3D, 0D, 1J, 1J, 1E, 1E, 4E, 1A, 1E, 8E, 1A, 1E, 8E]
+
+Loading HDUs in the input UVFITS files.
+  Primary HDU was loaded.
+  AIPS FQ Table was loaded.
+  Subarray 1 was found in an AIPS AN table
+
+Checking loaded HDUs.
+  1 Subarray settings are found.
+  No AIPS SU tables were found.
+    Assuming that this is a single source UVFITS file.
+
+Reading FQ Tables
+  Frequency Setup ID: 1
+    IF Freq setups (Hz):
+         if_freq_offset  ch_bandwidth  if_bandwidth  sideband
+      0             0.0    64000000.0    64000000.0         1
+      1      80000000.0    64000000.0    64000000.0         1
+      2     144000000.0    64000000.0    64000000.0         1
+      3     208000000.0    64000000.0    64000000.0         1
+    Note: Central Frequency of ch=i at IF=j (where i,j=1,2,3...)
+       freq(i,j) = reffreq + (i-1) * ch_bandwidth(j) * sideband + if_freq_offset(j)
+
+Reading AN Tables
+  Sub Array ID: 1
+    Frequency Setup ID: 1
+    Reference Frequency: 43007500000 Hz
+    Reference Date: 2016-12-
+    AN Table Contents:
+         id      name             x             y             z  mnttype
+      0   1  BR       -2.112065e+06 -3.705357e+06  4.726814e+06        0
+      1   2  FD       -1.324009e+06 -5.332182e+06  3.231962e+06        0
+      2   3  HN        1.446375e+06 -4.447940e+06  4.322306e+06        0
+      3   4  KP       -1.995679e+06 -5.037318e+06  3.357328e+06        0
+      4   5  LA       -1.449753e+06 -4.975299e+06  3.709124e+06        0
+      5   6  MK       -5.464075e+06 -2.495248e+06  2.148297e+06        0
+      6   7  NL       -1.308726e+05 -4.762317e+06  4.226851e+06        0
+      7   8  OV       -2.409150e+06 -4.478573e+06  3.838617e+06        0
+      8   9  PT       -1.640954e+06 -5.014816e+06  3.575412e+06        0
+      9  10  SC        2.607849e+06 -5.488069e+06  1.932740e+06        0
+
+Reading Source Information from Primary HDU
+  Frequency Setup ID: 1
+    Sources:
+         id source                           radec  equinox
+      0   1  3C273  12h29m06.6997s +02d03m08.5983s   2000.0
+
+Reading Primary HDU data
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/Users/akiyama/.pyenv/versions/anaconda2-5.3.1/lib/python2.7/site-packages/astropy/io/fits/fitsrec.py:687: UserWarning: Field &#39;ORBPARM&#39; has a repeat count of 0 in its format code, indicating an empty field.
+  &#39;indicating an empty field.&#39;.format(key))
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  VisData.sort: 0 indexes have wrong station orders (ant1 &gt; ant2).
+  VisData.sort: Data have been sorted by utc, ant1, ant2, subarray
+Stokes I data will be calculated from input RR and LL data
+</pre></div></div>
+</div>
+<p>As you can see the above log, this data set has full Stokes parameters. Here, we average data over IFs and select Stokes I. Then we create visibility tables.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Table objects of visibilities</span>
+<span class="n">vtable</span> <span class="o">=</span> <span class="n">uvfits</span><span class="o">.</span><span class="n">make_vistable</span><span class="p">()</span> <span class="c1"># Complex Visibilities</span>
+<span class="n">btable</span> <span class="o">=</span> <span class="n">vtable</span><span class="o">.</span><span class="n">make_bstable</span><span class="p">()</span>  <span class="c1"># Bispectra</span>
+<span class="n">ctable</span> <span class="o">=</span> <span class="n">vtable</span><span class="o">.</span><span class="n">make_catable</span><span class="p">()</span>  <span class="c1"># Log closure amplitudes</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+  5%|▍         | 93/1912 [00:00&lt;00:01, 923.43it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(1/5) Sort data
+(2/5) Tagging data
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+100%|██████████| 1912/1912 [00:02&lt;00:00, 880.08it/s]
+ 32%|███▏      | 20/62 [00:00&lt;00:00, 197.23it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  Number of Tags: 62
+(3/5) Checking Baseline Combinations
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+100%|██████████| 62/62 [00:00&lt;00:00, 208.34it/s]
+  2%|▏         | 1/62 [00:00&lt;00:11,  5.19it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  Detect 22 combinations for Closure Phases
+(4/5) Forming Closure Phases
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+100%|██████████| 62/62 [00:10&lt;00:00,  5.90it/s]
+  5%|▌         | 98/1912 [00:00&lt;00:01, 971.01it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(5/5) Creating BSTable object
+(1/5) Sort data
+(2/5) Tagging data
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+100%|██████████| 1912/1912 [00:01&lt;00:00, 1001.59it/s]
+ 35%|███▌      | 22/62 [00:00&lt;00:00, 194.14it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  Number of Tags: 62
+(3/5) Checking Baseline Combinations
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+100%|██████████| 62/62 [00:00&lt;00:00, 241.42it/s]
+  0%|          | 0/62 [00:00&lt;?, ?it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+  Detect 22 combinations for Closure Amplitudes
+(4/5) Forming Closure Amplitudes
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+100%|██████████| 62/62 [00:13&lt;00:00,  7.55it/s]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(5/5) Creating CATable object
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+
+</pre></div></div>
+</div>
+<p>Here, we would try a simple imaging with full closure quantities and also error-increased amplitude data sets. Full closure imaging is non-convex optimization, so therefore the resultant image will be affected by a choise of the initial image. In particular, you need non-zero (not empty image) for closure imaging, since closure imaging do not have sensitivities in the absolute position and needs a reference for a relative position.</p>
+<p>Here, we can start from a circular Gaussian, of which beam size is corresponding to the minor beam size of the synthesized beam. You can estimate beam size parameters from vistable.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">beamprm</span> <span class="o">=</span> <span class="n">vtable</span><span class="o">.</span><span class="n">fit_beam</span><span class="p">(</span><span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">beamprm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{u&#39;minsize&#39;: 0.1207788291535404, u&#39;pa&#39;: -15.238042928900784, u&#39;majsize&#39;: 0.6421714803233262, u&#39;angunit&#39;: &#39;mas&#39;}
+</pre></div></div>
+</div>
+<p>For starting imaging, we need to define the image FOV, pixel size. SMILI will do it by setting the initial image.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># This command can create an empty image. The final option uvfitsfile is optional, and can read header informations from uvfits file.</span>
+<span class="n">initimage</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">IMFITS</span><span class="p">(</span><span class="n">dx</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">nx</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">ny</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">nxref</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">nyref</span><span class="o">=</span><span class="mi">128</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">,</span> <span class="n">uvfitsfile</span><span class="o">=</span><span class="s2">&quot;3C273DEC16.UVP&quot;</span><span class="p">)</span>
+
+<span class="c1"># set beam</span>
+<span class="n">initimage</span><span class="o">.</span><span class="n">set_beam</span><span class="p">(</span><span class="o">**</span><span class="n">beamprm</span><span class="p">)</span>
+
+<span class="c1"># add a Gaussian</span>
+<span class="n">beamprm</span><span class="p">[</span><span class="s2">&quot;majsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">beamprm</span><span class="p">[</span><span class="s2">&quot;minsize&quot;</span><span class="p">]</span>
+<span class="n">initimage</span> <span class="o">=</span> <span class="n">initimage</span><span class="o">.</span><span class="n">add_gauss</span><span class="p">(</span><span class="n">totalflux</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">**</span><span class="n">beamprm</span><span class="p">)</span> <span class="c1"># this can add a circular or elliptical gaussian to the image</span>
+
+<span class="c1"># show imagee</span>
+<span class="n">initimage</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;gamma&quot;</span><span class="p">,</span> <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mJy&quot;</span><span class="p">,</span> <span class="n">saunit</span><span class="o">=</span><span class="s2">&quot;pixel&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c26d010d0&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c27ee11d0&gt;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_imaging_imaging_11_1.png" src="../../_images/_examples_imaging_imaging_11_1.png" />
+</div>
+</div>
+<p>Before starting imaging, let’s make a table for visibility amplitudes. Since they could have residual gain errors, let’s add additional errors for residual errrors. We can copy tables for full complex visibilities and add potential systematic errors.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">atable</span> <span class="o">=</span> <span class="n">vtable</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># Table for amplitudes</span>
+<span class="n">atable</span> <span class="o">=</span> <span class="n">atable</span><span class="o">.</span><span class="n">add_error</span><span class="p">(</span><span class="n">error</span><span class="o">=</span><span class="n">atable</span><span class="p">[</span><span class="s2">&quot;amp&quot;</span><span class="p">]</span><span class="o">*</span><span class="mf">0.05</span><span class="p">)</span>  <span class="c1"># add 5% errors in quadrature</span>
+</pre></div>
+</div>
+</div>
+<p>Then, now is the time to make the first image! The simplest imaging function is imaging.lbfgs.imaging.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">imprm</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># Data sets to be used</span>
+<span class="c1">#imprm[&quot;vistable&quot;]=vtable # If we use full complex visibility</span>
+<span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;amptable&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">atable</span> <span class="c1"># use amplitudes</span>
+<span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;bstable&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">btable</span> <span class="c1"># use closure phases</span>
+<span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;catable&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">ctable</span> <span class="c1"># use closure amplitudes</span>
+
+<span class="c1"># Regularization functions:</span>
+<span class="c1">#   we have 5 reglarization functions:</span>
+<span class="c1">#      l1-norm: &quot;l1_xxxxx&quot;</span>
+<span class="c1">#      Total Variation (TV): &quot;tv_xxxxx&quot;</span>
+<span class="c1">#      Total Squared Variation (TSV): &quot;tsv_xxxxx&quot;</span>
+<span class="c1">#       Relative Entropy (KL divergence): &quot;kl_xxxxx&quot;</span>
+<span class="c1">#       GS Entropy: &quot;gs_xxxxxx&quot;</span>
+<span class="c1">#</span>
+<span class="c1">#   The most important parameter is &quot;lambda&quot;, which is the hypter parameter of imaging.</span>
+<span class="c1">#   If xx_lambda &gt; 0: then the corresponding regularization function will be used.</span>
+<span class="c1">#</span>
+<span class="c1">#   l1-norm</span>
+<span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;l1_lambda&quot;</span><span class="p">]</span><span class="o">=</span><span class="mf">1.</span>
+<span class="c1">#imprm[&quot;l1_prior&quot;]=prior image   # this option will use weighted l1 regularization using prior image</span>
+<span class="c1">#</span>
+<span class="c1">#   TSV</span>
+<span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;tsv_lambda&quot;</span><span class="p">]</span><span class="o">=</span><span class="mf">1.</span>
+<span class="c1">#imprm[&quot;tsv_prior&quot;]= prior image   # this option will use weighted TSV regularization using prior image</span>
+<span class="c1">#</span>
+<span class="c1">#   TV</span>
+<span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;tv_lambda&quot;</span><span class="p">]</span><span class="o">=</span><span class="mf">1.</span>
+<span class="c1">#imprm[&quot;tv_prior&quot;]= prior image   # this option will use weighted-TV regularization using prior image</span>
+<span class="c1">#</span>
+<span class="c1">#   KL-MEM</span>
+<span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;kl_lambda&quot;</span><span class="p">]</span><span class="o">=-</span><span class="mf">1.</span>
+<span class="c1">#imprm[&quot;kl_prior&quot;]= prior image   # prior image. If it is not specified, then flat prior will be adopted.</span>
+<span class="c1">#</span>
+<span class="c1">#   GS-MEM</span>
+<span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;gs_lambda&quot;</span><span class="p">]</span><span class="o">=-</span><span class="mi">1</span>
+<span class="c1">#imprm[&quot;gs_prior&quot;]= prior image   # prior image. If it is not specified, then flat prior will be adopted.</span>
+
+<span class="c1"># Other regularization functions for scaling amplitudes or fixing the phase center.</span>
+<span class="c1">#</span>
+<span class="c1">#   Total flux regularization</span>
+<span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;tfd_lambda&quot;</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;totalflux&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">vtable</span><span class="o">.</span><span class="n">amp</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="c1">#</span>
+<span class="c1">#   Cent-of-mass regularization</span>
+<span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;cen_lambda&quot;</span><span class="p">]</span><span class="o">=</span><span class="mf">0.1</span>
+<span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;cen_alpha&quot;</span><span class="p">]</span><span class="o">=</span><span class="mf">3.0</span> <span class="c1"># the power of the centroid. 1 gives the regularization using the exact center of the mass.</span>
+                                             <span class="c1"># The higher value gives regularization using the region close to the peak of the image.</span>
+
+<span class="c1"># iteration number</span>
+<span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;niter&quot;</span><span class="p">]</span><span class="o">=</span><span class="mi">1000</span>
+
+<span class="c1"># imaging window: if you want to use the imaging region to limit your imaging pixels.</span>
+<span class="c1">#imprm[&quot;imregion&quot;]=imregion</span>
+</pre></div>
+</div>
+</div>
+<p>Closure imaging is non-convex optimization, and sometimes we fails on some local minima with many noises. We may kill some noise artifacts by blurring, thresholding and do imaging iteratively. We may also use reweighted sparse regularizations, which can enhance sparcity of images. Here, we use blurring and also reweighting l1-norm to kill noises in the image.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">editimage</span> <span class="o">=</span> <span class="n">initimage</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">editimage</span> <span class="o">=</span> <span class="n">outimage</span><span class="o">.</span><span class="n">soft_threshold</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span><span class="o">.</span><span class="n">convolve_gauss</span><span class="p">(</span><span class="o">**</span><span class="n">beamprm</span><span class="p">)</span>   <span class="c1"># thresholding &amp; bluring the image</span>
+    <span class="n">outimage</span> <span class="o">=</span> <span class="n">imaging</span><span class="o">.</span><span class="n">lbfgs</span><span class="o">.</span><span class="n">imaging</span><span class="p">(</span><span class="n">editimage</span><span class="p">,</span><span class="o">**</span><span class="n">imprm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">outimage</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">afmhot</span><span class="p">,</span> <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mJy&quot;</span><span class="p">,</span> <span class="n">saunit</span><span class="o">=</span><span class="s2">&quot;pixel&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c25632210&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c25773350&gt;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_imaging_imaging_18_1.png" src="../../_images/_examples_imaging_imaging_18_1.png" />
+</div>
+</div>
+<p>We can also do iterative imaging with self-calibrations</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># This is the loop for selfcalibration</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="c1">#  Imaging part</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span> <span class="c1"># for the first two times, we will use amplitudes</span>
+        <span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;amptable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">atable</span>
+        <span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;vistable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;cen_lambda&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># don&#39;t forget to switch off the centroid regularizer, since now we have absolute position information from full complex visibilities.</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;amptable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;vistable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">vtable</span>
+        <span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;cen_lambda&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># don&#39;t forget to switch off the centroid regularizer, since now we have absolute position information from full complex visibilities.</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">editimage</span> <span class="o">=</span> <span class="n">initimage</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">editimage</span> <span class="o">=</span> <span class="n">outimage</span><span class="o">.</span><span class="n">soft_threshold</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span><span class="o">.</span><span class="n">convolve_gauss</span><span class="p">(</span><span class="o">**</span><span class="n">beamprm</span><span class="p">)</span><span class="o">.</span><span class="n">comshift</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>   <span class="c1"># thresholding &amp; bluring the image</span>
+        <span class="n">outimage</span> <span class="o">=</span> <span class="n">imaging</span><span class="o">.</span><span class="n">lbfgs</span><span class="o">.</span><span class="n">imaging</span><span class="p">(</span><span class="n">editimage</span><span class="p">,</span><span class="o">**</span><span class="n">imprm</span><span class="p">)</span>
+
+    <span class="c1"># here we do selfcal</span>
+    <span class="n">caltable</span> <span class="o">=</span> <span class="n">uvfits</span><span class="o">.</span><span class="n">selfcal</span><span class="p">(</span><span class="n">outimage</span><span class="p">)</span>
+    <span class="n">uvfits</span> <span class="o">=</span> <span class="n">uvfits</span><span class="o">.</span><span class="n">apply_cltable</span><span class="p">(</span><span class="n">caltable</span><span class="p">)</span>
+
+    <span class="c1"># recreate vistable and amptable</span>
+    <span class="n">vtable</span> <span class="o">=</span> <span class="n">uvfits</span><span class="o">.</span><span class="n">make_vistable</span><span class="p">()</span>
+    <span class="n">atable</span> <span class="o">=</span> <span class="n">vtable</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">atable</span> <span class="o">=</span> <span class="n">atable</span><span class="o">.</span><span class="n">add_error</span><span class="p">(</span><span class="n">error</span><span class="o">=</span><span class="n">atable</span><span class="o">.</span><span class="n">amp</span> <span class="o">*</span> <span class="mf">0.05</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">outimage</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">afmhot</span><span class="p">,</span> <span class="n">fluxunit</span><span class="o">=</span><span class="s2">&quot;mJy&quot;</span><span class="p">,</span> <span class="n">saunit</span><span class="o">=</span><span class="s2">&quot;pixel&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c27e0ccd0&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c25865e10&gt;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_imaging_imaging_21_1.png" src="../../_images/_examples_imaging_imaging_21_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="Image-inspections">
+<h2>2.4.2. Image inspections<a class="headerlink" href="#Image-inspections" title="Permalink to this headline">¶</a></h2>
+<p>You can check the goodness of fitting between the image and data sets by following functions:</p>
+<ol class="arabic simple">
+<li>“eval_image” returns a model visibilities which is Fourier coefficient of the intensity of the image.</li>
+<li>“residual_image” calculates the residual between real and model visibilities.</li>
+<li>“chisq_image” estimates the a (mean square) standardized residual, <span class="math notranslate nohighlight">\(\chi\)</span> (<span class="math notranslate nohighlight">\(\chi_{\rm r}\)</span>).</li>
+</ol>
+<p>These functions can be adapted to complex visibilities, bispectra, and log closure amplitudes. Here, we show an example for modeling complex visibilities.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># model complex visibilities based on an input image</span>
+<span class="n">vtable_model</span> <span class="o">=</span> <span class="n">vtable</span><span class="o">.</span><span class="n">eval_image</span><span class="p">(</span><span class="n">outimage</span><span class="p">)</span>
+
+<span class="c1"># residual between real and model visibilities</span>
+<span class="n">vtable_residual</span> <span class="o">=</span> <span class="n">vtable</span><span class="o">.</span><span class="n">residual_image</span><span class="p">(</span><span class="n">outimage</span><span class="p">)</span>
+
+<span class="c1"># You can also check the visibilies as a function of projected baseline length</span>
+<span class="n">util</span><span class="o">.</span><span class="n">matplotlibrc</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Model image&quot;</span><span class="p">)</span>
+<span class="n">outimage</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">afmhot</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Radial plot: Real part of Visibilities&quot;</span><span class="p">)</span>
+<span class="n">vtable</span><span class="o">.</span><span class="n">radplot</span><span class="p">(</span><span class="n">datatype</span><span class="o">=</span><span class="s2">&quot;real&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Data&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">vtable_model</span><span class="o">.</span><span class="n">radplot</span><span class="p">(</span><span class="n">datatype</span><span class="o">=</span><span class="s2">&quot;real&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Model&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">vtable_residual</span><span class="o">.</span><span class="n">radplot</span><span class="p">(</span><span class="n">datatype</span><span class="o">=</span><span class="s2">&quot;real&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Residual&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span><span class="n">markerscale</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span><span class="n">handlelength</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Radial plot: Imag part of Visibilities&quot;</span><span class="p">)</span>
+<span class="n">vtable</span><span class="o">.</span><span class="n">radplot</span><span class="p">(</span><span class="n">datatype</span><span class="o">=</span><span class="s2">&quot;imag&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Imag&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">vtable_model</span><span class="o">.</span><span class="n">radplot</span><span class="p">(</span><span class="n">datatype</span><span class="o">=</span><span class="s2">&quot;imag&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Model&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">vtable_residual</span><span class="o">.</span><span class="n">radplot</span><span class="p">(</span><span class="n">datatype</span><span class="o">=</span><span class="s2">&quot;imag&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Residual&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># You can estimate chisquares and reduced chisquares.</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Complex visibilities  : chisquare and reduced chisquare are </span><span class="si">%1.2f</span><span class="s2"> and </span><span class="si">%1.2f</span><span class="s2">.&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">vtable</span><span class="o">.</span><span class="n">chisq_image</span><span class="p">(</span><span class="n">outimage</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Visibility amplitudes : chisquare and reduced chisquare are </span><span class="si">%1.2f</span><span class="s2"> and </span><span class="si">%1.2f</span><span class="s2">.&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">vtable</span><span class="o">.</span><span class="n">chisq_image</span><span class="p">(</span><span class="n">outimage</span><span class="p">,</span><span class="n">amptable</span><span class="o">=</span><span class="bp">True</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Imaging Window: Not Specified. We calcurate the image on all the pixels.
+Imaging Window: Not Specified. We calcurate the image on all the pixels.
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_imaging_imaging_23_1.png" src="../../_images/_examples_imaging_imaging_23_1.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Imaging Window: Not Specified. We calcurate the image on all the pixels.
+Complex visibilities  : chisquare and reduced chisquare are 12059.28 and 3.15.
+Imaging Window: Not Specified. We calcurate the image on all the pixels.
+Visibility amplitudes : chisquare and reduced chisquare are 5567.42 and 2.91.
+</pre></div></div>
+</div>
+<p>You can also adapt the same functions to bispectra and log closure amplitudes.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># model bispectra based on an input image</span>
+<span class="n">btable_model</span> <span class="o">=</span> <span class="n">btable</span><span class="o">.</span><span class="n">eval_image</span><span class="p">(</span><span class="n">outimage</span><span class="p">)</span>
+
+<span class="c1"># residual between real and model bispectra</span>
+<span class="n">btable_residual</span> <span class="o">=</span> <span class="n">btable</span><span class="o">.</span><span class="n">residual_image</span><span class="p">(</span><span class="n">outimage</span><span class="p">)</span>
+
+<span class="c1"># model log closure amplitudes based on an input image</span>
+<span class="n">ctable_model</span> <span class="o">=</span> <span class="n">ctable</span><span class="o">.</span><span class="n">eval_image</span><span class="p">(</span><span class="n">outimage</span><span class="p">)</span>
+
+<span class="c1"># residual between real and model bispectra</span>
+<span class="n">ctable_residual</span> <span class="o">=</span> <span class="n">ctable</span><span class="o">.</span><span class="n">residual_image</span><span class="p">(</span><span class="n">outimage</span><span class="p">)</span>
+
+<span class="c1"># You can also check the visibilities as a function of projected baseline length</span>
+<span class="n">util</span><span class="o">.</span><span class="n">matplotlibrc</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Model image&quot;</span><span class="p">)</span>
+<span class="n">outimage</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">afmhot</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Radial plot of closure phases&quot;</span><span class="p">)</span>
+<span class="n">btable</span><span class="o">.</span><span class="n">radplot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Real&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">btable_model</span><span class="o">.</span><span class="n">radplot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Model&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">btable_residual</span><span class="o">.</span><span class="n">radplot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Residual&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span><span class="n">markerscale</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span><span class="n">handlelength</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">sca</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Radial plot of log closure amplitudes&quot;</span><span class="p">)</span>
+<span class="n">ctable</span><span class="o">.</span><span class="n">radplot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Real&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">ctable_model</span><span class="o">.</span><span class="n">radplot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Model&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">ctable_residual</span><span class="o">.</span><span class="n">radplot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Residual&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># You can estimate chisquares and reduced chisquares.</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Closure phases        : chisquare and reduced chisquare are </span><span class="si">%1.2f</span><span class="s2"> and </span><span class="si">%1.2f</span><span class="s2">.&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">btable</span><span class="o">.</span><span class="n">chisq_image</span><span class="p">(</span><span class="n">outimage</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Log closure amplitudes: chisquare and reduced chisquare are </span><span class="si">%1.2f</span><span class="s2"> and </span><span class="si">%1.2f</span><span class="s2">.&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">ctable</span><span class="o">.</span><span class="n">chisq_image</span><span class="p">(</span><span class="n">outimage</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Imaging Window: Not Specified. We calcurate the image on all the pixels.
+Imaging Window: Not Specified. We calcurate the image on all the pixels.
+Imaging Window: Not Specified. We calcurate the image on all the pixels.
+Imaging Window: Not Specified. We calcurate the image on all the pixels.
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/_examples_imaging_imaging_25_1.png" src="../../_images/_examples_imaging_imaging_25_1.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Imaging Window: Not Specified. We calcurate the image on all the pixels.
+Closure phases        : chisquare and reduced chisquare are 2964.93 and 2.02.
+Imaging Window: Not Specified. We calcurate the image on all the pixels.
+Log closure amplitudes: chisquare and reduced chisquare are 1799.69 and 1.28.
+</pre></div></div>
+</div>
+<p>You can make summary pdf figures and csv file, showing residuals, residual statistics and chisquares between the image and data sets. Here are example outputs.</p>
+<ul class="simple">
+<li><a class="reference external" href="plot_model_fcv.pdf">plot_model_fcv.pdf</a></li>
+<li><a class="reference external" href="plot_model_cphase.pdf">plot_model_cphase.pdf</a></li>
+<li><a class="reference external" href="plot_model_logcamp.pdf">plot_model_logcamp.pdf</a></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># You can make a summary plot for image inspections.</span>
+<span class="c1"># Complex visibilities</span>
+<span class="n">vtable</span><span class="o">.</span><span class="n">plot_model_fcv</span><span class="p">(</span><span class="n">outimage</span><span class="p">,</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plot_model_fcv.pdf&quot;</span><span class="p">)</span>
+
+<span class="c1"># Closure phases</span>
+<span class="n">btable</span><span class="o">.</span><span class="n">plot_model</span><span class="p">(</span><span class="n">outimage</span><span class="p">,</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plot_model_cphase.pdf&quot;</span><span class="p">)</span>
+
+<span class="c1"># Log closure amplitudes</span>
+<span class="n">ctable</span><span class="o">.</span><span class="n">plot_model</span><span class="p">(</span><span class="n">outimage</span><span class="p">,</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plot_model_logcamp.pdf&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Acknowledgement">
+<h2>2.4.3. Acknowledgement<a class="headerlink" href="#Acknowledgement" title="Permalink to this headline">¶</a></h2>
+<p>This notebook makes use of 43 GHz VLBA data from the VLBA-BU Blazar Monitoring Program (VLBA-BU-BLAZAR; <a class="reference external" href="http://www.bu.edu/blazars/VLBAproject.html">http://www.bu.edu/blazars/VLBAproject.html</a>), funded by NASA through the Fermi Guest Investigator Program. The VLBA is an instrument of the National Radio Astronomy Observatory. The National Radio Astronomy Observatory is a facility of the National Science Foundation operated by Associated Universities, Inc.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../_static/license.html" class="btn btn-neutral float-right" title="3. License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../uvdata/uvdata.html" class="btn btn-neutral float-left" title="2.3. Interferometric data sets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-, SMILI Developper Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

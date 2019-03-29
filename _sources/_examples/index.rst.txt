@@ -7,3 +7,5 @@ Tutorial and Example Scripts
 
   image/imfits
   imregion/imregion
+  uvdata/uvdata
+  imaging/imaging

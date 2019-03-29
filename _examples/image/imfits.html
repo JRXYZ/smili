@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.1. Handle images &mdash; SMILI 0.0.0 documentation</title>
+  <title>2.1. Images &mdash; SMILI 0.0.0 documentation</title>
   
 
   
@@ -45,7 +45,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.2. Handle Regions in the image" href="../imregion/imregion.html" />
+    <link rel="next" title="2.2. Image regions" href="../imregion/imregion.html" />
     <link rel="prev" title="2. Tutorial and Example Scripts" href="../index.html" /> 
 </head>
 
@@ -97,19 +97,19 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../_static/install.html">1. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">2. Tutorial and Example Scripts</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.1. Handle images</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.1. Images</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#Creating-a-blank-image">2.1.1. Creating a blank image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Loading-images-from-FITS-files">2.1.2. Loading images from FITS files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Plot-images">2.1.3. Plot images</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Extracting-information-of-images">2.1.4. Extracting information of images</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Editing-Images">2.1.5. Editing Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Save-images-to-files">2.1.6. Save images to files</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Acknowledgement">2.1.6.1. Acknowledgement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Save-images-to-files">2.1.6. Save images to files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Acknowledgement">2.1.7. Acknowledgement</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../imregion/imregion.html">2.2. Handle Regions in the image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../imregion/imregion.html">2.2. Image regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uvdata/uvdata.html">2.3. Interferometric data sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../imaging/imaging.html">2.4. Imaging</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../_static/license.html">3. License</a></li>
@@ -164,7 +164,7 @@
         
           <li><a href="../index.html">2. Tutorial and Example Scripts</a> &raquo;</li>
         
-      <li>2.1. Handle images</li>
+      <li>2.1. Images</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -405,16 +405,18 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Handle-images">
-<h1>2.1. Handle images<a class="headerlink" href="#Handle-images" title="Permalink to this headline">¶</a></h1>
-<p>The most basic class for the image in SMILI is <strong>imdata.IMFITS</strong> object. Here, we show its basic usage.</p>
+<div class="section" id="Images">
+<h1>2.1. Images<a class="headerlink" href="#Images" title="Permalink to this headline">¶</a></h1>
+<p>The most basic class for the image in SMILI is <strong>imdata.IMFITS</strong> object.Here, we show its basic usage. You can see list of functions at <a class="reference external" href="../../_autodoc/smili.html">in this page</a>.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[72]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">from</span> <span class="nn">smili</span> <span class="kn">import</span> <span class="n">imdata</span><span class="p">,</span> <span class="n">util</span>
+
+<span class="c1"># this is for plotting</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="kn">as</span> <span class="nn">cm</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="kn">as</span> <span class="nn">mpl</span>
@@ -425,7 +427,7 @@ div.rendered_html tbody tr:hover {
 <h2>2.1.1. Creating a blank image<a class="headerlink" href="#Creating-a-blank-image" title="Permalink to this headline">¶</a></h2>
 <p>Let’s start from a blank image. You can make a blank image.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -445,12 +447,12 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>(&lt;matplotlib.image.AxesImage at 0x1c25935a10&gt;,
- &lt;matplotlib.colorbar.Colorbar at 0x1c25983090&gt;)
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c1da92a90&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c1dadf110&gt;)
 </pre></div>
 </div>
 </div>
@@ -463,7 +465,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>SMILI also can edit the location of the origin by nxref and nyref in the unit of the pixel number. Note that nxref=1, nyref=1 means the center will be set to the center of the leftmost and bottom pixel.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -482,12 +484,12 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>(&lt;matplotlib.image.AxesImage at 0x1c25b16f90&gt;,
- &lt;matplotlib.colorbar.Colorbar at 0x1c25c68610&gt;)
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c1dc70f90&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c1ddc2610&gt;)
 </pre></div>
 </div>
 </div>
@@ -503,7 +505,7 @@ div.rendered_html tbody tr:hover {
 <h2>2.1.2. Loading images from FITS files<a class="headerlink" href="#Loading-images-from-FITS-files" title="Permalink to this headline">¶</a></h2>
 <p>Here, we use <a class="reference external" href="BU_3C273_sampleimage.fits">an FITS image</a> reconstructed with SMILI from a 43 GHz 3C 273 data set of <a class="reference external" href="https://www.bu.edu/blazars/VLBAproject.html">the Boston University Blazar Group</a>.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -518,12 +520,12 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>(&lt;matplotlib.image.AxesImage at 0x1c25d0c610&gt;,
- &lt;matplotlib.colorbar.Colorbar at 0x1c25e1abd0&gt;)
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c1de61650&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c1df6fc10&gt;)
 </pre></div>
 </div>
 </div>
@@ -568,7 +570,7 @@ div.rendered_html tbody tr:hover {
 <h2>2.1.3. Plot images<a class="headerlink" href="#Plot-images" title="Permalink to this headline">¶</a></h2>
 <p>SMILI’s default plotting function is imdata.IMFITS.imshow. This function is inheriting <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.imshow.html">pyplot.imshow</a> so you can use all of arguments in pyplot.imshow to customize your plots.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -596,12 +598,12 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>(&lt;matplotlib.image.AxesImage at 0x1c2928d850&gt;,
- &lt;matplotlib.colorbar.Colorbar at 0x1c292c3bd0&gt;)
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c1f0e0410&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c1f118710&gt;)
 </pre></div>
 </div>
 </div>
@@ -628,7 +630,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>If you set the beam information, then you can also compute Jy/beam</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -641,12 +643,12 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>(&lt;matplotlib.image.AxesImage at 0x1c28c90e90&gt;,
- &lt;matplotlib.colorbar.Colorbar at 0x1c28f64450&gt;)
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c1f3b8c90&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c1f359250&gt;)
 </pre></div>
 </div>
 </div>
@@ -666,7 +668,7 @@ div.rendered_html tbody tr:hover {
 <li>imdata.IMFITS.data: 4 dimensional array of images.</li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -703,7 +705,7 @@ Example information read from the header
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -746,7 +748,7 @@ Array:
 <li>Total Flux and Peak Intensity</li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -770,7 +772,7 @@ peak flux = 0.04 Jy/pixel
 <li>Grid coordinates</li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[96]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -856,7 +858,7 @@ Image Extent
 <li>two dimensional image array</li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[97]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -866,7 +868,7 @@ Image Extent
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[97]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
@@ -889,13 +891,13 @@ Image Extent
 </div>
 <div class="section" id="Editing-Images">
 <h2>2.1.5. Editing Images<a class="headerlink" href="#Editing-Images" title="Permalink to this headline">¶</a></h2>
-<p>There are several functions to edit images.</p>
+<p>From the above functions, you can compute some quantities, do analysis and edit images. We also have several functions to edit images (e.g. shift, convolving, regridding) which will be frequently used. Here, we show some representatitive functions.</p>
 <ul class="simple">
 <li>Shifting:</li>
 </ul>
 <p>When you want to shift the image, peakshift, comshift, and refshift are available.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[98]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -916,12 +918,12 @@ Image Extent
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[98]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>(&lt;matplotlib.image.AxesImage at 0x1c32321e50&gt;,
- &lt;matplotlib.colorbar.Colorbar at 0x1c32b5c450&gt;)
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c2151fc10&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c24648210&gt;)
 </pre></div>
 </div>
 </div>
@@ -933,7 +935,7 @@ Image Extent
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[99]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -954,12 +956,12 @@ Image Extent
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[99]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>(&lt;matplotlib.image.AxesImage at 0x1c378c6450&gt;,
- &lt;matplotlib.colorbar.Colorbar at 0x1c3280da10&gt;)
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c1f2fef90&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c1f1fa110&gt;)
 </pre></div>
 </div>
 </div>
@@ -971,7 +973,7 @@ Image Extent
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[100]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -981,12 +983,12 @@ Image Extent
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[100]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>(&lt;matplotlib.image.AxesImage at 0x1c37478a10&gt;,
- &lt;matplotlib.colorbar.Colorbar at 0x1c329ebfd0&gt;)
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c1dfe6d90&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c1e314050&gt;)
 </pre></div>
 </div>
 </div>
@@ -1001,7 +1003,7 @@ Image Extent
 <li>Image copy and re-gridding</li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[107]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -1013,17 +1015,18 @@ Image Extent
 <span class="n">blank</span> <span class="o">=</span> <span class="n">imdata</span><span class="o">.</span><span class="n">IMFITS</span><span class="p">(</span><span class="n">dx</span><span class="o">=</span><span class="n">newdx</span><span class="p">,</span><span class="n">nx</span><span class="o">=</span><span class="n">newnx</span><span class="p">,</span><span class="n">angunit</span><span class="o">=</span><span class="s2">&quot;mas&quot;</span><span class="p">)</span>
 <span class="n">image_regrid</span> <span class="o">=</span> <span class="n">blank</span><span class="o">.</span><span class="n">cpimage</span><span class="p">(</span><span class="n">image</span><span class="p">)</span> <span class="c1"># regridding the image</span>
 
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;new re-gridded image&quot;</span><span class="p">)</span>
 <span class="n">image_regrid</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[107]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>(&lt;matplotlib.image.AxesImage at 0x1c32778a50&gt;,
- &lt;matplotlib.colorbar.Colorbar at 0x1c2f7829d0&gt;)
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c1fa4e250&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c1fa84810&gt;)
 </pre></div>
 </div>
 </div>
@@ -1038,7 +1041,7 @@ Image Extent
 <li>Convolution</li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[102]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -1047,12 +1050,12 @@ Image Extent
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[102]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>(&lt;matplotlib.image.AxesImage at 0x1c371f6690&gt;,
- &lt;matplotlib.colorbar.Colorbar at 0x1c37952c50&gt;)
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c1fd5a490&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c1fb9ba50&gt;)
 </pre></div>
 </div>
 </div>
@@ -1067,7 +1070,7 @@ Image Extent
 <li>Soft/Hard/minimum Thresholding</li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[103]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -1076,12 +1079,12 @@ Image Extent
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[103]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>(&lt;matplotlib.image.AxesImage at 0x1c3781b810&gt;,
- &lt;matplotlib.colorbar.Colorbar at 0x1c3722add0&gt;)
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c2000b610&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c200a8bd0&gt;)
 </pre></div>
 </div>
 </div>
@@ -1093,7 +1096,7 @@ Image Extent
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[104]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -1102,12 +1105,12 @@ Image Extent
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[104]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>(&lt;matplotlib.image.AxesImage at 0x1c3785bdd0&gt;,
- &lt;matplotlib.colorbar.Colorbar at 0x1c397743d0&gt;)
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c2076bbd0&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c20a551d0&gt;)
 </pre></div>
 </div>
 </div>
@@ -1120,7 +1123,7 @@ Image Extent
 </div>
 <p>Mininum threshold is slightly different from hard thresholding, since the former resets all of pixels where their brightness is smaller than a given threshold. On the other hand, hard thresholding resets all of pixels where the absolute of their brightness is smaller than the threshold.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[105]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -1129,12 +1132,12 @@ Image Extent
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[105]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>(&lt;matplotlib.image.AxesImage at 0x1c398fee90&gt;,
- &lt;matplotlib.colorbar.Colorbar at 0x1c399c5490&gt;)
+<span></span>(&lt;matplotlib.image.AxesImage at 0x1c20b1dc90&gt;,
+ &lt;matplotlib.colorbar.Colorbar at 0x1c20b5f290&gt;)
 </pre></div>
 </div>
 </div>
@@ -1150,7 +1153,7 @@ Image Extent
 <h2>2.1.6. Save images to files<a class="headerlink" href="#Save-images-to-files" title="Permalink to this headline">¶</a></h2>
 <p>There are a couple of formats that SMILI can output</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[109]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -1162,10 +1165,10 @@ Image Extent
 </pre></div>
 </div>
 </div>
-<div class="section" id="Acknowledgement">
-<h3>2.1.6.1. Acknowledgement<a class="headerlink" href="#Acknowledgement" title="Permalink to this headline">¶</a></h3>
-<p>This notebook makes use of 43 GHz VLBA data from the VLBA-BU Blazar Monitoring Program (VLBA-BU-BLAZAR; <a class="reference external" href="http://www.bu.edu/blazars/VLBAproject.html">http://www.bu.edu/blazars/VLBAproject.html</a>), funded by NASA through the Fermi Guest Investigator Program. The VLBA is an instrument of the National Radio Astronomy Observatory. The National Radio Astronomy Observatory is a facility of the National Science Foundation operated by Associated Universities, Inc.</p>
 </div>
+<div class="section" id="Acknowledgement">
+<h2>2.1.7. Acknowledgement<a class="headerlink" href="#Acknowledgement" title="Permalink to this headline">¶</a></h2>
+<p>This notebook makes use of 43 GHz VLBA data from the VLBA-BU Blazar Monitoring Program (VLBA-BU-BLAZAR; <a class="reference external" href="http://www.bu.edu/blazars/VLBAproject.html">http://www.bu.edu/blazars/VLBAproject.html</a>), funded by NASA through the Fermi Guest Investigator Program. The VLBA is an instrument of the National Radio Astronomy Observatory. The National Radio Astronomy Observatory is a facility of the National Science Foundation operated by Associated Universities, Inc.</p>
 </div>
 </div>
 
@@ -1177,7 +1180,7 @@ Image Extent
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../imregion/imregion.html" class="btn btn-neutral float-right" title="2.2. Handle Regions in the image" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../imregion/imregion.html" class="btn btn-neutral float-right" title="2.2. Image regions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../index.html" class="btn btn-neutral float-left" title="2. Tutorial and Example Scripts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
