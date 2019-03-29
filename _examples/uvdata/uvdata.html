@@ -102,7 +102,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.3. Interferometric data sets</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#Load/Save-uvfits-file-and-select-a-stokes-parameter">2.3.1. Load/Save uvfits file and select a stokes parameter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Create-a-Visibility-Table-for-Imaging">2.3.2. Create a Visibility Table for Imaging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#3.3-Make-tables-for-bispectra-and-log-closure-amplitudes">2.3.3. 3.3 Make tables for bispectra and log closure amplitudes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Make-tables-for-bispectra-and-log-closure-amplitudes">2.3.3. Make tables for bispectra and log closure amplitudes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Acknowledgement">2.3.4. Acknowledgement</a></li>
 </ul>
 </li>
@@ -404,7 +404,7 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="Interferometric-data-sets">
 <h1>2.3. Interferometric data sets<a class="headerlink" href="#Interferometric-data-sets" title="Permalink to this headline">¶</a></h1>
-<p>In SMILI, interfreometric data sets are handle by <strong>uvdata</strong> module. Here, we show a basic usage of uvdata module using a <a class="reference external" href="3C273DEC16.UVP">VLBA data set of 3C 273 at 43 GHz</a> of <a class="reference external" href="https://www.bu.edu/blazars/VLBAproject.html">the Boston University Blazar Group</a>.</p>
+<p>In SMILI, interfreometric data sets are handle by <em>uvdata</em> module. Here, we show a basic usage of uvdata module using a <a class="reference external" href="3C273DEC16.UVP">VLBA data set of 3C 273 at 43 GHz</a> of <a class="reference external" href="https://www.bu.edu/blazars/VLBAproject.html">the Boston University Blazar Group</a>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -864,7 +864,7 @@ Stokes I data will be calculated from input RR and LL data
 </pre></div>
 </div>
 </div>
-<p><strong>uvdata.VisTable</strong> has simple plot methods uvplot and raplot for plotting uv-coverages and radial plots. Each function is mocking pyploy.plot or pyplot.errorbar functions, and you can use almost all of arguments for pyplot.plot or pyplot.errorbar.</p>
+<p><em>uvdata.VisTable</em> has simple plot methods uvplot and raplot for plotting uv-coverages and radial plots. Each function is mocking pyploy.plot or pyplot.errorbar functions, and you can use almost all of arguments for pyplot.plot or pyplot.errorbar.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
@@ -933,8 +933,8 @@ Stokes I data will be calculated from input RR and LL data
 </div>
 </div>
 </div>
-<div class="section" id="3.3-Make-tables-for-bispectra-and-log-closure-amplitudes">
-<h2>2.3.3. 3.3 Make tables for bispectra and log closure amplitudes<a class="headerlink" href="#3.3-Make-tables-for-bispectra-and-log-closure-amplitudes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Make-tables-for-bispectra-and-log-closure-amplitudes">
+<h2>2.3.3. Make tables for bispectra and log closure amplitudes<a class="headerlink" href="#Make-tables-for-bispectra-and-log-closure-amplitudes" title="Permalink to this headline">¶</a></h2>
 <p>From <em>uvdata.VisTable</em>, you can make tables for closure quantities such as bispectra (<em>uvdata.BSTable</em>) and log closure amplitudes (<em>uvdata.CATable</em>). The classes of both table also inherit pandas.DataFrame class, so you can use this class like pandas.DataFrame.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:

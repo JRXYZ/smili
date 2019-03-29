@@ -403,7 +403,8 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="Imaging">
 <h1>2.4. Imaging<a class="headerlink" href="#Imaging" title="Permalink to this headline">¶</a></h1>
-<p>Here, we show a quick example of imaging using <em>imaging.lbfgs</em> module. In this notebook, we do not go to details of its theoretical backgroud nor practical imaging procedures; here we focus on going through the basic functions. We also note that the imaging function has been dynamical updated, so its usage may change on short time scales. Here, we use a <a class="reference external" href="3C273DEC16.UVP">VLBA data set of 3C 273 at 43 GHz</a> of <a class="reference external" href="https://www.bu.edu/blazars/VLBAproject.html">the Boston University Blazar Group</a>.</p>
+<p>We show a quick example of imaging using <em>imaging.lbfgs</em> module. In this notebook, we do not go to details of its theoretical backgroud nor imaging procedures (tuning parameters, iterative imaging, self-calbiration, etc.); here we focus on going through the basic functions. We also note that the imaging function has been dynamical updated, so its usage may change on short time scales. We use a <a class="reference external" href="3C273DEC16.UVP">VLBA data set of 3C 273 at 43 GHz</a> of <a class="reference external" href="https://www.bu.edu/blazars/VLBAproject.html">the Boston University Blazar
+Group</a>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -842,7 +843,7 @@ Stokes I data will be calculated from input RR and LL data
     <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span> <span class="c1"># for the first two times, we will use amplitudes</span>
         <span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;amptable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">atable</span>
         <span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;vistable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;cen_lambda&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># don&#39;t forget to switch off the centroid regularizer, since now we have absolute position information from full complex visibilities.</span>
+        <span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;cen_lambda&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># we need the centroid regularization during closure imaging, since the absolute potition information will be lost.</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;amptable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="n">imprm</span><span class="p">[</span><span class="s2">&quot;vistable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">vtable</span>
